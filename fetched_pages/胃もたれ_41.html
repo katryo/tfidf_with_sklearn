@@ -1,0 +1,994 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/temp-01.dwt" codeOutsideHTMLIsLocked="false" -->
+<!--Check OK-->
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="Author" content="Eisai Co., Ltd." />
+<meta name="robots" content="index,follow" />
+<meta name="robots" content="noydir" />
+<meta name="robots" content="noodp" />
+
+<meta name="description" content="胃の総合ホームページ「胃のサイエンス」では、胃の健康に関する情報をお届けしています。" />
+
+<meta name="keywords" content="胃,健康,くすり,成分名,胃腸,健胃" />
+
+
+<link href="styles/green/css/import.css" rel="stylesheet" type="text/css" />
+<link href="css/fontsize.css" rel="stylesheet" type="text/css" />							
+<link href="css/eisai.css" rel="stylesheet" type="text/css" />
+
+
+<script type="text/javascript" src="styles/green/js/selectcolor.js"></script>
+<script src="js/faqcommon.js" type="text/javascript"></script>							
+<script src="js/fontsize.js" type="text/javascript"></script>							
+<script type="text/javascript" src="./src/common/scripts/jquery.js"></script>
+<script type="text/javascript" src="./src/common/scripts/rollover.js"></script>
+<script type="text/javascript" src="./src/common/scripts/uascrolle.js"></script>
+<script type="text/javascript" src="./src/common/scripts/uafontswitch.js"></script>
+<script type="text/javascript" src="./src/common/scripts/popup.js"></script>
+<link rel="stylesheet" type="text/css" charset="Shift-JIS" href="./src/common/styles/site.css" media="all" />
+<link rel="alternate stylesheet" type="text/css" charset="Shift-JIS" href="./src/common/styles/fontsize-01.css" title="small" />
+<link rel="alternate stylesheet" type="text/css" charset="Shift-JIS" href="./src/common/styles/fontsize-02.css" title="big" />
+<link rel="stylesheet" type="text/css" charset="Shift-JIS" href="./src/common/styles/print.css" media="print" />
+
+<link href="styles/green/css/custom.css" rel="stylesheet" type="text/css" />	
+<script language="javascript">
+<!--
+function navi(obj) {
+ url = obj.options[obj.selectedIndex].value;
+ if(url != "") {
+   window.open(obj.options[obj.selectedIndex].value); 
+  }
+}
+//-->
+</script>
+
+<script src="http://www.i-no-science.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">
+   urchinTracker();
+</script>
+
+<script type="text/javascript">
+	
+	function BeginSearchID(VintActiveNodeID,VintDispNodeID){
+		var strSearchID = "";
+		var strURL;
+		var strOption;
+
+		var strBindFile = "FALSE";
+
+		
+		var objSearchID = document.getElementsByName('txtFAQID').item(0);
+		strSearchID = objSearchID.value;
+		if(strSearchID.length<=0){
+			alert('FAQ番号が未入力です！');
+			return 0;
+		}
+
+		if (strSearchID.match(/[^0-9]/g)) {
+			alert('FAQ番号には整数以外入力できません。');
+
+			return 0;
+		}
+
+		
+		var objSearchOpt = document.getElementsByName('SearchOpt').item(0);
+		
+		if (objSearchOpt.value == "1") {
+			objText = document.getElementsByName('txtSearchText2').item(0);
+		}else{
+			objText = document.getElementsByName('txtSearchText1').item(0);
+		}
+
+		
+		if(objText.value == ''){
+			strSearchText = '';
+		}else{
+			strSearchText = objText.value;
+		}
+		strSearchText = strSearchText.trim();
+
+
+		var objSearchType0 = document.getElementsByName('optSearchType').item(0);
+		if(objSearchType0.checked){
+			strSearchType = "1";
+		}
+		else{
+			strSearchType = "0";
+		}
+
+		
+		var objSearchTextCond = document.getElementsByName('cboSearchTextCond').item(0);
+		var strKeywordCond = "";
+		strKeywordCond = objSearchTextCond.value;
+
+		
+		var objSearchQA = document.getElementsByName('cboSearchQA').item(0);
+		var strSearchQA = "";
+		strSearchQA = objSearchQA.value;
+
+
+		strAttrs = "";
+		if (objSearchOpt.value == "1") {
+
+			var objAttrCount = document.getElementsByName('strAttrCount').item(0);
+			intAttrCount = objAttrCount.value;
+			for(i=0;i<intAttrCount;i++){
+				iIndex = i + 1;
+
+				var objAttrType = document.getElementsByName("strAttrType" + iIndex).item(0)
+				if (objAttrType.value=="N") {
+					var objAttrValue = document.getElementsByName("cboAttr" + iIndex).item(0);
+				}else{
+					var objAttrValue = document.getElementsByName("txtAttr" + iIndex).item(0);
+				}			
+				var objAttrID = document.getElementsByName("strAttrID" + iIndex).item(0);
+				var objAttrFull = document.getElementsByName("strAttrFull" + iIndex).item(0) 
+
+				strAttrType = objAttrType.value;
+				strAttrID = objAttrID.value;
+				strAttrValue = objAttrValue.value;
+				strAttrFull = objAttrFull.value; 
+				if(strAttrValue!=""){
+
+					strAttrValue = strAttrID + "\\" + strAttrValue + "\\" + strAttrType + "\\" + strAttrFull;
+					if(strAttrs==""){
+						strAttrs = strAttrValue;
+					}else{
+						strAttrs = strAttrs + String.fromCharCode(0x08) + strAttrValue;
+					}
+				}
+			}
+
+			var strBindFile = "FALSE";
+			var objBindFile = document.getElementsByName('chkBindFile').item(0);
+			if(objBindFile.checked){
+				strBindFile = "TRUE";
+			}
+			else{
+				strBindFile = "FALSE";
+			}
+
+		}
+
+		strURL = "detail.asp"
+			   + "?FAQID=" + strSearchID
+			   + "&baID=18"
+			   + "&strKind=4"
+			   + "&SearchID=" + strSearchID
+			   + "&Option=" + objSearchOpt.value
+			   + "&NodeID=" + VintActiveNodeID
+			   + "&DispNodeID=" + VintDispNodeID
+			   + "&CID=0"
+			   + "&Rows="
+			   + "&KW=" + strSearchType
+			   + "&KWAnd=" + strKeywordCond
+			   + "&Field=" + strSearchQA
+			   + "&Text=" + escape(strSearchText)
+			   + "&Attrs=" + escape(strAttrs)
+			   + "&Bind=" + strBindFile;
+
+
+		
+		document.location.href = strURL;
+		return -1;
+	}
+
+	
+	function BeginSearchText_delete(VintActiveNodeID,VstrDispNodeID,VblnChkFlg, VblnAttrChk) {
+		
+		var strSearchText = '';
+		var objText
+		var objSearchOpt = document.getElementsByName('SearchOpt').item(0);
+
+		var strBindFile = "FALSE";
+		
+		if (objSearchOpt.value == "1") {
+			objText = document.getElementsByName('txtSearchText2').item(0);
+		}else{
+			objText = document.getElementsByName('txtSearchText1').item(0);
+		}
+
+		
+		if(objText.value == ''){
+			strSearchText = '';
+		}else{
+			strSearchText = objText.value;
+		}
+
+		
+		strSearchText = strSearchText.trim();
+
+		
+		if (VblnChkFlg) {
+			if(strSearchText.length<=0){
+				alert('検索内容が未入力です！');
+
+				objText.value = '';
+				objText.focus();
+				return -1;
+			}
+		}
+
+		
+		if(strSearchText.length>=151){
+			alert('検索文字列数は150字以内で入力して下さい');
+			objText.value = objText.value.replace('\n', '')
+			objText.focus();
+			return -1;
+		}
+
+		
+		var objSearchID = document.getElementsByName('txtFAQID').item(0);
+		strSearchID = objSearchID.value;
+
+		if (strSearchID.match(/[^0-9]/g)) {
+			strSearchID="";
+		}
+
+		strSearchText = escape(strSearchText);
+
+
+		var objSearchType0 = document.getElementsByName('optSearchType').item(0);
+		if(objSearchType0.checked){
+			strSearchType = "1";
+		}
+		else{
+			strSearchType = "0";
+		}
+
+		
+		var objSearchTextCond = document.getElementsByName('cboSearchTextCond').item(0);
+		var strKeywordCond = "";
+		strKeywordCond = objSearchTextCond.value;
+
+		
+		var objSearchQA = document.getElementsByName('cboSearchQA').item(0);
+		var strSearchQA = "";
+		strSearchQA = objSearchQA.value;
+
+
+		strAttrs = "";
+		if (objSearchOpt.value == "1") {
+
+			var objAttrCount = document.getElementsByName('strAttrCount').item(0);
+			intAttrCount = objAttrCount.value;
+			for(i=0;i<intAttrCount;i++){
+				iIndex = i + 1;
+
+				var objAttrType = document.getElementsByName("strAttrType" + iIndex).item(0)
+				if (objAttrType.value=="N") {
+					var objAttrValue = document.getElementsByName("cboAttr" + iIndex).item(0);
+				}else{
+					var objAttrValue = document.getElementsByName("txtAttr" + iIndex).item(0);
+				}			
+				var objAttrID = document.getElementsByName("strAttrID" + iIndex).item(0);
+				var objAttrFull = document.getElementsByName("strAttrFull" + iIndex).item(0) 
+
+				strAttrType = objAttrType.value;
+				strAttrID = objAttrID.value;
+				strAttrValue = objAttrValue.value;
+				strAttrFull = objAttrFull.value; 
+				if(strAttrValue!=""){
+
+					strAttrValue = strAttrID + "\\" + strAttrValue + "\\" + strAttrType + "\\" + strAttrFull;
+					if(strAttrs==""){
+						strAttrs = strAttrValue;
+					}else{
+						strAttrs = strAttrs + String.fromCharCode(0x08) + strAttrValue;
+					}
+				}
+			}
+
+			var strBindFile = "FALSE";
+			var objBindFile = document.getElementsByName('chkBindFile').item(0);
+			if(objBindFile.checked){
+				strBindFile = "TRUE";
+			}
+			else{
+				strBindFile = "FALSE";
+			}
+
+		}
+
+		strURL = "resultdummy.asp"
+			   + "?Option=" + objSearchOpt.value
+			   + "&NodeID=" + VintActiveNodeID
+			   + "&DispNodeID=" + VstrDispNodeID
+			   + "&CID=0"
+			   + "&Rows="
+			   + "&KW=" + strSearchType
+			   + "&KWAnd=" + strKeywordCond
+			   + "&Field=" + strSearchQA
+			   + "&Text=" + strSearchText
+			   + "&Attrs=" + escape(strAttrs)
+			   + "&SearchID=" + strSearchID
+			   + "&Bind=" + strBindFile;
+
+		
+		document.location.href = strURL;
+		return -1;
+	}
+
+
+	function BeginSearchText(VintActiveNodeID,VstrDispNodeID,VblnChkFlg, VblnAttrChk) {
+
+		
+		strURL = "result.asp"
+			   + "?NodeID=" + VintActiveNodeID
+			   + "&DispNodeID=" + VstrDispNodeID
+			   + "&CID=0"
+			   + "&Rows="
+		
+		
+		document.location.href = strURL;
+		return -1;
+	}
+
+	function categoryOnClick(VintNodeId,VintDispNodeID) {
+		window.returnValue = false;
+
+		BeginSearchText(VintNodeId,VintDispNodeID,false, false);
+	}
+		
+	
+	function strSearchIDOnKeyDown(VintNodeId,VintDispNodeID) {
+		if (window.event.keyCode == 13) {
+			window.event.returnValue = false;
+			BeginSearchID(VintNodeId,VintDispNodeID);
+		}
+		return -1;
+	}
+
+	function strSearchTextOnKeyDown(VintActiveNodeID,VintDispNodeID) {
+		if (window.event.keyCode == 13) {
+			window.event.returnValue = false;
+			BeginSearchText(VintActiveNodeID, VintDispNodeID, true, true);
+		}
+		return -1;
+	}
+
+	function SearchFreeAttrs(VintActiveNodeID,VintDispNodeID,VintID,VintOption) {
+		if (VintOption == 0) {
+			if (window.event.keyCode == 13) {
+				window.event.returnValue = false;
+				var objAttrText = document.getElementsByName("txtAttr" + VintID).item(0);
+				if (objAttrText.value!=""){
+					BeginSearchText(VintActiveNodeID, VintDispNodeID, false, true);
+				}
+			}
+		}else if (VintOption == 1) {
+			var objAttrText = document.getElementsByName("txtAttr" + VintID).item(0);
+			if (objAttrText.value!=""){
+				BeginSearchText(VintActiveNodeID, VintDispNodeID, false, true);
+			}
+		}
+		return -1;
+	}
+
+	function seachTypeOnClick(){
+		var objSearchType1 = document.getElementsByName("optSearchType").item(1);
+		var objSearchTextCond = document.getElementsByName("cboSearchTextCond").item(0);
+
+		if(objSearchType1.checked){
+			objSearchTextCond.disabled = true;
+		}else{
+			objSearchTextCond.disabled = false;
+		}
+		return -1;
+	}
+
+	
+	function switchTerm() {
+
+		
+		return -1;
+	}
+
+	
+	function clearDefault() {
+		document.getElementById("txtSearchText1").value = "";
+		return -1;
+	}
+
+	
+	function clearDetail() {
+
+		document.getElementById("optSearchType2").checked = true;
+		document.getElementById("cboSearchTextCond").disabled = true;
+
+		document.getElementById("cboSearchQA").selectedIndex = 0;
+
+		document.getElementById("txtSearchText2").value = "";
+
+		document.getElementById("cboSearchTextCond").selectedIndex = 0;
+		document.getElementById("txtFAQID").value = "";
+
+		
+		var objAttrCount = document.getElementsByName('strAttrCount').item(0);
+		intAttrCount = objAttrCount.value;
+		for(i=0;i<intAttrCount;i++){
+			iIndex = i + 1;
+
+			var objAttrType = document.getElementsByName("strAttrType" + iIndex).item(0)
+			if (objAttrType.value=="N") {
+				var objAttrPD = document.getElementsByName("cboAttr" + iIndex).item(0);
+				objAttrPD.selectedIndex = 0;
+			}else{
+				var objAttrText = document.getElementsByName("txtAttr" + iIndex).item(0);
+				objAttrText.value = "";
+			}			
+		}
+
+
+		document.getElementById("chkBindFile").checked = false;
+
+		document.getElementById("txtSearchText2").focus();
+		objText = document.getElementById("txtSearchText2");
+		return -1;
+	}
+
+	function setFocus() {
+		var objText;
+		if (document.getElementById("search_detail").style.display == 'none') {
+			document.getElementById("txtSearchText1").focus();
+			objText = document.getElementById("txtSearchText1");
+		}
+		else{
+			document.getElementById("txtSearchText2").focus();
+			objText = document.getElementById("txtSearchText2");
+		}
+		objText.value = objText.value;
+	}
+</script>
+
+<script language="JavaScript">
+<!--
+	
+	function pageChangeOnClick(VintNextFlg){
+		intPage = 0;
+
+		if(VintNextFlg == 1){
+			intPage++;
+		}else{
+			intPage--;
+		}
+
+		if(intPage < 0){
+			intPage = 0;
+		}
+
+		chagePage(intPage);
+		return -1;
+	}
+
+	
+	function chagePage(VintPage){
+		var strURL;
+
+		strText = escape("");
+		strAttrs = escape("");
+		strURL = "result.asp";
+		strURL += "?Option=0"
+		strURL += "&NodeID=32";
+		strURL += "&DispNodeID=24";
+		strURL += "&CID=0";
+		strURL += "&KW=";
+		strURL += "&KWAnd=1";
+		strURL += "&Field=";
+		strURL += "&Attrs=" + strAttrs;
+		strURL += "&Text=" + strText;
+		strURL += "&SearchID=";
+		strURL += "&NB=1";
+		strURL += "&Rows=";
+		strURL += "&Page=" + VintPage;
+
+		strURL += "&Bind=";
+
+		strURL += "&Sort=";
+
+		document.location.href = strURL;
+		return -1;
+	}
+
+	
+	function ChangeRowCount(VintHeader){
+		var strURL;
+		var strRows;
+
+		var objCboPage;
+
+		if (VintHeader == 0)
+			objCboPage = document.getElementsByName('cboHeader').item(0);
+		else
+			objCboPage = document.getElementsByName('cboFooter').item(0);
+
+		if (objCboPage) 
+			strRows = objCboPage.value;
+
+		strText = escape("");
+		strAttrs = escape("");
+		strURL = "result.asp";
+		strURL += "?Option=0"
+		strURL += "&NodeID=32";
+		strURL += "&DispNodeID=24";
+		strURL += "&CID=0";
+		strURL += "&KW=";
+		strURL += "&KWAnd=1";
+		strURL += "&Field=";
+		strURL += "&Attrs=" + strAttrs;
+		strURL += "&Text=" + strText;
+		strURL += "&SearchID=";
+		strURL += "&NB=1";
+		strURL += "&Rows=" + strRows;
+
+		strURL += "&Bind=";
+
+		strURL += "&Sort=";
+
+		document.location.href = strURL;
+		return -1;
+	}
+-->	
+</script>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>検索結果一覧｜Ｑ＆Ａ｜胃もたれ、胃痛、胸やけなどの胃の悩み対策サイト『胃のサイエンス』</title>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="head" -->
+<script type="text/javascript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="PageCheck" type="text" value="ad" -->
+<!-- InstanceParam name="Pagefooter" type="text" value="page" -->
+</head>
+
+
+
+<body id="index">
+
+<!-- InstanceBeginEditable name="file" -->
+<link rel="stylesheet" type="text/css" charset="Shift-JIS" href="./src/ad/styles/ad.css" media="all" />
+<!-- InstanceEndEditable -->
+
+<div id="pagemain">
+
+<div id="pageheader">
+
+<div id="pageheader-main">
+<div id="pagelogo">
+<h1>胃もたれ、胃痛、胸やけなどの<br />胃の悩み対策サイト
+</h1>
+<a href="http://www.i-no-science.com/index.html"><img src="./src/common/images/siteid.gif" border="0" alt="胃のサイエンス あなたの胃を健康にするために" width="219" height="51" class="com" /></a>
+<!-- id] pagelogo -->
+</div>
+	  
+<div id="pagemenu">
+<ul id="utnavi">
+<li><a href="http://www.eisai.jp/inquiry/" target="_blank"><img src="./src/common/images/btn-utnavi-01_off.gif" border="0" alt="お問い合わせ" width="85" height="10" /></a></li>
+<li><a href="http://www.i-no-science.com/sitemap.html"><img src="./src/common/images/btn-utnavi-02_off.gif" border="0" alt="サイトマップ" width="71" height="10" /></a></li>
+</ul>
+
+<ul id="fontsize">
+<li class="fontsize-s"><a href="javascript:void(0)" onclick="setActiveStyleSheet('small'); return false;"><img src="./src/common/images/btn-fontsize-01_off.gif" border="0" alt="標準" width="36" height="33" /></a></li>
+<li class="fontsize-b"><a href="javascript:void(0)" onclick="setActiveStyleSheet('big'); return false;"><img src="./src/common/images/btn-fontsize-02_off.gif" border="0" alt="拡大" width="43" height="33" /></a></li>
+</ul>
+<form action="./site/search.asp" method="get" name="form2">
+<p><input type="text" id="query" name="query" value="" size="18" class="search" /><input type="image" name="submit" src="./src/common/images/hed_search02_off.gif" alt="検索" title="検索" width="47" height="21" onMouseOver="this.src='./src/common/images/hed_search02_on.gif'" onMouseOut="this.src='./src/common/images/hed_search02_off.gif'" /></p>
+</form>
+<!-- id] pagemenu --></div>
+<!-- #EndLibraryItem -->
+<!-- id] pageheader-main -->
+</div>
+<ul id="glnavi">
+ <!-- InstanceBeginEditable name="EditRegion6" -->
+<li><a href="http://www.i-no-science.com/check/index.html"><img src="./src/common/images/btn-glnavi-01_off.gif" border="0" alt="今すぐ知りたい！胃の症状と対策" width="238" height="55" /></a></li>
+<li><a href="http://www.i-no-science.com/medical/index.html"><img src="./src/common/images/btn-glnavi-02_off.gif" border="0" alt="知っていると安心！家庭の胃学" width="238" height="55" /></a></li>
+<li><a href="http://www.i-no-science.com/column/index.html"><img src="./src/common/images/btn-glnavi-03_off.gif" border="0" alt="知ってびっくり 胃の世界" width="238" height="55" /></a></li>
+<li><a href="http://www.i-no-science.com/ad/index.html"><img src="./src/common/images/btn-glnavi-04_on.gif" border="0" alt="あなたの胃の不快症状に セルベール・サクロンのご案内" width="239" height="55" /></a></li>
+<!-- InstanceEndEditable -->
+<!-- #EndLibraryItem -->
+</ul>
+<!-- id] pageheader -->
+</div>
+
+<div id="pagemiddle">
+<div id="pagemiddle-area">
+
+<!-- InstanceBeginEditable name="main" -->
+
+<div id="pagemiddle-right">
+
+<div id="breadlink">
+
+<p><a href="http://www.i-no-science.com/index.html">HOME（胃もたれ、胃痛、胸やけなどの胃の悩み対策サイト）</a>&nbsp;&nbsp;&gt;&nbsp;<a href="http://www.i-no-science.com/product/index.html">製品情報</a>&nbsp;&nbsp;&gt;&nbsp;<a href="./?DispNodeID=24&CID=0">Q＆A</a>&nbsp;&nbsp;&gt;&nbsp;セルベール・セルベール整胃錠（胃ぐすり：のみ薬）</p>
+   
+<!-- id] breadlink --></div>
+
+
+<div id="ad-top">
+<h2>Ｑ＆Ａ</h2>
+
+<div id="faq-main">
+
+
+      <table width="100%">
+        <tr>
+          <td>
+
+            <table width="100%" class="page">
+              <tr>
+                <td height="34" nowrap>9件中 1〜9件</td>
+
+                <td style="text-align: center;" nowrap>
+                  <table>
+                    <tr>
+
+                      <td nowrap>&nbsp;</td>
+
+		              <td nowrap><span class="bold">ページ：</span><span class="bold"><a href="javascript:chagePage(0);">1</a></span></td>
+
+                      <td nowrap>&nbsp;</td>
+
+                    </tr>
+                  </table>
+                </td>
+
+                <td style="text-align: right;" nowrap>
+                  <select name="cboHeader">
+
+				    <option value="10"  selected>10件</option>
+
+				    <option value="30" >30件</option>
+
+				    <option value="50" >50件</option>
+
+                  </select>
+
+                  <a href="javascript:ChangeRowCount(0);"><img src="styles/green/images/bt_show_green.gif" width="44" height="16" style="vertical-align: middle;" /></a>
+                </td>
+              </tr>
+            </table>
+
+	        <table width="100%" id="result">
+
+              <tr class="tit_01"  valign="top">
+
+                <th width="690" height="25">質問内容</th>
+
+              </tr>
+
+              <tbody onMouseOver="changebg(this)" onMouseOut="loadbg(this)" onClick="location.href='detail.asp?Option=0&FAQID=287&baID=3&NodeID=32&DispNodeID=24&CID=0&Text=&Attrs=&Field=&KW=&KWAnd=1&AspPage=LST&strkind=9&Page=0&Rows=10&NB=&SearchID=&Bind='">
+
+                <tr class="q">
+
+                  <td width="690" class="q"><p>セルベールはどんな症状におすすめですか？</p></td>
+
+                </tr>
+
+              </tbody>
+
+              <tbody onMouseOver="changebg(this)" onMouseOut="loadbg(this)" onClick="location.href='detail.asp?Option=0&FAQID=154&baID=3&NodeID=32&DispNodeID=24&CID=0&Text=&Attrs=&Field=&KW=&KWAnd=1&AspPage=LST&strkind=9&Page=0&Rows=10&NB=&SearchID=&Bind='">
+
+                <tr class="q">
+
+                  <td width="690" class="q"><p>風邪薬や鎮痛薬を服用すると胃の調子が良くありません。セルベールを一緒に服用してもよいのでしょうか？</p></td>
+
+                </tr>
+
+              </tbody>
+
+              <tbody onMouseOver="changebg(this)" onMouseOut="loadbg(this)" onClick="location.href='detail.asp?Option=0&FAQID=153&baID=3&NodeID=32&DispNodeID=24&CID=0&Text=&Attrs=&Field=&KW=&KWAnd=1&AspPage=LST&strkind=9&Page=0&Rows=10&NB=&SearchID=&Bind='">
+
+                <tr class="q">
+
+                  <td width="690" class="q"><p>セルベールとサクロンは併用しても良いですか？ </p></td>
+
+                </tr>
+
+              </tbody>
+
+              <tbody onMouseOver="changebg(this)" onMouseOut="loadbg(this)" onClick="location.href='detail.asp?Option=0&FAQID=150&baID=3&NodeID=32&DispNodeID=24&CID=0&Text=&Attrs=&Field=&KW=&KWAnd=1&AspPage=LST&strkind=9&Page=0&Rows=10&NB=&SearchID=&Bind='">
+
+                <tr class="q">
+
+                  <td width="690" class="q"><p>セルベールを続けて服用してもよいですか？ </p></td>
+
+                </tr>
+
+              </tbody>
+
+              <tbody onMouseOver="changebg(this)" onMouseOut="loadbg(this)" onClick="location.href='detail.asp?Option=0&FAQID=152&baID=3&NodeID=32&DispNodeID=24&CID=0&Text=&Attrs=&Field=&KW=&KWAnd=1&AspPage=LST&strkind=9&Page=0&Rows=10&NB=&SearchID=&Bind='">
+
+                <tr class="q">
+
+                  <td width="690" class="q"><p>セルベールとH2ブロッカーは併用しても良いですか？</p></td>
+
+                </tr>
+
+              </tbody>
+
+              <tbody onMouseOver="changebg(this)" onMouseOut="loadbg(this)" onClick="location.href='detail.asp?Option=0&FAQID=148&baID=3&NodeID=32&DispNodeID=24&CID=0&Text=&Attrs=&Field=&KW=&KWAnd=1&AspPage=LST&strkind=9&Page=0&Rows=10&NB=&SearchID=&Bind='">
+
+                <tr class="q">
+
+                  <td width="690" class="q"><p>セルベールの主成分のテプレノンとはなんですか？ </p></td>
+
+                </tr>
+
+              </tbody>
+
+              <tbody onMouseOver="changebg(this)" onMouseOut="loadbg(this)" onClick="location.href='detail.asp?Option=0&FAQID=151&baID=3&NodeID=32&DispNodeID=24&CID=0&Text=&Attrs=&Field=&KW=&KWAnd=1&AspPage=LST&strkind=9&Page=0&Rows=10&NB=&SearchID=&Bind='">
+
+                <tr class="q">
+
+                  <td width="690" class="q"><p>セルベールとH2ブロッカーとはどう違うのですか？</p></td>
+
+                </tr>
+
+              </tbody>
+
+              <tbody onMouseOver="changebg(this)" onMouseOut="loadbg(this)" onClick="location.href='detail.asp?Option=0&FAQID=147&baID=3&NodeID=32&DispNodeID=24&CID=0&Text=&Attrs=&Field=&KW=&KWAnd=1&AspPage=LST&strkind=9&Page=0&Rows=10&NB=&SearchID=&Bind='">
+
+                <tr class="q">
+
+                  <td width="690" class="q"><p>セルベールの働きを教えてください</p></td>
+
+                </tr>
+
+              </tbody>
+
+              <tbody onMouseOver="changebg(this)" onMouseOut="loadbg(this)" onClick="location.href='detail.asp?Option=0&FAQID=149&baID=3&NodeID=32&DispNodeID=24&CID=0&Text=&Attrs=&Field=&KW=&KWAnd=1&AspPage=LST&strkind=9&Page=0&Rows=10&NB=&SearchID=&Bind='">
+
+                <tr class="q">
+
+                  <td width="690" class="q"><p>セルベールに配合されている2種類の生薬は何の為に配合されているのですか？ </p></td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+            <table width="100%" class="page">
+              <tr>
+                <td height="34" nowrap>9件中 1〜9件</td>
+
+                <td style="text-align: center;" nowrap>
+                  <table>
+                    <tr>
+
+                      <td nowrap>&nbsp;</td>
+
+		              <td nowrap><span class="bold">ページ：</span><span class="bold"><a href="javascript:chagePage(0);">1</a></span></td>
+
+                      <td nowrap>&nbsp;</td>
+
+                    </tr>
+                  </table>
+                </td>
+
+                <td style="text-align: right;" nowrap>
+                  <select name="cboFooter">
+
+				    <option value="10"  selected>10件</option>
+
+				    <option value="30" >30件</option>
+
+				    <option value="50" >50件</option>
+
+                  </select>
+
+                  <a href="javascript:ChangeRowCount(1);"><img src="styles/green/images/bt_show_green.gif" width="44" height="16" style="vertical-align: middle;" /></a>
+                </td>
+              </tr>
+            </table>
+
+        </tr>
+      </table>
+
+    <table width="100%" id="category">
+      <tr>
+        <td>
+
+          <table width="100%" id="tit_cate">
+            <tr>
+
+              <td valign="bottom" width="92"><img src="./styles/green/images/tit_cate.gif" width="140" height="25"></td>
+
+              <td width="8"></td>
+            </tr>
+          </table>
+
+			<ul>
+
+				<li>
+
+					<a href="JavaScript:categoryOnClick(32,24);"><font color='red'>セルベール・セルベール整胃錠（胃ぐすり：のみ薬）（9）</font></a>
+
+				</li>
+
+				<li>
+
+					<a href="JavaScript:categoryOnClick(33,24);">サクロン・サクロン錠（胃ぐすり：のみ薬）（13）</a>
+
+				</li>
+
+			</ul>
+
+        </td>
+      </tr>
+    </table>
+
+</div>
+
+<div class="pagetop-section-03">
+<p class="fl"><a href="http://www.i-no-science.com/product/index.html" class="pagetop-l">製品情報ＴＯＰへ</a></p>
+<p class="fr pagetop-r"><a href="#pagemain">ページ先頭に戻る</a></p>
+<!-- class] check-section-03 --></div>
+<div class="div-clear"></div>
+
+<!-- id] ad-top --></div>
+
+
+
+
+<!-- id] pagemiddle-right -->
+
+
+
+
+</div>
+
+
+<!-- InstanceEndEditable -->
+
+
+
+
+
+<div id="pagemiddle-left">
+
+
+
+
+
+<h3><a href="http://www.i-no-science.com/ad/index.html"><img src="./src/ad/images/txt-adleft-01_off.gif" border="0" alt="セルベール・サクロンのご案内" width="198" height="55" /></a></h3>
+<dl>
+<dt><a href="http://www.i-no-science.com/product/index.html"><img src="./src/ad/images/txt-adleft-02_off.gif" border="0" alt="製品情報" width="198" height="36" /></a></dt>
+<dd><a href="http://www.i-no-science.com/product/selbellet/index.html">セルベール整胃錠</a></dd>
+<dd><a href="http://www.i-no-science.com/product/selbelle/index.html">セルベール</a></dd>
+<dd><a href="http://www.i-no-science.com/product/selbellet-new/index.html">新セルベール整胃〈錠〉</a></dd>
+<dd><a href="http://www.i-no-science.com/product/selbelle-new/index.html">新セルベール整胃〈細粒〉</a></dd>
+<dd><a href="http://www.i-no-science.com/product/saclon/index.html">サクロン</a></dd>
+<dd><a href="http://www.i-no-science.com/product/saclont/index.html">サクロン錠</a></dd>
+<dd><a href="http://www.i-no-science.com/product/saclons/index.html">サクロンS</a></dd>
+<dd><a href="http://www.i-no-science.com/product/saclonq/index.html">サクロンQ</a></dd>
+<dd><a href="http://qa.i-no-science.com/?DispNodeID=24&CID=0">製品Q＆A</a></dd>
+<dt><a href="http://www.i-no-science.com/ad/index.html#igusuritopics"><img src="./src/ad/images/txt-adleft-03_off.gif" border="0" alt="エーザイ胃ぐすりトピックス" width="198" height="36" /></a></dt>
+<dd><a href="http://www.i-no-science.com/history/history.html">セルベール開発物語</a></dd>
+<dd><a href="http://www.i-no-science.com/history/story.html">サクロン物語</a></dd>
+<dd><a href="http://www.i-no-science.com/promo/selbelle.html">弱った胃を粘液のベールで整える</a></dd>
+<dd><a href="http://www.i-no-science.com/promo/selbelle-new.html">トリプルアクションで弱ってきた胃を整える</a></dd>
+</dl>
+<h4><img src="./src/common/images/txt-left-01.gif" border="0" alt="胃の状態をチェック！" width="200" height="46" /></h4>
+<div id="pagemiddle-left-check">
+<div class="pagemiddle-left-formbg">
+<form method=post>
+<select onChange='location=this.options[this.selectedIndex].value'>
+<option>症状から選ぶ</option>
+<option value="http://www.i-no-science.com/check/check01.html">胃がもたれる
+<option value="http://www.i-no-science.com/check/check02.html">胃が重い
+<option value="http://www.i-no-science.com/check/check05.html">痛みがある
+<option value="http://www.i-no-science.com/check/check06.html">胸焼けがする
+<option value="http://www.i-no-science.com/check/check07.html">吐き気がする
+<option value="http://www.i-no-science.com/check/check04.html">膨満感がある
+<option value="http://www.i-no-science.com/check/check08.html">食欲不振
+</select>
+</form>
+<!-- class] pagemiddle-right-formbg --></div>
+<h4><img src="./src/common/images/txt-left-02.gif" border="0" alt="家庭の胃学" width="175" height="39" /></h4>
+<div class="pagemiddle-left-formbg">
+<form method=post>
+<select onChange='location=this.options[this.selectedIndex].value'>
+<option>病名から選ぶ</option>
+<option value="http://www.i-no-science.com/medical/sickness/sickness01.html">急性胃炎</option>
+<option value="http://www.i-no-science.com/medical/sickness/sickness02.html">慢性胃炎</option>
+<option value="http://www.i-no-science.com/medical/sickness/sickness03.html">胃潰瘍</option>
+<option value="http://www.i-no-science.com/medical/sickness/sickness04.html">胃がん</option>
+<option value="http://www.i-no-science.com/medical/sickness/sickness05.html">ポリープ</option>
+<option value="http://www.i-no-science.com/medical/sickness/sickness06.html">逆流性食道炎</option>
+<option value="http://www.i-no-science.com/medical/sickness/sickness07.html">食中毒</option>
+<option value="http://www.i-no-science.com/medical/sickness/sickness08.html">胃下垂・胃アトニー</option>
+<option value="http://www.i-no-science.com/medical/sickness/sickness09.html">胃けいれん</option>
+<option value="http://www.i-no-science.com/medical/sickness/sickness10.html">胃拡張</option>
+</select>
+</form>
+<!-- class] pagemiddle-right-formbg --></div>
+<!-- id] pagemiddle-right-check --></div>
+
+<div id="ad-leftlink-01">
+<ul>
+<li><a href="http://www.i-no-science.com/portal/selbelle/index.html"><img src="./src/common/images/btn-index-left-01_off.jpg" border="0" alt="年とともに、くり返す胃もたれに。" width="197" height="60" /></a></li>
+<li><a href="http://www.i-no-science.com/portal/saclon/index.html"><img src="./src/common/images/btn-index-left-02_off.jpg" border="0" alt="ムカムカ、胸やけ、飲みすぎに。" width="197" height="60" /></a></li>
+<li><a href="http://www.i-no-science.com/product/index.html"><img src="./src/common/images/btn-product-01_off.gif" border="0" alt="製品情報" width="197" height="34" /></a></li>
+</ul>
+<!-- id] index-left-link-01 --></div>
+
+<div id="ad-left-seo">
+<p>胃のサイエンスは、セルベール・サクロンの商品情報やCM紹介をはじめ、あなたの胃のもたれ、痛み、むかつき、膨満感、二日酔いなどの不快症状の原因や対処法について解説する胃の総合情報サイトです。胃薬の正しい飲み方・選び方、胃の病気についても解説しています。</p>
+<!-- id] index-left-seo --></div>
+
+
+
+<!-- id] pagemiddle-left --></div>
+<div class="div-clear"></div>
+
+<!-- id] pagemiddle-area --></div>
+<div id="seo">
+<p>胃のサイエンスは、胃のもたれ、痛み、吐き気、膨満感、重み、胸焼け、食欲不振、二日酔いなどの不快症状の原因や対処法、胃の病気や検査について解説しています。</p>
+<!-- id] seo -->
+</div>
+
+<div id="pagefotter">
+<div class="pagefotter-in">
+
+<ul class="fottermenu">
+<li><a href="http://www.i-no-science.com/check/index.html">今すぐ知りたい！胃の症状と対策</a></li>
+<li><a href="http://www.i-no-science.com/medical/index.html">知っていると安心！家庭の胃学</a></li>
+<li><a href="http://www.i-no-science.com/column/index.html">知ってびっくり胃の世界</a></li>
+<li><a href="http://www.i-no-science.com/ad/index.html">セルベール・サクロンのご案内</a></li>
+</ul>
+
+<dl class="pagelink">
+<dt><img src="./src/common/images/txt-footer-seo.gif" border="0" alt="こんな症状にセルベール・サクロン・サクロンQ" width="242" height="32" /></dt>
+<dd>胃もたれ｜胸やけ｜食べすぎ｜ムカムカ｜飲みすぎ｜はきけ｜胃痛</dd>
+</dl>
+
+<div class="sitelink">
+<h2>胃もたれ、胃痛、胸やけなどの胃の悩み対策サイト </h2>
+<ul>
+<li><a href="http://www.eisai.co.jp/privacy/privacy.html" target="_blank"><img src="./src/common/images/bt-ftnavi-01_off.gif" border="0" alt="プライバシーポリシー" width="124" height="11" /></a></li>
+<li><a href="http://www.eisai.co.jp/aboutsite/index.html" target="_blank"><img src="./src/common/images/bt-ftnavi-02_off.gif" border="0" alt="ご利用について" width="90" height="11" /></a></li>
+<li><a href="http://www.i-no-science.com/sitemap.html"><img src="./src/common/images/bt-ftnavi-03_off.gif" border="0" alt="胃のサイエンス サイトマップ" width="79" height="11" /></a></li>
+<li><a href="http://www.i-no-science.com/links.html"><img src="./src/common/images/bt-ftnavi-04_off.gif" border="0" alt="エーザイ関連サイト" width="115" height="11" /></a></li>
+</ul>
+<!-- id] sitelink --></div>
+
+
+<div id="copylink">
+<p class="sience"><a href="http://www.i-no-science.com/index.html"><img src="./src/common/images/siteid.gif" border="0" alt="胃のサイエンス あなたの胃を健康にするために" width="219" height="51" class="com" /></a></p>
+<div class="eisai">
+<p class="eisai-logo"><a href="http://www.eisai.co.jp/" target="_blank"><img src="./src/common/images/btn-copyright-01.gif" border="0" alt="Eisai" width="56" height="34" /></a></p>
+<p class="eisai-link"><a href="http://www.eisai.co.jp/" target="_blank">エーザイ企業サイト</a> | <a href="http://www.eisai.co.jp/products/index.html" target="_blank">製品情報</a> | <a href="http://www.eisai.co.jp/company/index.html" target="_blank">企業情報</a> | <a href="http://www.eisai.co.jp/ir/index.html" target="_blank">株主・投資家の皆さまへ</a> | <a href="http://www.eisai.co.jp/social/index.html" target="_blank">社会・環境活動</a> | <a href="http://www5.eisai.co.jp/index.html" target="_blank">採用情報</a><br />
+<a href="http://www.eisai.co.jp/privacy/privacy.html" target="_blank">プライバシーポリシー</a> | <a href="http://www.eisai.co.jp/aboutsite/index.html" target="_blank">ご利用について</a> | <a href="http://www.eisai.co.jp/acguide.html" target="_blank">アクセシビリティ</a> | <a href="http://www.eisai.jp/" target="_blank">予防から治療まで見つかるEisai.jp</a></p>
+<address><a href="http://www.i-no-science.com/copyright.html" onclick="javascript:popup('http://www.i-no-science.com/copyright.html');return false;"><img src="http://www.i-no-science.com/common/images/txt-copyright-01.gif" border="0" alt="Copyright (C) 2001 Eisai Co., Ltd. All rights reserved." width="259" height="12" class="copyright" /></a></address>
+</div>
+<div class="div-clear"></div>
+<!-- id] copylink --></div>
+
+<!-- #EndLibraryItem -->
+<!-- class] pagefotter-in -->
+</div>
+<!-- id] pagefotter -->
+</div>
+<!-- id] pagemiddle -->
+</div>
+
+<!-- id] pagemain -->
+</div>
+
+</body>
+<!-- InstanceEnd --></html>

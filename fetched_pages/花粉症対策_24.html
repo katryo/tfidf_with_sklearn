@@ -1,0 +1,663 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="description" content="Yahoo!ニュースに掲載されたトピックスを、過去にさかのぼって閲覧可能。重要なニュースを記録する日本最大級のアーカイブです。">
+<meta property="datestart" content="20131215">
+<meta name="keywords" content="トピックス,ニュース,一覧,過去"/>
+<title>Yahoo!ニュース - トピックス一覧</title>
+
+<link type="text/css" rel="stylesheet" href="http://i.yimg.jp/images/jpnews/cre/common/pc/css/common_pc.css?date=20131202" media="all" />
+<link type="text/css" rel="stylesheet" href="http://i.yimg.jp/images/jpnews/cre/pickup/pc/css/pickup_pc.css?date=20131202" media="all" />
+<link rel="apple-touch-icon" href="http://i.yimg.jp/images/ipn/wcb/news129.png">
+<!-- SpaceID=0 robot -->
+
+</head>
+
+<body class="yj950-2">
+<div id="wrapper">
+
+
+<div id="header">
+<span class="yjGuid"><a name="yjPagetop" id="yjPagetop"></a><img src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" width="1" height="1" alt="このページの先頭です"></span>
+<span class="yjSkip"><a href="#yjContentsStart"><img src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" alt="このページの本文へ" width="1" height="1" ></a></span>
+
+<!-- SpaceID=0 robot -->
+<!-- SpaceID=0 robot -->
+<!-- SpaceID=0 robot -->
+<!-- SpaceID=0 robot -->
+
+</div><!--/#header-->
+
+<hr class="yjSeparation">
+
+<div id="contents">
+
+<!-- #contentsHeader -->
+<div id="contentsHeader">
+
+    <div id="headerSearch">
+		<div class="searchWrapper">
+        <!-- ニュース -->
+		<form action="http://news.search.yahoo.co.jp/search" method="get" id="searchNewsForm" class="current">
+
+			<div class="inputWrapper">
+				<input class="searchInput" type="text" name="p" placeholder="キーワードを入力">
+                <input type="hidden" value="utf-8" name="ei">
+                <input type="hidden" value="news_sw" name="fr">
+            </div><!-- /.inputWrapper -->
+            <p class="currentSearch"><a href="#">ニュース</a></p>
+			<span class="searchButton"><input type="submit" value="検索"></span>
+            
+            <!-- 条件指定ボタン -->
+       		<p class="advanced"><a href="http://news.search.yahoo.co.jp/advanced">条件指定</a></p>
+		</form>
+		<form action="http://news.search.yahoo.co.jp/search" method="get" id="searchTopicsForm">
+
+			<div class="inputWrapper">
+				<input class="searchInput" type="text" name="p" placeholder="キーワードを入力">
+                <input type="hidden" value="utf-8" name="ei">
+                <input type="hidden" value="news_sw" name="fr">
+                <input type="hidden" value="t" name="st">
+            </div><!-- /.inputWrapper -->
+            <p class="currentSearch"><a href="#">トピックス</a></p>
+			<span class="searchButton"><input type="submit" value="検索"></span>
+            
+            <!-- 条件指定ボタン -->
+       		<p class="advanced"><a href="http://news.search.yahoo.co.jp/advanced">条件指定</a></p>
+		</form>
+		<form action="http://buzz.news.yahoo.co.jp/search/result/" method="get" id="searchBuzzwordForm">
+
+			<div class="inputWrapper">
+				<input class="searchInput" type="text" name="search" placeholder="キーワードを入力">
+            </div><!-- /.inputWrapper -->
+            <p class="currentSearch"><a href="#">Buzzワード</a></p>
+			<span class="searchButton"><input type="submit" value="検索"></span>
+            
+		</form>
+		<form action="http://gsearch.news.yahoo.co.jp/gs" method="get" id="searchGSRForm">
+
+			<div class="inputWrapper">
+				<input class="searchInput" type="text" name="key" placeholder="キーワードを入力">
+                <input type="hidden" value="l" name="ty">
+                <input type="hidden" value="" name="dbty">
+            </div><!-- /.inputWrapper -->
+            <p class="currentSearch"><a href="#">全国紙パック</a></p>
+			<span class="searchButton"><input type="submit" value="検索"></span>
+            
+		</form>
+        <ul class="searchSelect hide"><li id="searchNews"><a href="#" class="current"><span>ニュース</span></a></li>
+<li id="searchTopics"><a href="#"><span>トピックス</span></a></li>
+<li id="searchBuzzword"><a href="#"><span>Buzzワード</span></a></li>
+<li id="searchGSR"><a href="#"><span>全国紙パック</span></a></li>
+        </ul>
+        <div class="bubble hide"></div>
+        
+		</div><!-- /.searchWrapper -->
+		<ul class="personalInfo">
+			<li class="myPage"><a href="http://person.news.yahoo.co.jp/u/login" onmousedown="this.href='http://person.news.yahoo.co.jp/u/login'"><span class="myThumb"><img src="http://i.yimg.jp/images/bloom/v201212/anonymous_24.png" width="24" height="24"></span></a><a href="http://person.news.yahoo.co.jp/u/login" onmousedown="this.href='http://person.news.yahoo.co.jp/u/login'"><span class="myName">ユーザーページ</span></a></li><li class="purchase"><a href="http://headlines.yahoo.co.jp/purchase/" onmousedown="this.href='http://headlines.yahoo.co.jp/purchase/'">購入済み</a></li><li class="setting"><a href="http://person.news.yahoo.co.jp/settings/profile/" onmousedown="this.href='http://person.news.yahoo.co.jp/settings/profile/'">設定</a></li>
+		</ul><!-- /.personalInfo -->
+    </div><!-- /#search -->
+    <div id="globalNav">
+<ul id="gnPri">
+<li id="gnPriTop" class="current"><a href="http://news.yahoo.co.jp/" onmousedown="this.href='http://news.yahoo.co.jp/'">トップ</a></li><li id="gnPriNew"><a href="http://headlines.yahoo.co.jp/hl?c=flash" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=flash'">速報</a></li><li id="gnPriPhoto"><a href="http://headlines.yahoo.co.jp/hl?ty=p" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?ty=p'">写真</a></li><li id="gnPriVideo"><a href="http://headlines.yahoo.co.jp/videonews/" onmousedown="this.href='http://headlines.yahoo.co.jp/videonews/'">映像</a></li><li id="gnPriZasshi"><a href="http://zasshi.news.yahoo.co.jp/" onmousedown="this.href='http://zasshi.news.yahoo.co.jp/'">雑誌</a></li><li id="gnPriBylines"><a href="http://bylines.news.yahoo.co.jp/" onmousedown="this.href='http://bylines.news.yahoo.co.jp/'">個人</a></li><li id="gnPriBuzz"><a href="http://buzz.news.yahoo.co.jp/" onmousedown="this.href='http://buzz.news.yahoo.co.jp/'">Buzz</a></li><li id="gnPriPolls"><a href="http://polls.dailynews.yahoo.co.jp/" onmousedown="this.href='http://polls.dailynews.yahoo.co.jp/'">意識調査</a></li><li id="gnPriRanking"><a href="http://headlines.yahoo.co.jp/accr" onmousedown="this.href='http://headlines.yahoo.co.jp/accr'">ランキング</a></li><li id="gnPriFeed"><a href="http://feed.news.yahoo.co.jp/" onmousedown="this.href='http://feed.news.yahoo.co.jp/'">ニュースフィード</a></li></ul>
+
+        <div class="gnSecWrap">
+            <ul id="gnSec"><!-- global nav secondaly --><!--
+            --><li id="gnPridomestic"><a href="http://headlines.yahoo.co.jp/hl?c=dom" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=dom'">国内</a></li><!--
+            --><li id="gnPriinternational"><a href="http://headlines.yahoo.co.jp/hl?c=c_int" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=c_int'">国際</a></li><!--
+            --><li id="gnPribusiness"><a href="http://headlines.yahoo.co.jp/hl?c=bus" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=bus'">経済</a></li><!--
+            --><li id="gnPrientertainment"><a href="http://headlines.yahoo.co.jp/hl?c=c_ent" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=c_ent'">エンタメ</a></li><!--
+            --><li id="gnPrisports"><a href="http://headlines.yahoo.co.jp/hl?c=c_spo" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=c_spo'">スポーツ</a></li><!--
+            --><li id="gnPritechnology"><a href="http://headlines.yahoo.co.jp/hl?c=c_sci" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=c_sci'">IT・科学</a></li><!--
+            --><li id="gnPrilife"><a href="http://headlines.yahoo.co.jp/hl?c=c_life" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=c_life'">ライフ</a></li><!--
+            --><li id="gnPrilocal"><a href="http://headlines.yahoo.co.jp/hl?c=loc" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=loc'">地域</a></li><!--
+            --></ul>
+            <ul id="gnSecSub">
+                <li class="current"><a href="/list/" onmousedown="this.href='http://news.yahoo.co.jp/list/'">アーカイブ</a></li>
+            </ul>
+        </div><!-- /.gnSecWrap -->
+    </div><!-- /.globalNav -->
+
+</div><!--/#contentsHeader-->
+<!-- /#contentsHeader -->
+
+<div id="contentsBody">
+<span class="yjGuid"><a name="yjContentsStart" id="yjContentsStart"></a><img src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" alt="ここから本文です" width="1" height="1"></span>
+
+<div id="main">
+
+<!-- alert message -->
+<!-- alert JavaScript -->
+<noscript>
+<div class="alertBox">
+<div class="alert">
+<i></i><p>現在<em>JavaScriptが無効</em>になっています。Yahoo!ニュースのすべての機能を利用するためには、JavaScriptの設定を有効にしてください。<br>JavaScriptの設定を変更する方法は<a href="http://www.yahoo-help.jp/app/noscript">こちら</a>。</p>
+</div>
+</div>
+</noscript>
+<!-- alert System -->
+
+<!-- attention -->
+<div class="attention">
+<p>トピックスのアーカイブ期間はニュース記事提供社により決定されます。<br>期間外のトピックスは閲覧できません。
+</p>
+</div>
+<!-- /.attention -->
+
+<div class="mainBox topicsBox">
+    <h1 class="listTtl">花粉症</h1>
+    <!-- detailNews -->
+    <div class="detailNews">
+        <div class="hd">
+            <h2>関連ニュース</h2>
+            <p><a href="http://dailynews.yahoo.co.jp/fc/science/pollinosis/news_list/" onmousedown="this.href='http://dailynews.yahoo.co.jp/fc/science/pollinosis/news_list/'">関連ニュース一覧 &gt;</a></p>
+        </div>
+        <ul>
+            <li>
+                <a href="http://headlines.yahoo.co.jp/hl?a=20131215-00000005-asahi-pol" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?a=20131215-00000005-asahi-pol'">外務省、おもてなしに腐心　ＡＳＥＡＮ首脳の注文に対応</a>
+                <span class="icPhoto">[写真]</span>
+                <p class="source">朝日新聞デジタル 2013年12月15日 5時38分</p>
+            </li>
+            <li>
+                <a href="http://headlines.yahoo.co.jp/hl?a=20131211-00000518-san-sctch" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?a=20131211-00000518-san-sctch'">花粉症患者に朗報！？　全国初、神奈川県が「無花粉ヒノキ」発見</a>
+                <span class="icPhoto">[写真]</span>
+                <p class="source">産経新聞 2013年12月11日 9時15分</p>
+            </li>
+            <li>
+                <a href="http://headlines.yahoo.co.jp/hl?a=20131211-00000019-kana-l14" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?a=20131211-00000019-kana-l14'">全国初「無花粉ヒノキ」　県が苗木生産へ、花粉症対策に期待／神奈川</a>
+                <span class="icPhoto">[写真]</span>
+                <p class="source">カナロコ by 神奈川新聞 2013年12月11日 8時0分</p>
+            </li>
+            <li>
+                <a href="http://bylines.news.yahoo.co.jp/kubotahiroyuki/20131211-00030545/" onmousedown="this.href='http://bylines.news.yahoo.co.jp/kubotahiroyuki/20131211-00030545/'">「米債高等から円債も買いが先行か」牛さん熊さんの本日の債券（朝）2013年12月11日</a>
+                <span class="icPay">[有料]</span>
+                <p class="source">Yahoo!ニュース 個人 2013年12月11日 7時55分</p>
+            </li>
+            <li>
+                <a href="http://headlines.yahoo.co.jp/hl?a=20131211-00000002-asahi-soci" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?a=20131211-00000002-asahi-soci'">花粉症に朗報？無花粉ヒノキ発見　神奈川で量産へ</a>
+                <p class="source">朝日新聞デジタル 2013年12月11日 0時11分</p>
+            </li>
+        </ul>
+    </div>
+    <!-- /.detailNews -->
+
+    <div class="listArea">
+        <h2>トピックス一覧</h2>
+        <div class="listNav">
+            <div class="listNum"><b>1&#xFF5E;20</b>/93件</div>
+        </div>
+        <ul class="list">
+            <li><a href="/pickup/6100159" onmousedown="this.href='http://news.yahoo.co.jp/pickup/6100159'">
+                <span class="ttl">全国初 無花粉ヒノキを発見</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年12月10日 20時15分</span>
+                </span>
+            </a></li>
+            <li><div>
+                <span class="ttl">バナナ毎日摂取で花粉症軽く?</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年11月29日 19時21分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">秋の花粉 ランニングに注意</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年11月3日 12時43分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">来春の花粉は今年より少なめ?</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年10月9日 19時41分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">秋の花粉 飛散が長びく見込み</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年9月18日 18時28分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">大人の食物アレルギー 原因は</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年7月8日 19時21分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">花粉、来月上旬には終息へ</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年4月19日 18時8分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">花粉飛散 昨年より早く終了へ</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年4月12日 11時6分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">車でお出かけ時の花粉症対策</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年3月24日 22時44分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">カビスプレーでスギ花粉撃退</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年3月18日 11時41分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">花粉を避ける洗濯のコツは</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年3月7日 9時16分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">花粉症には市販薬か、通院か</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年3月1日 20時57分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">花粉症対策 免疫力向上も重要</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年2月19日 11時3分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">花粉 関東以北で3-7倍の予測</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年2月4日 16時39分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">花粉 関東・北陸で大幅増予測</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2013年1月26日 1時47分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">来春の花粉 東日本で多め</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2012年12月21日 20時6分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">来春花粉量 関東など3-7倍も</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2012年12月5日 19時1分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">無花粉スギ 本格的な植林開始</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2012年11月12日 18時55分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">来春の花粉飛散量は7割増に</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2012年10月30日 18時12分</span>
+                </span>
+            </div></li>
+            <li><div>
+                <span class="ttl">来春の花粉、西少なく東多め</span>
+                <span class="supple">
+                    <span class="cate">科学</span>
+                    <span class="date">2012年10月3日 22時59分</span>
+                </span>
+            </div></li>
+        </ul>
+    </div><!-- /.listArea -->
+
+</div><!-- /.mainBox -->
+
+<div class="fdFt">
+    <div class="ftPager">
+        <ul><!--
+            --><li class="prev"><span>前へ</span></li><!--
+            --><li><span>1</span></li><!--
+            --><li><a href="/list/?t=pollinosis&p=2" onmousedown="this.href='http://news.yahoo.co.jp/list/?t=pollinosis&p=2'">2</a></li><!--
+            --><li><a href="/list/?t=pollinosis&p=3" onmousedown="this.href='http://news.yahoo.co.jp/list/?t=pollinosis&p=3'">3</a></li><!--
+            --><li><a href="/list/?t=pollinosis&p=4" onmousedown="this.href='http://news.yahoo.co.jp/list/?t=pollinosis&p=4'">4</a></li><!--
+            --><li><a href="/list/?t=pollinosis&p=5" onmousedown="this.href='http://news.yahoo.co.jp/list/?t=pollinosis&p=5'">5</a></li><!--
+            --><li class="next"><a href="/list/?t=pollinosis&p=2" onmousedown="this.href='http://news.yahoo.co.jp/list/?t=pollinosis&p=2'">次へ</a></li><!--
+        --></ul>
+        <p class="counter">1&#xFF5E;20<span>/93件</span></p>
+    </div>
+    <a id="pageTopBtn" class="goTop btnView" href="#"><span>上へ戻る</span></a>
+</div><!-- .fdFt -->
+<ul class="ftCategory">
+    <li><a href="http://headlines.yahoo.co.jp/hl">ニューストップ</a></ul>
+
+<div class="adIM" id="adIM"></div>
+<script type="text/javascript">var yjaxclookup = function(jo){
+    if(typeof jo[0] != "undefined") {
+        document.getElementById("adIM").innerHTML = jo[0];
+    }}
+
+yjaxc_ad_ds = 'anemos_topics00376';
+yjaxc_ad_id = '2080282684';
+yjaxc_ad_deli = 'm'</script>
+<script type="text/javascript" language="javascript" src="http://yjaxc.yahoo.co.jp/js/yjaxc.js"></script>
+<!-- SpaceID=0 robot -->
+
+</div><!--/#main-->
+
+<div id="sub">
+
+<!-- SpaceID=0 robot -->
+
+<div class="subMod subAnnounce">
+    <div class="hd">
+        <h3 class="ttl">お知らせ</h3>
+    </div>
+    <ul class="bd">
+        <li class="info00">
+            <a href="http://blogs.yahoo.co.jp/yjtopics_blog/47711483.html">関連ニュースコーナーを設置しました</a>
+            <span title="NEW" class="icNew">NEW</span>
+        </li>
+        <li class="info01">
+            <a href="http://www.yahoo-help.jp/app/answers/detail/a_id/72347/p/575">アーカイブについて</a>
+        </li>
+    </ul>
+</div>
+<div class="subMod subTopics">
+    <div class="hd">
+        <h3 class="ttl">主要トピックス</h3>
+    </div>
+    <ul class="bd">
+        <li><a href="http://dailynews.yahoo.co.jp/fc/world/north_korea/?id=6100637">中国の張氏人脈100人姿消す?</a><span class="icPhoto">[写真]</span><span class="icNew">NEW!</span></li>
+        <li><a href="http://dailynews.yahoo.co.jp/fc/local/osaka_city/?id=6100621">市議会が橋下市長口封じ作戦</a><span class="icPhoto">[写真]</span></li>
+        <li><a href="http://dailynews.yahoo.co.jp/fc/local/ofunato_tsunami/?id=6100623">あと1年 焦る大船渡の屋台村</a><span class="icPhoto">[写真]</span><span class="icNew">NEW!</span></li>
+        <li><a href="http://dailynews.yahoo.co.jp/fc/sports/fifa_world_cup_2014/?id=6100626">W杯会場建設地でまた事故死</a><span class="icPhoto">[写真]</span><span class="icNew">NEW!</span></li>
+        <li><a href="http://dailynews.yahoo.co.jp/fc/entertainment/game/?id=6100606">ドラクエ無料配信 狙いを探る</a><span class="icPhoto">[写真]</span></li>
+        <li><a href="http://dailynews.yahoo.co.jp/fc/sports/marathon/?id=6100630">川内 月間2度サブテン達成</a><span class="icPhoto">[写真]</span><span class="icNew">NEW!</span></li>
+        <li><a href="http://dailynews.yahoo.co.jp/fc/entertainment/junichi_ishida/?id=6100629">すみれ 父の忠告乗り越え来日</a><span class="icPhoto">[写真]</span><span class="icNew">NEW!</span></li>
+        <li><a href="http://dailynews.yahoo.co.jp/fc/entertainment/owarai/?id=6100616">筋肉芸人 今はつえが必要に</a><span class="icPhoto">[写真]</span></li>
+    </ul><!-- /.rankingContents -->
+        <p class="ft"><a href="http://news.yahoo.co.jp/list/">もっと見る</a></p>
+</div>
+<!-- /.sub_topics -->
+<!-- SpaceID=0 robot -->
+<div class="subMod subRanking">
+    <div class="hd">
+        <h3 class="ttl">アクセスランキング</h3>
+    </div>
+
+    <ol class="bd">
+        <li>
+            <a href="http://headlines.yahoo.co.jp/hl?a=20131212-00000025-flix-movi" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?a=20131212-00000025-flix-movi'">
+            <span class="rankNum">1</span>
+            <span class="cap">
+                <span class="ttl">酒井若菜、休業期間を振り返る…「罰は受けたつもり」</span>
+                <span class="source">シネマトゥデイ</span>
+                <span class="date">12月13日(金) 17時20分</span>
+            </span>
+            </a>
+        </li>
+        <li>
+            <a href="http://headlines.yahoo.co.jp/hl?a=20131215-00000042-dal-ent" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?a=20131215-00000042-dal-ent'">
+            <span class="rankNum">2</span>
+            <span class="cap">
+                <span class="ttl">カイヤ　恋人候補は２人増えて８人…麻世より大事</span>
+                <span class="source">デイリースポーツ</span>
+                <span class="date">12月15日(日) 16時24分</span>
+            </span>
+            </a>
+        </li>
+        <li>
+            <a href="http://zasshi.news.yahoo.co.jp/article?a=20130821-00002718-davinci-ent" onmousedown="this.href='http://zasshi.news.yahoo.co.jp/article?a=20130821-00002718-davinci-ent'">
+            <span class="rankNum">3</span>
+            <span class="cap">
+                <span class="ttl">サザエさん一家が漂流！？ 人権、エロ、宗教、不条理…闇に葬られたマンガのウラ事情</span>
+                <span class="source">ダ・ヴィンチ電子ナビ</span>
+                <span class="date">8月21日(水) 11時30分</span>
+            </span>
+            </a>
+        </li>
+        <li>
+            <a href="http://headlines.yahoo.co.jp/hl?a=20131215-00000305-oric-ent" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?a=20131215-00000305-oric-ent'">
+            <span class="rankNum">4</span>
+            <span class="cap">
+                <span class="ttl">小島瑠璃子、生放送でデヴィ夫人に謝罪　ナイナイ岡村はフォロー</span>
+                <span class="source">オリコン</span>
+                <span class="date">12月15日(日) 16時16分</span>
+            </span>
+            </a>
+        </li>
+        <li>
+            <a href="http://headlines.yahoo.co.jp/hl?a=20131215-00000513-san-ent" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?a=20131215-00000513-san-ent'">
+            <span class="rankNum">5</span>
+            <span class="cap">
+                <span class="ttl">「芸能界は甘くない」父・石田純一の忠告を乗り越え挑戦した娘・すみれ</span>
+                <span class="source">産経新聞</span>
+                <span class="date">12月15日(日) 16時21分</span>
+            </span>
+            </a>
+        </li>
+    </ol><!-- /.rankingContents -->
+    <p class="ft"><a href="http://headlines.yahoo.co.jp/accr?ty=t" onmousedown="this.href='http://headlines.yahoo.co.jp/accr?ty=t'">もっと見る</a></p>
+</div><!-- /.ranking -->
+<div class="adIM_criteo">
+<script type="text/javascript" language="javascript">
+yjaxc_ad_ds = 'anemos_topics01325';
+yjaxc_ad_id = '2080282684';
+yjaxc_ad_deli = 'j';
+</script>
+<script type="text/javascript" language="javascript" src="http://yjaxc.yahoo.co.jp/js/yjaxc.js"></script>
+</div>
+<div class="subMod subRanking">
+    <div class="hd">
+        <h3 class="ttl">意識調査 回答数ランキング</h3>
+        <p class="spl">12月15日集計</p>
+    </div><!-- /.rankingHd -->
+    <ol class="bd">
+        <li>
+            <a href="http://polls.dailynews.yahoo.co.jp/sports/10541/vote" onmousedown="this.href='http://polls.dailynews.yahoo.co.jp/sports/10541/vote">
+                <span class="rankNum">1</span>
+                <span class="cap">
+                    <span class="ttl">本田圭佑はACミランで活躍できる？</span>
+                    <span class="rankStatus"><span class="accept">実施中</span>38,035票</span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="http://polls.dailynews.yahoo.co.jp/entertainment/10524/vote" onmousedown="this.href='http://polls.dailynews.yahoo.co.jp/entertainment/10524/vote">
+                <span class="rankNum">2</span>
+                <span class="cap">
+                    <span class="ttl">あゆ「再婚」へ、ビックリ度は？</span>
+                    <span class="rankStatus"><span class="accept">実施中</span>11,179票</span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="http://polls.dailynews.yahoo.co.jp/domestic/10522/vote" onmousedown="this.href='http://polls.dailynews.yahoo.co.jp/domestic/10522/vote">
+                <span class="rankNum">3</span>
+                <span class="cap">
+                    <span class="ttl">東国原英夫衆院議員が進むべき路線は？</span>
+                    <span class="rankStatus"><span class="accept">実施中</span>6,707票</span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="http://polls.dailynews.yahoo.co.jp/domestic/10542/vote" onmousedown="this.href='http://polls.dailynews.yahoo.co.jp/domestic/10542/vote">
+                <span class="rankNum">4</span>
+                <span class="cap">
+                    <span class="ttl">今年の漢字「輪」に納得？</span>
+                    <span class="rankStatus"><span class="accept">実施中</span>6,457票</span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="http://polls.dailynews.yahoo.co.jp/sports/10480/vote" onmousedown="this.href='http://polls.dailynews.yahoo.co.jp/sports/10480/vote">
+                <span class="rankNum">5</span>
+                <span class="cap">
+                    <span class="ttl">楽天はマー君のポスティング移籍を認めるべき？</span>
+                    <span class="rankStatus"><span class="accept">実施中</span>5,035票</span>
+                </span>
+            </a>
+        </li>
+    </ol><!-- /.rankingContents -->
+</div><!-- /.ranking -->
+<!-- SpaceID=0 robot -->
+
+</div><!--/#sub-->
+
+
+</div><!--/#contentsBody-->
+
+<!-- SpaceID=0 robot -->
+<!-- #contentsFooter -->
+<div id="contentsFooter">
+<div id="cfInner">
+    <div class="cfNavColumn">
+        <ul>
+            <li><a href="http://promo.news.yahoo.co.jp/app/yjnews/" onmousedown="this.href='http://promo.news.yahoo.co.jp/app/yjnews/'">
+                <div class="iconAPP"><span>アプリ</span></div>
+                <p><em>アプリ</em><span>データ先読みで、電車でもサクサク</span></p>
+            </a></li>
+            <li><a href="http://www.facebook.com/yjnews" onmousedown="this.href='http://www.facebook.com/yjnews'">
+                <div class="iconFB"><span>Facebookページ</span></div>
+                <p><em>Facebookページ</em><span>編集部による厳選記事を毎日配信</span></p>
+            </a></li>
+            <li><a href="https://twitter.com/YahooNewsTopics" onmousedown="this.href='https://twitter.com/YahooNewsTopics'">
+                <div class="iconTW"><span>Twitter</span></div>
+                <p><em>Twitter</em><span>リアルタイムでニュースを配信</span></p>
+            </a></li>
+            <li><a href="http://headlines.yahoo.co.jp/rss/list" onmousedown="this.href='http://headlines.yahoo.co.jp/rss/list'">
+                <div class="iconRSS"><span>RSS</span></div>
+                <p><em>RSS</em><span>購読したいニュースをお好みで</span></p>
+            </a></li>
+        </ul>
+    </div><!-- /.cfNavColumn -->
+    <div class="cfNavList">
+        <ul>
+            <li><a href="http://news.yahoo.co.jp/" onmousedown="this.href='http://news.yahoo.co.jp/'">トップ</a></li>
+            <li><a href="http://headlines.yahoo.co.jp/hl?c=flash" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=flash'">新着</a></li>
+            <li><a href="http://headlines.yahoo.co.jp/hl?ty=p" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?ty=p'">写真</a></li>
+            <li><a href="http://headlines.yahoo.co.jp/videonews/" onmousedown="this.href='http://headlines.yahoo.co.jp/videonews/'">映像</a></li>
+            <li><a href="http://zasshi.news.yahoo.co.jp/" onmousedown="this.href='http://zasshi.news.yahoo.co.jp/'">雑誌</a></li>
+            <li><a href="http://bylines.news.yahoo.co.jp/" onmousedown="this.href='http://bylines.news.yahoo.co.jp/'">個人</a></li>
+            <li><a href="http://buzz.news.yahoo.co.jp/" onmousedown="this.href='http://buzz.news.yahoo.co.jp/'">Buzz</a></li>
+            <li><a href="http://polls.dailynews.yahoo.co.jp/" onmousedown="this.href='http://polls.dailynews.yahoo.co.jp/'">意識調査</a></li>
+            <li class="last"><a href="http://headlines.yahoo.co.jp/accr" onmousedown="this.href='http://headlines.yahoo.co.jp/accr'">ランキング</a></li>
+        </ul>
+    </div><!-- /.cfNavList -->
+    <div class="cfSubNavList">
+        <dl class="subNavL">
+            <dt>ニュースカテゴリ：</dt>
+            <dd><a href="http://headlines.yahoo.co.jp/hl?c=dom" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=dom'">国内</a></dd>
+            <dd><a href="http://headlines.yahoo.co.jp/hl?c=c_int" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=c_int'">国際</a></dd>
+            <dd><a href="http://headlines.yahoo.co.jp/hl?c=bus" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=bus'">経済</a></dd>
+            <dd><a href="http://headlines.yahoo.co.jp/hl?c=c_ent" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=c_ent'">エンタメ</a></dd>
+            <dd><a href="http://headlines.yahoo.co.jp/hl?c=c_spo" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=c_spo'">スポーツ</a></dd>
+            <dd><a href="http://headlines.yahoo.co.jp/hl?c=c_sci" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=c_sci'">IT・科学</a></dd>
+            <dd><a href="http://headlines.yahoo.co.jp/hl?c=c_life" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=c_life'">ライフ</a></dd>
+            <dd><a href="http://headlines.yahoo.co.jp/hl?c=loc" onmousedown="this.href='http://headlines.yahoo.co.jp/hl?c=loc'">地域</a></dd>
+        </dl>
+        <dl class="subNavR">
+            <dt>その他：</dt>
+            <dd><a href="http://headlines.yahoo.co.jp/docs/copyright.html" onmousedown="this.href='http://headlines.yahoo.co.jp/docs/copyright.html'">ニュース提供社</a></dd>
+            <dd><a href="http://gsearch.news.yahoo.co.jp/gs?ty=g" onmousedown="this.href='http://gsearch.news.yahoo.co.jp/gs?ty=g'">新聞記事横断検索</a></dd>
+        </dl>
+    </div><!-- /.cfSubNavList -->
+</div><!-- /#cfWrap -->
+
+</div><!--/#contentsFooter-->
+
+</div><!--/#contents-->
+
+<hr class="yjSeparation">
+
+
+
+<!--footer-->
+<div id="footer">
+<!-- SpaceID=0 robot -->
+<address>
+<a href="http://docs.yahoo.co.jp/docs/info/terms/chapter1.html#cf2nd">プライバシーポリシー</a> - <a href="http://docs.yahoo.co.jp/docs/info/terms/">利用規約</a> - 
+<a href="http://headlines.yahoo.co.jp/docs/copyright.html">著作権</a>  - 
+<a href="http://headlines.yahoo.co.jp/docs/tokuteisho.html">特定商取引法の表示</a> - <a href="http://rd.yahoo.co.jp/media/news/footer/feedback/*http://ms.yahoo.co.jp/bin/yadv-info/feedback/">ご意見・ご要望</a> - <a href="http://help.yahoo.co.jp/help/jp/news/">ヘルプ・お問い合わせ</a><br>
+Copyright (C) 2013 Yahoo Japan Corporation. All Rights Reserved.
+</address>
+
+</div><!--/#footer-->
+
+</div><!--/#wrapper-->
+
+
+<!-- ニュース利用 -->
+<!--<script type="text/javascript" src="http://i.yimg.jp/images/news/lib/jquery-1.9.1.min.js"></script>-->
+<script type="text/javascript" src="http://i.yimg.jp/images/commerce/js/libs/jquery/core/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://i.yimg.jp/images/news/lib/underscore/underscore-1.4.4.min.js"></script>
+<script type="text/javascript" src="http://i.yimg.jp/images/rapid/1.5.0/ult.js"></script>
+<script type="text/javascript" src="http://i.yimg.jp/images/jpnews/js/libs/backbone/1.0.0/backbone.min.js"></script>
+<script type="text/javascript" src="/pickup/js/pages.gnavi.js"></script>
+<script type="text/javascript" src="http://i.yimg.jp/images/gyao/video/player-1.0.js?date=20131010" charset="UTF-8"></script>
+<script type="text/javascript" src="/pickup/js/pages.util.js"></script>
+<script type="text/javascript">
+var YAHOO_JP_SPID = '2080282684',
+    YAHOO_JP_HOST = 'ybx.yahoo.co.jp',
+    YAHOO_JP_DATA = '0';
+</script>
+<script type="text/javascript" src="/pickup/js/pages.ult.js" language="javascript"></script>
+<script type="text/javascript">
+$(function(){
+    $('span.imgWrap').each(function(){
+        var $hide = $(this);
+        var $img = $('img',this);
+        var $url = $img.attr('data-src');
+
+        $img
+            .one('error',function(){
+                $hide.remove();
+            });
+        $img
+            .one('load',function(){
+                var w = $(this).width(),h=$(this).height(),dw=$(this).attr('data-width'),dh=$(this).attr('data-height');
+                if(w <= dw && h <= dh) {
+                    return true;
+                } else {
+                    if(w/dw > h/dh) $(this).css('width',dw+'px');
+                    else $(this).css('height',dh+'px');
+                }
+            })
+            .attr('src', $url);
+    });
+});
+</script>
+<script type="text/javascript">
+$(function(){
+    $("#pageTopBtn").mousedown(function () {
+		$('body, html').animate({ scrollTop: 0 }, 500);
+		return false;
+	});
+});
+</script>
+</body>
+</html>
+<!-- web00.tpc.news.ogk.yahoo.co.jp compressed Sun Dec 15 16:45:03 JST 2013 -->

@@ -4,12 +4,13 @@ import requests
 import sys
 import my_api_keys
 
+
 class Bing(object):
-    # コンストラクタ（初期化）
+    # 同じ階層にmy_api_keys.pyというファイルを作り、そこにBING_API_KEYを書き込んでおく。
+    # my_api_keys.pyはgitignoreしておくこと。
     def __init__(self, api_key=my_api_keys.BING_API_KEY):
         self.api_key = api_key
 
-    # web検索
     def web_search(self, query, num_of_results, keys=["Url"], skip=0):
         """
             keysには'ID','Title','Description','DisplayUrl','Url'が入りうる
@@ -18,7 +19,6 @@ class Bing(object):
         url = 'https://api.datamarket.azure.com/Bing/Search/Web?'
         # 一回で返ってくる最大数
         max_num = 50
-        # 各種パラメータ
         params = {
             "Query": "'{0}'".format(query),
             "Market": "'ja-JP'"
@@ -48,7 +48,6 @@ class Bing(object):
         """
         # 基本になるURL
         url = 'https://api.datamarket.azure.com/Bing/Search/RelatedSearch?'
-        # 各種パラメータ
         params = {
             "Query": "'{0}'".format(query),
             "Market": "'ja-JP'"
@@ -58,7 +57,6 @@ class Bing(object):
         results = self._hit_api(request_url, 50, 0, keys)
         return results
 
-    # APIを叩く
     def _hit_api(self, request_url, top, skip, keys):
         # APIを叩くための最終的なURL
         final_url = "{0}&$top={1}&$skip={2}".format(request_url, top, skip)
@@ -76,8 +74,8 @@ class Bing(object):
 
 
 if __name__ == '__main__':
-    api_key = my_api_keys.BING_API_KEY
+    # bing_api.pyを単独で使うと、入力した語で50件検索して結果を表示するツールになる
     for query in sys.stdin:
-        bing = Bing(api_key)
+        bing = Bing()
         results = bing.web_search(query=query, num_of_results=50, keys=["Title", "Url"])
         print(results)

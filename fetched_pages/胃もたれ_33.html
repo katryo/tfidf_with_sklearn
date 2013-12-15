@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="imagetoolbar" content="no" />
+<title>病気や症状の情報［症状別一覧］ | エーザイの一般生活者向けサイト</title>
+<meta name="keywords" content="病気,症状,健康,薬,くすり,痛み,痛い,予防,治療,クスリ" />
+<meta name="description" content="Eisai.jpではエーザイ製品に関する情報に加え、家族の健康や病気の予防・治療などの情報を見つけることができます。" />
+
+<link rel="stylesheet" type="text/css" href="/resource/styles/style.css" title="" media="all" />
+<link rel="stylesheet" type="text/css" href="/resource/styles/wf.css" title="" media="all" />
+<link rel="alternate stylesheet" type="text/css" href="/resource/styles/medium.css" title="A" />
+<link rel="alternate stylesheet" type="text/css" href="/resource/styles/large.css" title="A+" />
+<script type="text/javascript" src="/resource/scripts/lib/jquery.js"></script>
+<script type="text/javascript" src="/resource/scripts/lib/styleswitcher.js"></script>
+<script type="text/javascript" src="/resource/scripts/contents.js"></script>
+<script type="text/javascript" src="/js/FuncLib.js"></script>
+<script type="text/javascript" src="/js/textsearch.js"></script>
+<script src="/urchin_qa.js" type="text/javascript"></script>
+<script type="text/javascript">
+	urchinTracker();
+</script>
+</head>
+<body id="diseases_and_symptoms" class="patients">
+<a name="pagetop"></a>
+
+<!-- HEADER SECTION -->
+<div id="header_section">
+	<div id="header_wrapper">
+		<div id="header_logo"><a href="/"><img src="/resource/images/logos.png" alt="エーザイ 予防から治療まで見つかる Eisai.jp" /></a></div>
+		<ul class="guide">
+			<li><a href="#main_section">グローバルナビゲーションをスキップしてメインコンテンツに移動</a></li>
+			<li><a href="#sidebar">コンテンツメニューに移動</a></li>
+			<li><a href="#footer_section">フッターメニューに移動</a></li>
+		</ul>
+		<div id="header_links_box">
+			<ul id="header_links">
+				<li><a href="/sitemap.html">サイトマップ</a></li>
+				<li><a href="/inquiry/">お問い合わせ</a></li>
+				<li><a href="http://www.eisai.co.jp/" target="_blank">エーザイ企業サイト</a></li>
+			</ul>
+			<div id="letter_size"><em>文字サイズ :</em><a href="#" id="ls_small">標準</a><span>|</span><a href="#" id="ls_large">拡大</a></div>
+		</div>
+		<div class="guide">ここからグローバルナビゲーション</div>
+		<ul id="global_nav">
+			<li id="gn_patients"><a href="/">患者さま・ご家族の皆さまへ</a></li>
+			<li id="gn_medical"><a href="/medical/">医療関係者の皆さまへ</a></li>
+		</ul>
+	</div>
+</div>
+<!-- /HEADER SECTION -->
+
+<!-- WELLNESS FINDER -->
+<div id="wellness_finder_header">
+	<p><a href="/wellness-finder/"><img src="/resource/images/wf/logo_header.gif" width="114" height="25" alt="Wellness Finder 症状や気になるキーワードを入力してください。" /></a></p>
+		<div><input id="searchWords" type="text" name="#" size="30" value="" /></div>
+		<span><input type="image" name="#" src="/resource/images/wf/btn_search_header.png" alt="検索" onclick="searchButton_onClick(PAFuncLib.$('searchWords').value);" /></span>
+		<span><input type="image" name="#" src="/resource/images/wf/btn_reset_header.png" alt="リセット" onclick="PAFuncLib.$('searchWords').value='';" /></span>
+	<noscript><p class="noscript">JavaScriptの設定をオンにしますと、この検索をご利用になれます。&#187; <a href="/requirement.html">推奨環境</a></p></noscript>
+</div>
+<!-- /WELLNESS FINDER -->
+<script type="text/javascript">eisaiUtility.embedSwfHeader();</script>
+
+<!-- PATIENTS GLOBAL NAVI SECTION -->
+<div id="patients_global_nav_section">
+	<ul>
+		<li id="pgn_healthcare"><a href="/health-care/">薬粧品の情報</a></li>
+		<li id="pgn_diseases"><a href="/diseases-and-symptoms/">病気や症状の情報</a></li>
+		<li id="pgn_watashilife"><a href="/watashi-life/">WATASHI Life</a></li>
+	</ul>
+</div>
+<!-- /PATIENTS GLOBAL NAVI SECTION -->
+
+
+<!-- TOPIC PATH -->
+<ol id="topic_path">
+	<li id="to_top"><a href="/">TOP</a></li>
+	<li>病気や症状の情報［症状別一覧］</li>
+</ol>
+<!-- /TOPIC PATH -->
+
+<!-- MAIN SECTION -->
+<div id="main_section">
+
+	<div id="main_wrapper">
+		<div class="guide">ここからメインコンテンツ</div>
+		<div id="main_container">
+			<h1><img src="/resource/images/title_diseases_and_symptoms.png" width="700" height="59" alt="病気や症状の情報" /></h1>
+			
+			<!-- BANNER -->
+			<div id="main_container_bnr"></div>
+			<script type="text/javascript" src="/resource/scripts/main_contents-bnr.js"></script>
+			<!-- /BANNER -->
+			
+			<!-- TAB -->
+			<div class="tab_type_a">
+				<ul>
+					<li id="tab_symptoms" class="selected"><a href="/diseases-and-symptoms/index.html"><img src="/resource/images/contents_tab.png" alt="症状別一覧" /></a></li>
+					<li id="tab_kana"><a href="/diseases-and-symptoms/list-kana.html"><img src="/resource/images/contents_tab.png" alt="50音順一覧" /></a></li>
+				</ul>
+			</div>
+			<!-- /TAB -->
+			
+			<!-- DISEASE AND SYMPTOMS LIST -->
+			<ul id="diseases_and_symptoms_list_top">
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>頭</SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_82_list.html'>頭が痛い</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_84_list.html'>ふらつき、吐き気がある</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_85_list.html'>熱が出る</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_86_list.html'>記憶障害がある</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_317_list.html'>頭がかゆい</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>顔 </SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_88_list.html'>おでこやほほ、口の周りが荒れる</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_89_list.html'>顔色が急に悪くなる</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_90_list.html'>シミ・そばかすが出てきた</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_320_list.html'>顔がかゆい</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>目/耳/鼻</SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_92_list.html'>見えづらくなる</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_94_list.html'>目がショボショボする、開けていられない</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_95_list.html'>聞こえづらい</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_96_list.html'>鼻で呼吸しづらい</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>口/歯 </SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_98_list.html'>口内にデキモノがある</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_99_list.html'>歯ぐきから出血する</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>のど</SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_101_list.html'>のどが痛い</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_323_list.html'>のどが渇く</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_102_list.html'>咳がよく出る</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_103_list.html'>息が切れる</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>首/肩</SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_105_list.html'>肩や首が痛む、肩がこる</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_106_list.html'>あごの下や肩、首の後ろデキモノがある</A>
+</LI>
+<LI>
+	<A href='./list/pbaid_3_nodeid_327_list.html'>首や肩がかゆい</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>背中</SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_109_list.html'>背中が痛い</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_110_list.html'>肌荒れやデキモノがある</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_330_list.html'>背中がかゆい</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>腕/手/足</SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_112_list.html'>腕や手、足が痛い</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_113_list.html'>腕や手、足がしびれる</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_114_list.html'>腕や足にデキモノがある</A>
+</LI>
+<LI>
+	<A href='./list/pbaid_3_nodeid_294_list.html'>手や足が思うように動かない</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_337_list.html'>腕や手、足がかゆい</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>胸</SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_118_list.html'>胸がムカムカして不快</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_119_list.html'>思うように呼吸できない</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_120_list.html'>動悸が激しい</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_121_list.html'>胸が痛い</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_122_list.html'>胸から脇腹にデキモノがある</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_348_list.html'>胸がかゆい</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>胃腸</SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_124_list.html'>胃が重い</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_125_list.html'>おなかが痛い</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_126_list.html'>下腹部にデキモノがある</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_127_list.html'>便通が不安定になる</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_128_list.html'>おなかが張る</A>
+</LI>
+<LI>
+	<A href='./list/pbaid_3_nodeid_351_list.html'>著しくおなかが出る（太る）</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_355_list.html'>お腹がかゆい</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>腰</SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_130_list.html'>腰が痛い</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_131_list.html'>腰が変形する</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_132_list.html'>腰の肌がただれる</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_359_list.html'>腰がかゆい</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>泌尿器/生殖器/肛門</SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_134_list.html'>女性の病気</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_136_list.html'>排尿すると痛い</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_137_list.html'>便・尿の様子がおかしい</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>こころ ・神経</SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_86_list.html'>記憶障害がある</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>体全体 </SPAN></H2>
+    <UL>
+<LI>
+<A href='./list/pbaid_3_nodeid_259_list.html'>体全体の調子がおかしい</A>
+</LI>
+<LI>
+<A href='./list/pbaid_3_nodeid_260_list.html'>何カ所かに同時に症状が出ている</A>
+</LI>
+    </UL>
+  </DIV>
+</LI>
+<!--<LI>
+  <DIV>
+    <H2 class="heading_type_b"><SPAN>その他</SPAN></H2>
+</DIV>
+</LI>-->
+
+			</ul>
+			<!-- /DISEASE AND SYMPTOMS LIST -->
+			
+		</div><!-- /#main_container -->
+
+		<div id="sidebar">
+			<div class="guide">ここからコンテンツメニュー</div>
+			
+			<!-- CONTENTS NAVI -->
+			<div id="contents_nav">
+				<div id="cn_top"><a href="/">患者さま・ご家族の皆さまへ</a></div>
+				<h2 class="selected"><a href="/diseases-and-symptoms/">病気や症状の情報</a></h2>
+				<ul>
+					<li><div><a href="/diseases-and-symptoms/ad-gallery/">疾患啓発広告ギャラリー</a></div></li>
+				</ul>
+			</div>
+			<!-- /CONTENTS NAVI -->
+			
+			<!-- BANNER -->
+			<div id="bnr_side"></div>
+			<script type="text/javascript" src="/resource/scripts/sidebar-bnr.js"></script>
+			<!-- BANNER -->
+			
+			<!-- GALLERY BANNER -->
+			<div id="bnr_side_gallery"></div>
+			<script type="text/javascript" src="/resource/scripts/sidebar-ad.js"></script>
+			<!-- /GALLERY BANNER -->
+			
+			<!-- EISAI RELATED SITES -->
+			<h2><img src="/resource/images/top/tit_related_sites.gif" alt="エーザイ関連サイト" /></h2>
+			<table id="related_sites_side" summary="エーザイ関連サイト">
+			</table>
+			<script type="text/javascript" src="/resource/scripts/sidebar-related_sites.js"></script>
+			<!-- /EISAI RELATED SITES -->
+			
+		</div>
+	</div>
+</div>
+<div id="footer_section">
+	<div id="contents_footer">
+		<div class="btn_pagetop"><a href="#pagetop">ページ先頭へ戻る</a></div>
+		<div class="guide">ここからフッターメニュー</div>
+		<ul>
+			<li><a href="/">患者さま・ご家族の皆さまへ</a></li>
+			<li><a href="/medical/">医療関係者の皆さまへ</a></li>
+			<li><a href="/sitemap.html">サイトマップ</a></li>
+			<li><a href="/inquiry/">お問い合わせ</a></li>
+			<li><a href="/requirement.html">推奨環境</a></li>
+		</ul>
+	</div>
+	<div id="site_footer"><span><!-- --></span>
+		<ul>
+			<li><a href="http://www.eisai.co.jp/" target="_blank">エーザイ企業サイト</a><span>|</span></li>
+			<li><a href="http://www.eisai.co.jp/company/index.html" target="_blank">企業情報</a><span>|</span></li>
+			<li><a href="http://www.eisai.co.jp/ir/index.html" target="_blank">株主・投資家の皆さまへ</a><span>|</span></li>
+			<li><a href="http://www.eisai.co.jp/social/index.html" target="_blank">社会・環境活動</a><span>|</span></li>
+			<li><a href="http://www5.eisai.co.jp/index.html" target="_blank">採用情報</a></li>
+		</ul>
+		<ul>
+			<li><a href="http://www.eisai.co.jp/privacy/privacy.html" target="_blank">プライバシーポリシー</a><span>|</span></li>
+			<li><a href="http://www.eisai.co.jp/aboutsite.html" target="_blank">ご利用について</a><span>|</span></li>
+			<li><a href="http://www.eisai.co.jp/acguide.html" target="_blank">アクセシビリティ</a><span>|</span></li>
+		</ul>
+		<div id="footer_logo"><span><img src="/resource/images/logos.png" alt="エーザイ" /></span></div>
+		<div id="footer_logo_hhc"><span><img src="/resource/images/logos.png" alt="hhc human health care" /></span></div>
+		<div id="copyright"><span><img src="/resource/images/copyright.png" alt="Copyright(C) Eisai Co., Ltd. All rights reserved." /></span></div>
+	</div>
+</div>
+<script type="text/javascript">
+	eisaiUtility.faqTitleCenter();
+</script>
+<script type="text/javascript" src="/resource/scripts/lib/jquery.plugin.js"></script>
+</body>
+</html>

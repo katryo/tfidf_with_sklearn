@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- meron2012/single -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ja">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+
+		<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+
+		<link rel="apple-touch-icon" href="/apple-touch-icon-57.png"  type="image/png" sizes="57x57"   />
+		<link rel="apple-touch-icon" href="/apple-touch-icon-114.png" type="image/png" sizes="114x114" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon-72.png"  type="image/png" sizes="72x72"   />
+
+		<meta name="viewport" content="width=device-width" />
+
+		<link rel="stylesheet" type="text/css" href="/c/wp-content/themes/meron2012/style.css" />
+
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+		<!--
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script type="text/javascript" src="/common/js/jquery.js"></script>
+		-->
+
+		<link rel="stylesheet" type="text/css" href="/common/fancybox/jquery.fancybox.css" />
+		<script type="text/javascript" src="/common/fancybox/jquery.fancybox.pack.js"></script>
+
+		<!--[if gt IE 6]> <script type="text/javascript" src="/common/fancybox/auto-fancybox.js"    ></script>     <![endif]-->
+		<!--[if IE 6]>    <script type="text/javascript" src="/common/fancybox/auto-fancybox-ie6.js"></script>     <![endif]-->
+		<!--[if !IE]>-->  <script type="text/javascript" src="/common/fancybox/auto-fancybox.js"    ></script> <!--<![endif]-->
+
+		<script type="text/javascript" src="/common/js/smoothRollOver.js"></script>
+
+
+
+		<meta name="Keywords"    content="Meron,町のくすり屋さん,くすりやさん,薬屋さん,薬局,検索,melon,メロン,めろん" />
+		<meta name="Description" content="薬局ポータルサイトMeronは、東北(青森・岩手・秋田・山形・宮城・福島)と新潟エリアの町のくすりやさんが検索できる健康/医療情報サイトです。" />
+		<meta name="Author"      content="Health Care Management Institute Ltd." />
+
+
+		<link rel="alternate" type="application/rss+xml" title=" フィード" href="http://www.meron-net.jp/c/useful/feed" />
+
+		<link rel="canonical" href="http://www.meron-net.jp/c/useful/feature/201111-1.html" />
+
+		<meta property="og:url" content="http://www.meron-net.jp/c/useful/feature/201111-1.html" />
+
+		<meta property="og:image" content="http://www.meron-net.jp/c/useful/files/2012/10/index_img_feature.jpg" />
+
+		<title>[今月の話題] 胃腸のしくみと健康について（1/2）  :  健康お役立ち情報 | Meron - あなたの町のくすり屋さん。</title>
+
+	</head>
+
+	<!--[if IE 6]>    <body class="body-ie body-ie6 site_id-1 blog_id-8 post_id-225 post_name-201111-1 post_type-post category_id-3 category_id-8 category_slug-feature category_slug-%e8%85%b9%e9%83%a8">     <![endif]-->
+	<!--[if IE 7]>    <body class="body-ie body-ie7 site_id-1 blog_id-8 post_id-225 post_name-201111-1 post_type-post category_id-3 category_id-8 category_slug-feature category_slug-%e8%85%b9%e9%83%a8">     <![endif]-->
+	<!--[if IE 8]>    <body class="body-ie body-ie8 site_id-1 blog_id-8 post_id-225 post_name-201111-1 post_type-post category_id-3 category_id-8 category_slug-feature category_slug-%e8%85%b9%e9%83%a8">     <![endif]-->
+	<!--[if IE 9]>    <body class="body-ie body-ie9 site_id-1 blog_id-8 post_id-225 post_name-201111-1 post_type-post category_id-3 category_id-8 category_slug-feature category_slug-%e8%85%b9%e9%83%a8">     <![endif]-->
+	<!--[if gt IE 9]> <body class="body-ie body-ieX site_id-1 blog_id-8 post_id-225 post_name-201111-1 post_type-post category_id-3 category_id-8 category_slug-feature category_slug-%e8%85%b9%e9%83%a8">     <![endif]-->
+	<!--[if !IE]>-->  <body class="body-modern      site_id-1 blog_id-8 post_id-225 post_name-201111-1 post_type-post category_id-3 category_id-8 category_slug-feature category_slug-%e8%85%b9%e9%83%a8"> <!--<![endif]-->
+		<!-- #header_wrapper -->
+		<div id="header_wrapper">
+			<!-- #header -->
+			<div id="header">
+				<ul class="menu">
+					<li class="menu01" id="menu-listitem_useful"   ><a href="/c/useful/"    id="menu-anchor_useful"   ><!-- <img alt="健康お役立ち情報" src="/theme/meron2012/images/header/header_useful_on.png"    /> --><img class="on" alt="健康お役立ち情報" src="/theme/meron2012/images/header/header_useful_off.png"    /></a></li>
+
+					<li class="menu02" id="menu-listitem_freepaper"><a href="/c/freepaper/" id="menu-anchor_freepaper"><!-- <img alt="フリーペーパー"   src="/theme/meron2012/images/header/header_freepaper_on.png" /> --><img class="on" alt="フリーペーパー"   src="/theme/meron2012/images/header/header_freepaper_off.png" /></a></li>
+
+					<li class="menu03" id="menu-listitem_pharmacy" ><a href="/c/pharmacy/"  id="menu-anchor_pharmacy" ><!-- <img alt="薬局のこと"       src="/theme/meron2012/images/header/header_pharmacy_on.png"  /> --><img class="on" alt="薬局のこと"       src="/theme/meron2012/images/header/header_pharmacy_off.png"  /></a></li>
+
+					<li class="menu04" id="menu-listitem_enjoy"    ><a href="/c/enjoy/"     id="menu-anchor_enjoy"    ><!-- <img alt="お楽しみ"         src="/theme/meron2012/images/header/header_enjoy_on.png"     /> --><img class="on" alt="お楽しみ"         src="/theme/meron2012/images/header/header_enjoy_off.png"     /></a></li>
+				</ul>
+
+				<div class="headerBar">
+					<div class="description">
+						<p>まちのくすり屋さんが集まるポータルサイト</p>
+					</div>
+
+					<div class="searchBox">
+						<div class="loginName">
+							ようこそゲストさん
+
+							<input id="loginButton" type="button" value="マイページ" onclick="location[ 'href' ] =  '/member/login.php';" />
+						</div>
+
+						<div class="search">
+							<form method="get" action="/system/wholesearch.php">
+								<div>
+									<!--
+									<input type="text" name="s" value="" placeholder="何でも検索" class="txt" />
+									-->
+									<input type="text" name="s" value="サイト内検索" class="txt" onfocus="this['value']=(this['value']==this['defaultValue'])?(''):(this['value']);" onblur="this['value']=(this['value']==this['defaultValue'])?(this['defaultValue']):((this['value']['length'])?(this['value']):(this['defaultValue']));" />
+
+									<!-- <input type="image" class="btn" name="" src="/theme/meron2012/images/header/search_btn_on.jpg" /> -->
+									<input type="image" class="btn" name="" src="/theme/meron2012/images/header/search_btn_off.jpg" />
+
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="logo"><a href="/"><img alt="Meron logo" src="/theme/meron2012/images/header/header_logo.jpg" /></a></div>
+
+				<div class="home"><a href="/"><!-- <img alt="Meron home" src="/theme/meron2012/images/header/header_home_btn_on.jpg" /> --><img alt="Meron home" src="/theme/meron2012/images/header/header_home_btn_off.jpg" /></a></div>
+
+				<div>
+					<!-- top-submenu -->
+
+					<ul id="top-submenu" class="subMenu">
+<li id="menu-item-37" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37"><a href="/member/about.php">Meronクラブ</a></li>
+<li id="menu-item-38" class="menu-member-mypage menu-item menu-item-type-custom menu-item-object-custom menu-item-38"><a href="/member/mypage.php">マイページ</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- /#header -->
+		</div>
+		<!-- /#header_wrapper -->
+
+		<div id="wrapper">
+			<div id="content_wrapper">
+				<!-- #utilities -->
+				<div id="utilities">
+					<div class="menuBox-container">
+						<div class="menuBox">
+							<h1><a href="/c/useful/"><img alt="健康お役立ち情報" src="/theme/meron2012/images/left/side_title_useful.jpg" /></a></h1>
+
+							<!-- sidebar-left-1 -->
+
+							<ul id="sidebar-left-1" class="sideMenu">
+<li id="menu-item-20" class="menu-c-useful-feature menu-item menu-item-type-custom menu-item-object-custom menu-item-20 blog_name-useful category_name-feature"><a href="/c/useful/feature/">今月の話題</a></li>
+<li id="menu-item-21" class="menu-c-useful-exercise menu-item menu-item-type-custom menu-item-object-custom menu-item-21 blog_name-useful category_name-exercise"><a href="/c/useful/exercise/">5分でできる健康体操</a></li>
+<li id="menu-item-23" class="menu-c-useful-recipe menu-item menu-item-type-custom menu-item-object-custom menu-item-23 blog_name-useful category_name-recipe"><a href="/c/useful/recipe/">健康レシピ</a></li>
+<li id="menu-item-24" class="menu-c-useful-healthcheck menu-item menu-item-type-custom menu-item-object-custom menu-item-24 blog_name-useful category_name-healthcheck"><a href="/c/useful/healthcheck/">ヘルスチェック</a></li>
+<li id="menu-item-25" class="menu-c-useful-faq menu-item menu-item-type-custom menu-item-object-custom menu-item-25 blog_name-useful category_name-faq"><a href="/c/useful/faq/">健康Q&#038;A</a></li>
+<li id="menu-item-22" class="menu-c-useful-advice menu-item menu-item-type-custom menu-item-object-custom menu-item-22 blog_name-useful category_name-advice"><a href="/c/useful/advice/">健康アドバイス</a></li>
+<li id="menu-item-108" class="menu-c-useful-database menu-item menu-item-type-custom menu-item-object-custom menu-item-108 blog_name-useful category_name-database"><a href="/c/useful/database/">お薬を調べる</a></li>
+							</ul>
+						</div>
+
+						<div class="menuBox">
+							<h1><a href="/c/freepaper/"><img alt="フリーペーパー" src="/theme/meron2012/images/left/side_title_freepaper.jpg" /></a></h1>
+
+							<!-- sidebar-left-2 -->
+
+							<ul id="sidebar-left-2" class="sideMenu">
+<li id="menu-item-26" class="menu-c-freepaper menu-item menu-item-type-custom menu-item-object-custom menu-item-26 blog_name-freepaper category_name-newly"><a href="/c/freepaper/newly/">最新号のご案内</a></li>
+<li id="menu-item-28" class="menu-c-freepaper-backnumber menu-item menu-item-type-custom menu-item-object-custom menu-item-28 blog_name-freepaper category_name-backnumber"><a href="/c/freepaper/backnumber/">バックナンバー</a></li>
+							</ul>
+						</div>
+
+						<div class="menuBox">
+							<h1><a href="/c/pharmacy/"><img alt="薬局のこと" src="/theme/meron2012/images/left/side_title_pharmacy.jpg" /></a></h1>
+
+							<!-- sidebar-left-3 -->
+
+							<ul id="sidebar-left-3" class="sideMenu">
+<li id="menu-item-30" class="menu-system-article_list menu-item menu-item-type-custom menu-item-object-custom menu-item-30"><a href="/system/article_list.php">薬局ブログ一覧</a></li>
+<li id="menu-item-31" class="menu-system-search_map menu-item menu-item-type-custom menu-item-object-custom menu-item-31"><a href="/system/search_map.php">薬局をさがそう</a></li>
+<li id="menu-item-32" class="menu-system-recruit menu-item menu-item-type-custom menu-item-object-custom menu-item-32"><a href="/system/recruit.php">薬局で働きたい</a></li>
+							</ul>
+						</div>
+
+						<div class="menuBox">
+							<h1><a href="/c/enjoy/"><img alt="お楽しみ" src="/theme/meron2012/images/left/side_title_enjoy.jpg" /></a></h1>
+
+							<!-- sidebar-left-4 -->
+
+							<ul id="sidebar-left-4" class="sideMenu">
+<li id="menu-item-34" class="menu-machirepo menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a href="/machirepo/">まちrepo</a></li>
+<li id="menu-item-35" class="menu-c-staffblog menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a href="/c/staffblog/">こちら編集部</a></li>
+<li id="menu-item-36" class="menu-member-enquete menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a href="/member/enquete.php">モニタープレゼント</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- dynamic_sidebar sidebar-left -->
+<div id="banner-area" style="margin-top: 15px;">
+	<a href="/machirepo/"><img src="/images/top/banner_machirepo.png" alt="まちrepo" /></a><br /><br />
+	<a href="/c/staffblog/"><img src="/images/top/banner_staff_blog.png" alt="スタッフBLOG" /></a>
+	<p style="text-align:right;"><span class="red">2013.12.13 UP!!</span></p>
+</div>					<!-- /dynamic_sidebar sidebar-left -->
+				</div>
+				<!-- /#utilities -->
+
+				<div id="oldMain">
+					<div id="main">
+						<div id="signBoard" class="leaf">
+							<ol>
+								<li><a href="/">HOME</a></li>
+
+								<li><a href="http://www.meron-net.jp/c/useful/">健康お役立ち情報</a></li>
+
+								<li><a href="http://www.meron-net.jp/c/useful/feature/">今月の話題</a></li>
+
+								<li><strong>胃腸のしくみと健康について（1/2）</strong></li>
+							</ol>
+						</div>
+
+						<div id="article-225" class="post-225 post type-post status-publish format-standard hentry category-feature category-8 tag-11 tag-105 tag-350 article">
+<style type="text/css">
+<!--
+.bold01 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #0B8B9D;
+}
+
+.bold02{
+	color:#7FCA91;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.padding01{
+	padding: 0px 25px 25px 0px;
+	border-right: 2px dotted #CCC;
+
+}
+
+.padding02{
+	padding: 0px 0px 25px 25px;
+	border-bottom: 2px dotted #A9D0F8;
+}
+
+.padding03{
+	padding: 25px 25px 0px 0px;
+	border-right: 2px dotted #A9D0F8;
+}
+
+.padding04{
+	padding: 25px 0px 0px 25px;
+}
+
+.padding05{
+	padding: 0px 20px 0px 0px;
+	border-right: 2px dotted #A9D0F8;
+}
+
+.padding06{
+	padding:15px;
+	border-right:1px dotted #ccc;
+	border-left:1px solid #ccc;
+	border-bottom:1px dotted #ccc;
+}
+
+.padding07{
+	padding:15px;
+	border-right:1px solid #ccc;
+	border-bottom:1px dotted #ccc;
+}
+
+.padding08{
+	padding:15px;
+	border-right:1px dotted #ccc;
+	border-left:1px solid #ccc;
+}
+
+.padding09{
+	padding:15px;
+	border-right:1px solid #ccc;
+}
+
+.lead{
+	font-size:18px;
+	color:#174C8C;
+	margin-bottom:20px;
+}
+.border{
+	border-style:solid;
+	border-color:#CCC;
+	border-width:1px;
+	padding:10px;
+}
+-->
+</style>
+
+<!-- signBoard start -->
+<div class="leaf">
+
+<p><img src="../../../images/feature/201111/stomach00.jpg" alt="胃腸のしくみと健康について" width="790" height="120" /></p>
+</div>
+
+<!-- signBoard end -->
+
+<!-- content start -->
+<div>
+
+	<!-- main start -->
+	<div>
+
+
+<!-- Social Link Area -->
+<div align="right"> 
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.meron-net.jp%2Fc%2Fuseful%2Ffeature%2F201111-1.html&amp;layout=button_count&amp;show_faces=true&amp;width=100&amp;height=20&amp;action=like&amp;font=tahoma" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:20px;" class="" allowTransparency="true"></iframe> <a href="http://twitter.com/share" data-count="none" data-via="" data-lang="" data-url="http://www.meron-net.jp/c/useful/feature/201111-1.html" class="twitter-share-button" style="">つぶやく</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
+</div> 
+<!-- // Social Link Area -->
+
+
+    
+    <br />
+    <table border="0" cellpadding="0" cellspacing="0" align="center">
+    	<tr>
+			<td width="350"><a href="201111-1.html"><img src="../../../images/feature/201111/stomach_btn01_on.jpg" alt="胃のしくみと胃もたれの関係" width="351" height="115" /></a></td>
+			<td width="30">&nbsp;</td>
+			<td width="350"><a href="201111-2.html"><img src="../../../images/feature/201111/stomach_btn02.jpg" alt="胃のしくみと便通について" width="351" height="115" /></a></td>
+        </tr>
+    </table>
+
+
+	
+
+	<br />
+
+	<br />
+
+	
+	<br class="clear" />
+    <div class="margin-bottom:20px;"> <img src="../../../images/feature/201111/stomach01.gif" width="792" height="45" alt="はじめに" />
+    </div>
+    
+<h4 class="lead">胃もたれはどうして起こるの？</h4>
+	<p style="margin-bottom:50px"><img src="../../../images/feature/201111/stomach02.gif" alt="食べ過ぎ" width="118" height="142" class="img_R" />
+胃には食べ物と胃酸を混ぜ合わせ、消化する働きがあります。そして「胃もたれ」とは胃で消化された食べ物がなかなか十二指腸へ送り出されない状態のこと。消化を終えても消化物が胃の中に長く残るため、食後しばらく経っても胃が重く感じてしまいます。つまり、食べ過ぎた時など、胃が正常に膨らまなかったり消化物を送り出せないために胃の不快感が起こっています。 </p>
+
+<h4 class="lead">胃の種類ともたれやすさ</h4>
+<table width="790" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:40px">
+  <tr>
+    <td width="240" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center" height="145" valign="top"><img src="../../../images/feature/201111/stomach03.gif" alt="牛角胃" width="233" height="145" /></td>
+      </tr>
+      <tr>
+        <td>「牛角胃」といわれる牛の角のようにすらりとした形の胃。食べ物がスムーズに流れ、もたれることはあまりありません。</td>
+      </tr>
+      <tr>
+        <td><div class="border">特徴 ： <br />
+          とくに欧米人に多い形状</div></td>
+      </tr>
+    </table></td>
+    <td width="35">&nbsp;</td>
+    <td width="240" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center" height="145" valign="top"><img src="../../../images/feature/201111/stomach04.gif" alt="鉤状胃" width="228" height="139" /></td>
+      </tr>
+      <tr>
+        <td>鉤のように曲がった「鉤状胃」は日本人に多い形状。中央部が出口より低い位置にあるため、食べ物がたまりやすい。</td>
+      </tr>
+      <tr>
+        <td><div class="border">特徴 ： <br />
+          日本人に多い形状</div></td>
+      </tr>
+    </table></td>
+    <td width="35">&nbsp;</td>
+    <td width="240" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center" height="145" valign="top"><img src="../../../images/feature/201111/stomach05.gif" alt="瀑状胃" width="185" height="139" /></td>
+      </tr>
+      <tr>
+        <td>胃の入り口が出口より下にあり、二つ折りになっている複雑な形状。食べ物が流れにくく、数箇所にたまってしまいます。</td>
+      </tr>
+      <tr>
+        <td><div class="border">特徴 ： <br />
+          日本人の10人中2、3人に見られる</div></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<div style="margin-bottom:20px"><img src="../../../images/feature/201111/stomach06.gif" width="792" height="45" alt="胃もたれの原因と予防" /></div>
+
+<h4 class="lead">胃もたれの原因とタイプ</h4>
+
+<p>胃もたれのタイプは、大きく２種類のタイプに分けることができます。</p>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px">
+  <tr>
+    <td width="308" align="center"><span style="margin-bottom:30px"><img src="../../../images/feature/201111/stomach07.gif" width="303" height="25" alt="食べ過ぎ・飲み過ぎによる胃もたれ" /></span></td>
+    <td width="80">&nbsp;</td>
+    <td width="339" align="center"><span style="margin-bottom:30px"><img src="../../../images/feature/201111/stomach08.gif" width="334" height="25" alt="胃自体が弱っている時に起こる胃もたれ" /></span></td>
+    <td width="80">&nbsp;</td>
+    <td width="188" rowspan="2" align="center"><span style="margin-bottom:30px"><img src="../../../images/feature/201111/stomach11.gif" alt="胃もたれ" width="73" height="149" /></span></td>
+  </tr>
+  <tr>
+    <td>胃の消化能力を超えている量を食べたり、消化しにくい脂肪分を摂りすぎたりすると、食べ物が消化しきるまで胃が満杯の状態となるため、胃もたれの原因になります。</td>
+    <td>&nbsp;</td>
+    <td>風邪や不規則な生活、ストレスなどにより、胃の運動機能が低下して胃もたれを起こすことがあります。いつまでも症状が治らなかったり、食欲不振が続く場合は、専門医の検査を受けたほうがよいでしょう。</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<h4 class="lead">気をつけるべき食事や食材</h4>
+
+<p>胃もたれのタイプは、大きく２種類のタイプに分けることができます。</p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:50px">
+  <tr>
+    <td width="308" align="center"><span style="margin-bottom:30px"><img src="../../../images/feature/201111/stomach09.gif" width="303" height="25" alt="食べ過ぎ・飲み過ぎによる胃もたれ" /></span></td>
+    <td width="80">&nbsp;</td>
+    <td width="339" align="center"><span style="margin-bottom:30px"><img src="../../../images/feature/201111/stomach10.gif" width="334" height="25" alt="胃自体が弱っている時に起こる胃もたれ" /></span></td>
+    <td width="80">&nbsp;</td>
+    <td width="188" rowspan="2" align="center"><span style="margin-bottom:30px"><img src="../../../images/feature/201111/stomach12.gif" alt="消化のよい食材" width="100" height="86" /><br />
+      <br />
+        <img src="../../../images/feature/201111/stomach13.gif" alt="避けたい食材" width="110" height="77" /></span></td>
+  </tr>
+  <tr>
+    <td>脂肪は消化に時間がかかるため、肉類を摂りたいときは脂肪の少ない鶏肉のささみ、牛・豚のヒレやもも肉などを選ぶと良いでしょう。また食物繊維が豊富なカボチャ、大根、ニンジン、トマトなどのように、煮込んで柔らかくなるものを選ぶとよいでしょう。</td>
+    <td>&nbsp;</td>
+    <td>肉のあぶらみやハム、ソーセージ、ベーコンなどの加工食品は脂肪が多く、胃に負担をかけるので避けましょう。また胃を刺激し、胃酸を増やすものとして、香辛料（とうがらし、わさびなど）、カフェインを多く含むもの（コーヒー、煎茶など）があげられます。</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+
+<h3 style="margin-bottom:10px">気をつけよう！胃症状の注意点</h3>
+
+
+
+<table width="790" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px">
+		<tr>
+				<td colspan="2"><span style="text-align:center"><img src="../../../images/feature/201109/bdrtop.gif" width="790" height="5" /></span></td>
+				</tr>
+		<tr>
+				<td width="50%" valign="top" class="padding06">
+                <strong>たばこや飲酒、コーヒーに注意</strong>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td valign="top">喫煙は胃粘膜の血流を低下させるため胃潰瘍の引き金となることがあります。<br />また、大量の飲酒やコーヒーは胃に負担がかかり胃潰瘍の原因となることがあるため、胃の調子が悪い人はなるべく避けた方がいいでしょう。</td>
+                      <td><img src="../../../images/feature/201111/stomach14.gif" alt="コーヒー" width="75" height="61" /></td>
+                    </tr>
+                  </table>
+          </td>
+				<td width="50%" valign="top" class="padding07">
+                <strong>ストレスと胃の関係</strong>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td valign="top">ストレスと胃の動きには密接な関係があるといわれています。ストレスが溜まると胃は蠕動運動（ぜんどううんどう）が弱まり、胃液の分泌量などが変調をきたす場合があり、それによって胃もたれが慢性に起こるようになると考えられます。</td>
+                      <td><img src="../../../images/feature/201111/stomach15.gif" alt="ストレス" width="81" height="127" /></td>
+                    </tr>
+                  </table>
+</td>
+		</tr>
+		<tr>
+				<td width="50%" valign="top" class="padding08">
+                <strong>食事の間隔を空ける</strong>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td valign="top">一度食事を摂ったら４時間は間隔を空けるようにしましょう。一般的に食べた物は４時間で一度消化されるため、しっかりを胃を休めるサイクルを作ることが大切です。また、就寝前も3～4時間空けることが望ましいといえます。 </td>
+                      <td><img src="../../../images/feature/201111/stomach16.gif" alt="時計" width="79" height="79" /></td>
+                    </tr>
+                  </table>
+          </td>
+				<td width="50%" valign="top" class="padding09">
+                <strong>薬はコップ一杯の水で</strong>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td valign="top">薬を飲む際はなるべくコップ一杯分の水で飲むようにしましょう。胃の働きが弱くなった場合などに少ない水で飲むと、胃の中で薬が一ヶ所に固まってしまい、胃潰瘍などの症状を起こしやすくなる場合があります。</td>
+                      <td><img src="../../../images/feature/201111/stomach17.gif" alt="コップ一杯の水" width="66" height="79" /></td>
+                    </tr>
+                  </table>
+</td>
+	  </tr>
+		<tr>
+				<td colspan="2"><span style="text-align:center"><img src="../../../images/feature/201109/bdrbtm.gif" width="790" height="5" /></span></td>
+	  </tr>
+</table>
+
+<br class="clear" />
+    <div class="txt_R" style="font-size: 10px"><a href="#header">▲ページTOPへ</a></div>
+
+
+
+
+	<br />
+    <br />
+    <div style="text-align:center">
+    		
+    		<a href="201111-1.html"><img src="../../../images/feature/page/page_1_on1.jpg" width="20" height="20" border="0" /></a> &nbsp; <a href="201111-2.html"><img src="../../../images/feature/page/page_2.jpg" width="20" height="20" class="on" border="0" /></a> &nbsp; <a href="201111-2.html"><img src="../../../images/feature/page/page_after.jpg" width="68" height="20" class="on" border="0" /></a> </div>
+    <br />
+    <br />
+
+    <!-- Social Link Area -->
+    <img src="../../../images/recomend.gif" width="132" height="12" alt="この記事をおすすめする" class="margin10" /><br />
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.meron-net.jp%2Fc%2Fuseful%2Ffeature%2F201111-1.html&amp;layout=button_count&amp;show_faces=true&amp;width=100&amp;height=20&amp;action=like&amp;font=tahoma" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:20px;" class="" allowTransparency="true"></iframe> <a href="http://twitter.com/share" data-count="none" data-via="" data-lang="" data-url="http://www.meron-net.jp/c/useful/feature/201111-1.html" class="twitter-share-button" style="">つぶやく</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <!-- // Social Link Area -->
+
+<br />
+
+	</div>
+  <!-- main end -->
+
+
+</div>
+<!-- content end --><div class='yarpp-related'>
+				<div>
+					<h1><img src="/images/feature/related/related-top.png" /></h1>
+
+					<div class="related" style="">
+						<table cellspacing="0" class="related-table" style="">
+							<tbody>
+								<tr>
+									<td colspan="1" rowspan="1" valign="top" class="related-tablecell_image" style="">
+										<div style="padding: 6px 4px 4px 4px;"><a href="http://www.meron-net.jp/c/useful/feature/201111-2.html"><img width="84" height="84" src="http://www.meron-net.jp/c/useful/files/2012/10/index_img_feature1.jpg" class="attachment-84x84 wp-post-image" alt="index_img_feature" title="index_img_feature" /></a></div>
+									</td>
+
+									<td colspan="1" rowspan="1" valign="top" class="related-tablecell_text"  style="">
+										<div style="margin-top: 5px;">[<a href="http://www.meron-net.jp/c/useful/feature/">今月の話題</a>]</div>
+
+										<div><a href="http://www.meron-net.jp/c/useful/feature/201111-2.html">胃腸のしくみと健康について（2/2）</a></div>
+
+										<!--<div style="font-size: 12px;">[ 2011.11.09 ]</div>-->
+									</td>
+									<td colspan="1" rowspan="1" valign="top" class="related-tablecell_image" style="">
+										<div style="padding: 6px 4px 4px 4px;"><a href="http://www.meron-net.jp/c/useful/feature/200712-1.html"><img width="84" height="84" src="http://www.meron-net.jp/c/useful/files/2012/10/index_img_feature200712.gif" class="attachment-84x84 wp-post-image" alt="index_img_feature200712" title="index_img_feature200712" /></a></div>
+									</td>
+
+									<td colspan="1" rowspan="1" valign="top" class="related-tablecell_text"  style="">
+										<div style="margin-top: 5px;">[<a href="http://www.meron-net.jp/c/useful/feature/">今月の話題</a>]</div>
+
+										<div><a href="http://www.meron-net.jp/c/useful/feature/200712-1.html">アルコールと健康</a></div>
+
+										<!--<div style="font-size: 12px;">[ 2007.12.09 ]</div>-->
+									</td>
+									<td colspan="1" rowspan="1" valign="top" class="related-tablecell_image" style="">
+										<div style="padding: 6px 4px 4px 4px;"><a href="http://www.meron-net.jp/c/useful/feature/201105_2-1.html"><img width="84" height="84" src="http://www.meron-net.jp/c/useful/files/2011/05/teeth_sub.gif" class="attachment-84x84 wp-post-image" alt="teeth_sub" title="teeth_sub" /></a></div>
+									</td>
+
+									<td colspan="1" rowspan="1" valign="top" class="related-tablecell_text"  style="">
+										<div style="margin-top: 5px;">[<a href="http://www.meron-net.jp/c/useful/feature/">今月の話題</a>]</div>
+
+										<div><a href="http://www.meron-net.jp/c/useful/feature/201105_2-1.html">歯の健康を考えよう</a></div>
+
+										<!--<div style="font-size: 12px;">[ 2011.05.01 ]</div>-->
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div><img src="/images/feature/related/related-bottom.png" /></div>
+				</div>
+</div>
+
+						</div>
+
+						<br class="clear" />
+					</div>
+				</div>
+
+				<br class="clear" />
+			</div>
+
+			<br class="clear" />
+		</div>
+
+		<!-- #footer_wrapper -->
+		<div id="footer_wrapper">
+			<!-- #footer -->
+			<div id="footer">
+				<div class="pageTop"><a href="#header"><!-- <img alt="ページトップへ" src="/theme/meron2012/images/footer/pagetop_btn_on.jpg" /> --><img alt="ページトップへ" src="/theme/meron2012/images/footer/pagetop_btn_off.jpg" /></a></div>
+
+				<div class="logoArea">
+
+					<div class="logo"><img alt="Meron logo" src="/theme/meron2012/images/footer/footer_logo.jpg" /></div>
+
+					<p class="caption">Meronとは、<br />顔を合わせ一人ひとりに向き合い、<br />健やかな毎日を支えるために<br />あなたと町のくすり屋さんとを結ぶ<br />信頼のネットワークです。</p>
+
+					<p><strong>【展開エリア】</strong><br />青森県・秋田県・岩手県・山形県・<br />宮城県・福島県・新潟県・茨城県・<br />栃木県・群馬県・千葉県・埼玉県・<br />東京都・神奈川県・富山県・<br />石川県・福井県・滋賀県</p>
+
+					<br class="clear" />
+				</div>
+
+				<div class="menuBox">
+					<div class="mainNavi">
+						<h1><img alt="footer menu home" src="/theme/meron2012/images/footer/footer_title_home.jpg" /></h1>
+
+						<!-- bottom-mainmenu -->
+
+						<ul id="bottom-mainmenu" class="bottomMainMenu">
+<li id="menu-item-42" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42"><a href="/system/company.php">運営会社案内</a></li>
+<li id="menu-item-41" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41"><a href="/system/privacy.php">個人情報保護方針</a></li>
+<li id="menu-item-40" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40"><a href="/system/link.php">リンクのお問合せ</a></li>
+<li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="/contact/">お問合せ</a></li>
+						</ul>
+
+						<br class="clear" />
+					</div>
+
+					<div class="pageNavi">
+						<div class="naviBox-container">
+							<h1 class="title"><img alt="健康お役立ち情報" src="/theme/meron2012/images/footer/footer_title_useful.jpg" /></h1>
+
+							<ul id="bottom-submenu-useful" class="naviBox">
+<li class="menu-c-useful-feature menu-item menu-item-type-custom menu-item-object-custom menu-item-20 blog_name-useful category_name-feature"><a href="/c/useful/feature/">今月の話題</a></li>
+<li class="menu-c-useful-exercise menu-item menu-item-type-custom menu-item-object-custom menu-item-21 blog_name-useful category_name-exercise"><a href="/c/useful/exercise/">5分でできる健康体操</a></li>
+<li class="menu-c-useful-recipe menu-item menu-item-type-custom menu-item-object-custom menu-item-23 blog_name-useful category_name-recipe"><a href="/c/useful/recipe/">健康レシピ</a></li>
+<li class="menu-c-useful-healthcheck menu-item menu-item-type-custom menu-item-object-custom menu-item-24 blog_name-useful category_name-healthcheck"><a href="/c/useful/healthcheck/">ヘルスチェック</a></li>
+<li class="menu-c-useful-faq menu-item menu-item-type-custom menu-item-object-custom menu-item-25 blog_name-useful category_name-faq"><a href="/c/useful/faq/">健康Q&#038;A</a></li>
+<li class="menu-c-useful-advice menu-item menu-item-type-custom menu-item-object-custom menu-item-22 blog_name-useful category_name-advice"><a href="/c/useful/advice/">健康アドバイス</a></li>
+<li class="menu-c-useful-database menu-item menu-item-type-custom menu-item-object-custom menu-item-108 blog_name-useful category_name-database"><a href="/c/useful/database/">お薬を調べる</a></li>
+							</ul>
+
+							<br class="clear" />
+						</div>
+
+						<div class="naviBox-container">
+							<h1 class="title"><img alt="Meronフリーペーパー" src="/theme/meron2012/images/footer/footer_title_freepaper.jpg" /></h1>
+
+							<ul id="bottom-submenu-freepaper" class="naviBox">
+<li class="menu-c-freepaper menu-item menu-item-type-custom menu-item-object-custom menu-item-26 blog_name-freepaper category_name-newly"><a href="/c/freepaper/newly/">最新号のご案内</a></li>
+<li class="menu-c-freepaper-backnumber menu-item menu-item-type-custom menu-item-object-custom menu-item-28 blog_name-freepaper category_name-backnumber"><a href="/c/freepaper/backnumber/">バックナンバー</a></li>
+							</ul>
+
+							<br class="clear" />
+						</div>
+
+						<div class="naviBox-container">
+							<h1 class="title"><img alt="薬局のこと" src="/theme/meron2012/images/footer/footer_title_pharmacy.jpg" /></h1>
+
+							<ul id="bottom-submenu-pharmacy" class="naviBox">
+<li class="menu-system-article_list menu-item menu-item-type-custom menu-item-object-custom menu-item-30"><a href="/system/article_list.php">薬局ブログ一覧</a></li>
+<li class="menu-system-search_map menu-item menu-item-type-custom menu-item-object-custom menu-item-31"><a href="/system/search_map.php">薬局をさがそう</a></li>
+<li class="menu-system-recruit menu-item menu-item-type-custom menu-item-object-custom menu-item-32"><a href="/system/recruit.php">薬局で働きたい</a></li>
+							</ul>
+
+							<br class="clear" />
+						</div>
+
+						<div class="naviBox-container">
+							<h1 class="title"><img alt="お楽しみ" src="/theme/meron2012/images/footer/footer_title_enjoy.jpg" /></h1>
+
+							<ul id="bottom-submenu-enjoy" class="naviBox">
+<li class="menu-machirepo menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a href="/machirepo/">まちrepo</a></li>
+<li class="menu-c-staffblog menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a href="/c/staffblog/">こちら編集部</a></li>
+<li class="menu-member-enquete menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a href="/member/enquete.php">モニタープレゼント</a></li>
+							</ul>
+
+							<br class="clear" />
+						</div>
+
+						<br class="clear" />
+					</div>
+
+					<div class="pageNavi">
+						<div class="naviBox-container">
+							<h1 class="title"><img alt="Meron会員" src="/theme/meron2012/images/footer/footer_title_member.jpg" /></h1>
+
+							<ul id="bottom-submenu-member" class="naviBox">
+<li id="menu-item-51" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a href="/member/about.php">Meronクラブのご案内</a></li>
+<li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a href="/member/mypage.php">マイページ</a></li>
+<li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="/member/registration.php">Meronクラブ新規登録</a></li>
+							</ul>
+
+							<br class="clear" />
+						</div>
+
+						<div class="naviBox-container">
+							<h1 class="title"><img alt="サービスヘルプ" src="/theme/meron2012/images/footer/footer_title_help.jpg" /></h1>
+
+							<ul id="bottom-submenu-help" class="naviBox">
+<li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="/system/about.php">Meronって？</a></li>
+<li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="/system/sitemap.php">サイトマップ</a></li>
+<li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="/system/join.php">ホームページ登録について</a></li>
+							</ul>
+
+							<br class="clear" />
+						</div>
+
+						<!--
+						<div class="naviBox-container">
+							<h1 class="title"><img alt="マイページ" src="/theme/meron2012/images/footer/footer_title_mypage.jpg" /></h1>
+
+							<ul id="bottom-submenu-mypage" class="naviBox">
+<li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a href="/member/login.php">ログイン</a></li>
+							</ul>
+
+							<br class="clear" />
+						</div>
+						-->
+
+						<br class="clear" />
+					</div>
+
+					<div class="pageNavi">
+						<div class="mobile">
+							<div class="thum"><img src="/theme/meron2012/images/footer/footer_sp.jpg" /></div>
+
+							<p><img alt="Meronのスマートフォンサイト" src="/theme/meron2012/images/footer/footer_sp_title.jpg" /></p>
+
+							<p>下記のアドレスからお持ちのスマートフォンでもご覧頂けます。</p>
+
+							<p><a href="/">http://www.meron-net.jp/</a></p>
+						</div>
+
+						<div class="mobile">
+							<div class="thum"><img src="/theme/meron2012/images/footer/footer_qr.jpg" /></div>
+
+							<p><img src="/theme/meron2012/images/footer/footer_mobile_title.jpg" alt="Meronの携帯サイト" /></p>
+
+							<p>Meronが携帯からもご利用いただけます。詳細はQRコードをスキャンしてください。</p>
+
+							<p style="font-size: 75%;">※ QRコードは、株式会社デンソーウェーブの登録商標です。</p>
+						</div>
+
+						<br class="clear" />
+					</div>
+
+					<br class="clear" />
+				</div>
+
+				<address>Copyright (c) Health Care Management Institute Ltd. All Rights Reserved.</address>
+
+				<br class="clear" />
+			</div>
+			<!-- /#footer -->
+
+			<br class="clear" />
+		</div>
+		<!-- /#footer_wrapper -->
+
+
+		<!-- overlayed sidebar -->
+
+<style>
+
+.sideMonitor {
+	position:   fixed;
+	right:      0;
+	top:        80px;
+}
+
+.sideFacebook {
+	position:   fixed;
+	right:      0;
+	top:        250px;
+}
+
+.sideGoogleplus {
+	position:   fixed;
+	right:      0;
+	top:        430px;
+}
+
+a:hover img.sidebar{
+	opacity:0.70;
+	filter:alpha(opacity=70);
+	-ms-filter: "alpha( opacity=70 )";
+	-moz-opacity:0.70;
+}
+
+/* ***** SLIDE MENU ***** */
+#slide_panel{
+	z-index:    100;
+	position:   fixed;
+	top:        80px;
+	right:      0;
+	margin:     0;
+	padding:    0;
+	/* ポイント：横幅指定とはみ出し非表示にする事で、横幅が0に近づいても文字の改行を押さえる(改行させない) */
+	width:      265px;
+	height:     372px;
+	cursor:     pointer;
+	overflow:   hidden;	/* ←重要 */
+}
+
+#slide_panel .wrap{
+	width:      265px;
+	overflow:   hidden;	/* IE対策のおまじない */
+}
+/* active用(メニューの背景画像切替) */
+div.menu_off{
+	background-image:    url(/images/include/sidebar_monitor.png);
+	background-repeat:   no-repeat;
+	background-position: 0 0;
+
+}
+/* active用(メニューの背景画像切替) */
+div.panel_active{
+	background-position: 0 0;
+}
+
+#slide_panel .wrap .panel_main{
+	margin-left:  35px;
+	padding:      0;
+}
+/* ***** // SLIDE MENU ***** */
+
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox-monitor").fancybox({
+			'showCloseButton': false,
+			'autoSize'       : false,
+			'type'           : 'iframe',
+			'width'          : 850,
+			
+//		}).hover(function() {
+//			$(this).click();
+//			$(".fancybox-overlay").mouseout(function() {
+//				$.fancybox.close();
+//			});
+		});
+	});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+// ■ページ読込み完了時
+	//パネルの初期設定のwidth, heightを取得しておく
+	var panel_DefW = $("#slide_panel").width();
+	var panel_DefH = $("#slide_panel").height();
+	//メニュの表示幅（クリックできる範囲）
+	var btn_DefW = 35;
+	var btn_DefH = 185;
+	//パネルの横幅をボタンの横幅だけにしておく
+	$('#slide_panel').width(btn_DefW);
+	$('#slide_panel').height(btn_DefH);
+
+	$('.menu_off').click(function() {
+
+		//ボタンの横幅よりも、パネル全体の横幅が広い時＝開いてる時
+		if( ($("#slide_panel").width() > btn_DefW) && ($("#slide_panel").height() > btn_DefH) ){
+			//横幅=ボタンの横幅 へアニメーション
+			w = btn_DefW;
+			h = btn_DefH;
+		}else{
+			//横幅=初期値 へアニメーション
+			w = panel_DefW;
+			h = panel_DefH;
+		}
+
+		$("#slide_panel").animate({
+			width:  w,
+			height: h
+		}, "slow",
+		function(){
+			//アニメーションが終わってclass変更
+			$('.menu_off').toggleClass('panel_active');
+		});
+	});
+});
+</script>
+
+
+		<div id="slide_panel">
+			<div class="wrap menu_off">
+				<div class="panel_main">
+					<div class="monitor-box">
+						<img src="/images/top/monitor/top_club_monitor_201311-201312.jpg" alt="Meronクラブモニター募集" usemap="#Map" />
+						<map name="Map" id="Map">
+							<area shape="rect" coords="15,327,215,355" href="/member/enquete.php" alt="モニタープレゼントに申し込む" />
+							<!--<area shape="rect" coords="15,329,215,364" href="/c/staffblog/" alt="編集部レポートもあります" />-->
+						</map>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!-- / overlayed sidebar -->
+
+
+
+		<script type="text/javascript" src="http://www.google-analytics.com/urchin.js"></script>
+
+		<script type="text/javascript">
+			_uacct = "UA-1117182-18";
+			urchinTracker();
+		</script>
+
+
+<!-- BEGIN: WP Social Bookmarking Light -->
+<!-- END: WP Social Bookmarking Light -->
+<!-- Generated in 1.319 seconds. Made 42 queries to database and 117 cached queries. Memory used - 30.42MB -->
+<!-- Cached by DB Cache Reloaded Fix -->
+
+
+	</body>
+</html>
