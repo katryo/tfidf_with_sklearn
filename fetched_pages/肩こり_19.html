@@ -1,0 +1,973 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>肩こり度チェック - Yahoo!ヘルスケア</title>
+<meta name="description" content="肩こり度のチェック。質問に答えると肩こり度の診断ができます。">
+<meta name="keywords" content="肩こり度チェック,肩こり,健康チェック,健康診断,健診,チェック,診断,セルフチェック">
+<link rel="stylesheet" type="text/css" href="http://i.yimg.jp/images/health/medical/css/yjTmplCommon-min.css">
+<link rel="stylesheet" type="text/css" href="http://i.yimg.jp/images/health/medical/css/check/check-question.css">
+
+<!--[if lt IE 6]>
+<link rel="stylesheet" href="http://i.yimg.jp/yui/jp/tmpl/1.1.0/yjTmplIE5-min.css" type="text/css" media="all">
+<![endif]-->
+
+<!-- SpaceID=0 robot -->
+
+<!-- facebook ogp -->
+<meta property="og:title"       content="肩こり度チェック - Yahoo!ヘルスケア"/>
+<meta property="og:type"        content="article"/>
+<meta property="og:url"         content="http://medical.yahoo.co.jp/selfcheck/3/">
+<meta property="og:image"       content="http://i.yimg.jp/images/health/outlink/health60_60.png"/>
+<meta property="og:description" content="肩こり度のチェック。質問に答えると肩こり度の診断ができます。"/>
+<meta property="og:site_name"   content="Yahoo!ヘルスケア"/>
+<meta property="fb:app_id"      content="419954158044994"/>
+<!-- /facebook ogp -->
+
+
+</head>
+
+<body class="yj950-2">
+
+
+<!-- facebookSDK/ -->
+<script src="http://i.yimg.jp/images/rapid/1.5.0/ult.js"></script>
+<div id="fb-root"></div>
+ <script>
+  window.fbAsyncInit = function() {
+      FB.init({
+             appId      : '419954158044994', // App ID
+             channelUrl : 'http://' + location.hostname + '/Channel.html', // Channel File
+             status     : true, // check login status
+             cookie     : true, // enable cookies to allow the server to access the session
+             xfbml      : true  // parse XFBML
+      });       // 初期化コードはここに
+
+      // ビーコンポスト用のフラグを宣言
+      var postFlag = 0;
+      // Facebook Like Event
+      FB.Event.subscribe('edge.create', function(response) {
+              // リンクパラメータの設定
+              // mod パラメータのname は固定でfacebook としておく事
+              // links パラメータ内のパラメータは全て固定とする(この部分 ⇒ {nam:'like_log', params:{sec:'facebook', slk:'lie_log', pos:'1'}}
+              var link_data = [{
+                        mod:{name:'facebook'},
+                        links:[{name:'like_log', params:{sec:'facebook', slk:'like_log', pos:'1'}}]
+              }];
+              // ログに落とす情報を変数に入れる
+              // beacon_server: ビーコンを飛ばすサーバ
+              // spaceid: 埋め込むページのSpaceIDを記入してください
+
+              var jsHost = (("https:" == document.location.protocol)?true:false)
+;
+              var space_id = 2080220119;
+
+              var ins = YAHOO.i13n.Beaconer(
+                      {beacon_server:'ybx.yahoo.co.jp',
+                       keys:{rpdprop:"facebook"},
+                       https:jsHost, // https ページで使う方はこの行追加してください、それ以外の方はこの行を消してください
+                       link_data:link_data,
+                       spaceid:space_id // ここを変更してください
+              });
+              // Click ログのビーコンを飛ばす(9/19追記:ビーコンの2重ポスト回避実装追加)
+              if(postFlag == 0) {
+                       ins.doClickBeacon(link_data[0].links[0].params);
+                       postFlag = 1;
+              }
+    });
+
+  };     // SDKの非同期読み出し
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/ja_JP/all.js";
+     ref.parentNode.insertBefore(js, ref);
+  }(document));
+</script>
+<!-- /facebook-SDK -->
+
+
+
+
+<![if !IE 6 ]>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://i.yimg.jp/images/evt/common/external/tw_tweet/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<![endif]>
+
+
+
+<div id="wrapper">
+<div id="header"> <span class="yjGuid"><a name="yjPagetop" id="yjPagetop"></a><img src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" width="1" height="1" alt="このページの先頭です"></span> <span class="yjSkip"><a href="#yjContentsStart"><img src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" alt="このページの本文へ" width="1" height="1" ></a></span>
+
+<!-- SpaceID=0 robot -->
+<!-- SpaceID=0 robot -->
+
+</div>
+
+<!--/#header-->
+<hr class="yjSeparation">
+<div id="contents">
+
+<!-- yjContentsHeader /-->
+<div id="yjContentsHeader">
+
+<!-- gnvWrap /--> 
+
+
+
+<!-- gnvWrap /-->
+<div id="gnvWrap">
+<!-- globalNav /-->
+<div id="globalNav">
+<ul>
+<li class="gnv0"><a  href="/">トップ</a></li>
+<li class="gnv1"><a  href="/hospital/">病院情報</a></li>
+<li class="gnv2"><a href="http://health.yahoo.co.jp/katei/">家庭の医学</a></li>
+<li class="gnv3"><a href="http://rdsig.yahoo.co.jp/healthcare/outside_rd_meds/RV=1/RE=1387194934/RH=cmRzaWcueWFob28uY28uanA-/RB=/RU=aHR0cDovL3d3dy5xbGlmZS5qcC9tZWRzL3lhaG9vLw--/RS=^ADAcEGVRowTwcjpV9Dg4rOxYu5M0LQ-"  target="qlife">お薬検索<img class="outlnk" src="http://i.yimg.jp/images/health/medical/images/common/out_link_gnav.gif" width="21" height="14" title="外部リンク" alt="外部リンク" border="0"></a></li>
+<li class="gnv4"><a class="cr" href="/selfcheck/">セルフチェック</a></li>
+<li class="gnv5"><a href="http://health.yahoo.co.jp/soudan/">からだ相談</a></li>
+</ul>
+
+<!-- gnavBar /-->
+<div id="gnavBar">
+<!-- 出し分け時：ここからここまで隠す /--> 
+<div class="title_wrap cf">
+<h1>健康セルフチェック</h1>
+<!-- /出し分け時：ここからここまで隠す -->
+</div>
+</div>
+<!-- /gnavBar -->
+</div>
+<!-- /globalNav -->
+
+<!-- titleMenu /-->
+<!-- 出し分け時：ここからここまで隠す /-->
+<!-- <div id="titleMenu">
+<ul class="cf">
+<li><a href="http://health.yahoo.co.jp/soudan/member/alert/thread.html">アラート管理</a></li>
+<li><a href="http://health.yahoo.co.jp/soudan/list/?t=my">質問履歴</a></li>
+<li><a href="http://health.yahoo.co.jp/soudan/list/?t=myc">コメント履歴</a></li>
+<li><a href="http://health.yahoo.co.jp/soudan/guide/">使い方ガイド</a></li>
+</ul>
+</div> -->
+<!-- /出し分け時：ここからここまで隠す -->
+<!-- /titleMenu -->
+</div>
+<!-- /gnvWrap -->
+
+<!-- /gnvWrap -->
+
+<!-- SpaceID=0 robot -->
+
+</div>
+
+<!-- /yjContentsHeader -->
+<div id="yjContentsBody"> <span class="yjGuid"><a name="yjContentsStart" id="yjContentsStart"></a><img src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" alt="ここから本文です" width="1" height="1"></span>
+<div id="yjMain">
+<div class="yjMainGrid">
+<!-- contentsHeader /-->
+
+<div id="yjBreadcrumbs" class="yjSt">
+<p><span class="yjGuid">現在位置：</span><a href="/">Yahoo!ヘルスケア</a><span class="sepalate">&gt;</span><a href="/selfcheck/">健康セルフチェック</a><span class="sepalate">&gt;</span>肩こり度チェック</p>
+</div>
+<!--/#yjBreadcrumbs-->
+
+<div id="contentsHeader">
+</div>
+<!-- /contentsHeader -->
+
+<!-- #mainContents /-->
+<div id="mainContents">
+
+<!-- checkTitle /--> 
+<div id="checkTitle">
+<div class="sdw_box">
+<div class="box_cntnt cf">
+<!-- left /--> 
+<div class="left fl">
+<!-- mdsr 1.0 /--> 
+<div class="mdsr">
+<div class="mds_wrap">
+<div class="ttl">
+<span class="txt">肩こり度チェック</span><span class="tag">肩、腰、骨格など</span>
+
+<!-- ボタンを配置するところにコピペ -->
+
+<!-- shareButtons1.1 /--> 
+<div id="shareButtons" name="share_button">
+<ul>
+<li>
+
+</li>
+<li>
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-url="http://medical.yahoo.co.jp/selfcheck/3/" data-text="肩こり度のチェック。質問に答えると肩こり度の診断ができます。 - Yahoo!ヘルスケア" data-hashtags="健康セルフチェック">ツイート</a>
+
+</li>
+</ul>
+</div>
+<!-- /shareButtons1.1 -->
+
+</div>
+</div></div>
+ <!-- /mdsr 1.0 -->
+
+<p class="detail">肩こりは慢性的な筋肉疲労による血行障害がもとで起き、運動不足、姿勢の悪さ、ストレスが3大原因といわれています。でも、なかには他の病気が肩こりを引き起こしている場合も。あなたの「肩こり度」をチェックしてみましょう。</p>
+</div>
+<!-- /left -->
+ <div class="right fr">
+<!--  それぞれのチェックのイラストをtoolIDと一致させます -->
+<img src="http://i.yimg.jp/images/health/medical/images/check/illustrations/illust03.png" alt="肩こり度チェック" width="100" height="120">
+</div>
+
+
+</div>
+
+</div>
+</div>
+<!-- /checkTitle -->
+
+<!-- checkModule /--> 
+
+<div id="checkModule">
+<!-- question /--> 
+
+<!-- /question -->
+<div class="question"><table><tr>
+<td class="q_num">
+<span class="q">Q</span>
+<span class="num">1</span>
+<span class="q_of_all">/15</span>
+</td>
+<td class="q_txt">
+両肩が重く感じる</td>
+</tr>
+</table>
+</div>
+
+<!-- answer /--> 
+<div class="answer_module">
+<ul class="answers">
+<li class="li1">
+<div class="hlt_btn">
+<p class="wrap">
+<a href="/selfcheck/3/?question_no=2&answer=1">
+<span class="txt">はい</span>
+</a>
+</div>
+</li>
+<li class="li2">
+<div class="hlt_btn">
+<p class="wrap">
+<a href="/selfcheck/3/?question_no=2&answer=2">
+<span class="txt">いいえ</span>
+</a>
+</div>
+</li>
+</ul>
+
+
+</div>
+
+<!-- /answer -->
+
+<!-- credit /--> 
+
+<div class="credit">
+<div class="doctor"><dl><dt>監修：小石川ホームクリニック</dt>
+<dd>門川誠先生</dd>
+</dl></div>
+<div class="logowrap">
+<a href="http://www.wellness.co.jp/"><img src="http://i.yimg.jp/images/health/medical/images/check/wellness_logo.png" alt="ウェルネス株式会社" width="144" height="36"></a>
+<img src="http://i.yimg.jp/images/health/medical/images/common/out_link_icon_10.gif" width="14" height="10" title="外部リンク" alt="外部リンク" border="0">
+</div></div>
+
+<div class="check_note">
+チェックの結果は健康状態や症状の目安で、診断に代わるものではありません。気になる点がある方は、医師にご相談ください。</div>
+<!-- /credit -->
+
+</div>
+<!-- /checkModule -->
+
+<!-- banner/ -->
+<div class="bnr_wrap"><a href="http://health.yahoo.co.jp/gene/" class="img_lnk">
+<img src="http://i.yimg.jp/images/health/campaign/genome/pc/3/images/bnr_620_90_b.png" alt="「遺伝子検査」は手の届く時代へ。" width="620" height="90"></a></div>
+<!-- /banner -->
+
+
+
+<script type="text/javascript">
+var yjaxclookup = function(jo){
+    if(typeof jo[0] != "undefined") {
+        document.getElementById("center1").innerHTML = jo[0];
+    }
+    if(typeof jo[1] != "undefined") {
+        document.getElementById("center2").innerHTML = jo[1];
+    }
+    if(typeof jo[2] != "undefined") {
+        document.getElementById("rightbox").innerHTML = jo[2];
+    }
+}
+</script>
+
+<div id="center1"></div>
+
+
+
+
+<!-- 横リンクモジュール /--> 
+<div class="chk_cate_mod">
+<dl class="sdw_box">
+<dt class="box_head">セルフチェックをさがす</dt>
+<dd class="box_cntnt">
+<div class="cntnt_wrap">
+<ul class="link_list_s">
+<li><a href="/selfcheck/#1">頭部、目、鼻、口</a></li>
+<li><a href="/selfcheck/#2">内臓（循環器系）、血管、血液</a></li>
+<li><a href="/selfcheck/#3">内臓（呼吸器系）</a></li>
+<li><a href="/selfcheck/#4">内臓（消化器系）</a></li>
+<li><a href="/selfcheck/#5">全身</a></li>
+<li><a href="/selfcheck/#6">肩、腰、骨格など</a></li>
+<li><a href="/selfcheck/#7">女性特有、男性特有の病気</a></li>
+<li><a href="/selfcheck/#8">皮膚、つめなど</a></li>
+<li><a href="/selfcheck/#9">こころの病気</a></li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<!-- /横リンクモジュール -->
+
+
+<div id="center2"></div>
+
+
+<!-- SpaceID=0 robot -->
+
+</div>
+<!-- /#mainContents -->
+</div>
+<!--/.yjMainGrid-->
+</div>
+<!--/#yjMain-->
+
+<div id="yjSub">
+
+<!-- SpaceID=0 robot -->
+
+<div class="bnr_wrap">
+<a href="http://health.yahoo.co.jp/appli/katei/"><img src="http://i.yimg.jp/images/health/smartphone/images/bnr_app_promo.png" alt="Yahoo!家庭の医学スマートフォンアプリ" width="300" height="60"></a>
+</div> 
+<div class="bnr_wrap">
+<a href="http://medical.yahoo.co.jp/apps/handbook/"><img src="http://i.yimg.jp/images/health/medical/images/app/medicinenote/300_60.png" alt="お薬手帳スマートフォンアプリ" width="300" height="60"></a>
+</div> 
+
+
+<!-- SpaceID=0 robot -->
+
+<!-- SpaceID=0 robot -->
+
+<!-- sub medical search/ -->
+<div class="sub_box">
+<div class="sub_boxtitle">
+Yahoo!ヘルスケア内を検索</div>
+<div class="sub_boxwrap">
+<div class="sub_boxhead">
+</div>
+<div class="sub_boxcontent">
+<div class="medical_search">
+<form method="GET" action="http://health.yahoo.co.jp/search/index.html">
+<div class="search_box">
+<div class="inputbox">
+<input name="p" type="text" class="search_input" onfocus="if (this.value == 'Yahoo!ヘルスケアを検索') this.value = '';" onblur="if (this.value == '')this.value = 'Yahoo!ヘルスケアを検索'"  value="Yahoo!ヘルスケアを検索">
+<input type="reset" id="clearWords" class="clear" value="設定をクリア" title="設定をクリア">
+</div>
+<input type="submit" class="search_btn" value="検索">
+</div>
+</form>
+</div>
+</div>
+<div class="sub_boxfoot">
+</div>
+</div>
+</div>
+<!-- /sub medical search -->
+
+
+<div id="rightbox"></div>
+<script type="text/javascript" language="javascript">
+yjaxc_ad_ds = 'anemos_health01216';
+yjaxc_ad_id = '2080220119';
+yjaxc_ad_deli = 'm';
+</script>
+<script type="text/javascript" language="javascript" src="http://yjaxc.yahoo.co.jp/js/yjaxc.js"></script>
+
+
+<div class="img_im_sub_wrap">
+<script type="text/javascript" language="javascript">
+yjaxc_ad_ds = 'anemos_health01280';
+yjaxc_ad_id = '2080220119';
+</script>
+<script type="text/javascript" language="javascript" src="http://yjaxc.yahoo.co.jp/js/yjaxc.js"></script>
+</div>
+
+
+<!-- /sub list -->
+<div class="sub_box">
+<div class="sub_boxtitle">
+Yahoo!ヘルスケアのおすすめ
+</div>
+<div class="sub_boxwrap">
+
+<div class="sub_boxcontent">
+<ul class="sub_1col">
+<li class="li1">
+<a href="http://medical.yahoo.co.jp/feature/tounyou/" class="row">
+<img class="li_img"src="http://i.yimg.jp/images/health/medical/images/tonyo/60_60.jpg" alt="増え続ける糖尿病と今からできる予防法" width="60" height="60">
+<div class="li_txt">
+<p class="ttl">増え続ける糖尿病と今からできる予防法<img src="http://i.yimg.jp/images/new2.gif" width="28" height="11" title="NEW" alt="NEW" border="0"></p>
+<p class="read">11月14日は世界糖尿病デーです。糖尿病になりにくい7つの生活習慣とは？　この機会に確認してみましょう！</p>
+</div>
+</a>
+</li>
+<li class="li2">
+<a href="http://medical.yahoo.co.jp/feature/influenza/2/" class="row">
+<img class="li_img"src="http://i.yimg.jp/images/health/medical/images/influenza/2013/60_60.png" alt="毎年約1000万人が感染するインフルエンザ" width="60" height="60">
+<div class="li_txt">
+<p class="ttl">毎年約1000万人が感染するインフルエンザ<img src="http://i.yimg.jp/images/new2.gif" width="28" height="11" title="NEW" alt="NEW" border="0"></p>
+<p class="read">症状や予防法とあわせて知っておきたい予防接種効果や新型インフルエンザとは？</p>
+</div>
+</a>
+</li>
+<li class="li3">
+<a href="http://medical.yahoo.co.jp/feature/haplo/" class="row">
+<img class="li_img"src="http://i.yimg.jp/images/health/medical/images/gene/haplo/60_60.jpg" alt="Haplo ルーツをたどり、自分を知る。" width="60" height="60">
+<div class="li_txt">
+<p class="ttl">Haplo ルーツをたどり、自分を知る。</p>
+<p class="read">あなたの祖先はどこから来たのか？遺伝子の旅へ踏み出そう。</p>
+</div>
+</a>
+</li>
+<li class="li4">
+<a href="http://health.yahoo.co.jp/appli/katei/" class="row">
+<img class="li_img"src="http://i.yimg.jp/images/health/medical/images/app/katei/60_60.png" alt="無料のスマートフォンアプリ　Yahoo!家庭の医学" width="60" height="60">
+<div class="li_txt">
+<p class="ttl">無料のスマートフォンアプリ　Yahoo!家庭の医学</p>
+<p class="read">オフラインでも見られていざという時も安心！　携帯する家庭の医学。</p>
+</div>
+</a>
+</li>
+<li class="li5">
+<a href="http://medical.yahoo.co.jp/feature/akiutsu/" class="row">
+<img class="li_img"src="http://i.yimg.jp/images/health/medical/images/melancholy/winter/60_60.jpg" alt="季節性うつ病を知ろう" width="60" height="60">
+<div class="li_txt">
+<p class="ttl">季節性うつ病を知ろう</p>
+<p class="read">秋・冬になると落ち込みやすく、やる気が起きない……そんなことはありませんか？  過眠になりやすい季節性うつ病
+
+とは。</p>
+</div>
+</a>
+</li>
+<li class="li6">
+<a href="http://medical.yahoo.co.jp/feature/kodomoakifuyu/2/" class="row">
+<img class="li_img"src="http://i.yimg.jp/images/health/medical/images/kids_wintercold/60_60.png" alt="秋・冬に子どもがかかりやすいRSウイルス感染症・マイコプラズマ肺炎" width="60" height="60">
+<div class="li_txt">
+<p class="ttl">秋・冬に子どもがかかりやすいRSウイルス感染症・マイコプラズマ肺炎</p>
+<p class="read">気をつけたい2つのウィルス。それぞれの症状と対策とは？</p>
+</div>
+</a>
+</li>
+<li class="li7">
+<a href="http://health.yahoo.co.jp/gene/" class="row">
+<img class="li_img"src="http://i.yimg.jp/images/health/campaign/genome/pc/11/images/bnr_60_60.png" alt="病気予防にこの一手！" width="60" height="60">
+<div class="li_txt">
+<p class="ttl">病気予防にこの一手！　遺伝子検査から始める健康管理</p>
+<p class="read">かかりやすい病気と予防法がわかる！　今注目の最先端技術、遺伝子検査で健康管理。</p>
+</div>
+</a>
+</li>
+</ul>
+</div>
+<div class="sub_boxfoot">
+<p class="other_lnk">
+<a href="/feature/releaselist/"><span class="arrow">特集一覧を見る</span></a>
+</p>
+</div>
+</div>
+</div>
+
+
+<!-- sub_pr_bnr /--> 
+<div id="sub_pr_bnr">
+<div class="box_wrap">
+<div class="pr_cntnt">
+<div class="pr_wrap">
+<ul class="bnr_list">
+
+<li class="li_1st">
+<!-- bnr /--> 
+<div>
+<a class="img_lnk_alpha" href="http://chiken-mikata.com/details/chiken_3284.html?from=y"><img src="http://i.yimg.jp/images/health/medical/images/bnr/plusr_tounyoubyou_290_50.gif" alt="糖尿病の新薬をお探しなら" width="290" height="50"></a>
+</div> 
+<!-- /bnr -->
+</li>
+
+<li>
+<!-- bnr /--> 
+<div>
+<a class="img_lnk_alpha" href="http://chiken-mikata.com/details/chiken_3254.html?from=y"><img src="http://i.yimg.jp/images/health/medical/images/bnr/plusr_tsufu_290_50.gif" alt="尿酸値8以上！？" width="290" height="50"></a>
+</div> 
+<!-- /bnr -->
+</li>
+
+<li>
+<!-- bnr /--> 
+<div>
+<a class="img_lnk_alpha" href="http://chiken-mikata.com/details/chiken_3253.html?from=y"><img src="http://i.yimg.jp/images/health/medical/images/bnr/plusr_koushi_290_50.gif" alt="中性脂肪が200以上！でお困りなら・・・" width="290" height="50"></a>
+</div> 
+<!-- /bnr -->
+</li>
+
+<li>
+<!-- bnr /--> 
+<div>
+<a class="img_lnk_alpha" href="http://karadanote.jp/y/henzutsu/start/"><img src="http://i.yimg.jp/images/health/medical/images/bnr/plusr_henzutsu_290_50.gif" alt="片頭痛かも・・・？と思ったら" width="290" height="50"></a>
+</div> 
+<!-- /bnr -->
+</li>
+
+<li>
+<!-- bnr /--> 
+<div>
+<a class="img_lnk_alpha" href="http://karadanote.jp/y/shimaisya"><img src="http://i.yimg.jp/images/health/medical/images/bnr/plusr_simaisha_290_50.gif" alt="島のお医者さん" width="290" height="50"></a>
+</div> 
+<!-- /bnr -->
+</li>
+
+</ul>
+</div>
+<!-- /pr_cntnt -->
+</div>
+</div>
+</div>
+<!-- /sub_pr_bnr -->
+
+
+
+<!-- sub_diet_rss_v2 -->
+<div class="subDietRss_v2 sub_box">
+
+<div class="sub_boxwrap">
+
+    <div class="modTtl cf">
+    <p class="ttl"><a href="/diet/">健康ダイエット</a></p>
+    <p class="logo">presented by Yahoo!ヘルスケア</p>
+    </div>
+
+        <!-- dietArticle -->
+    <div class="dietArticle">
+    <div class="ttl cf">
+    <p class="t">新着ダイエット記事</p>
+    <p class="more"><a href="/diet/column/">もっと見る<span class="arw"></span></a></p>
+    </div>
+
+    <div class="list">
+    <ul>
+        <li class="cf">
+    <p class="ttl"><a href="/diet/column/1823/">たるんだお腹をなんとかするエクササイズ方法</a></p>
+    <p class="img"><a href="/diet/column/1823/"><img src="http://beauty.c.yimg.jp/im_siggclbE.ArJMfXqGSJJY7_8Gg---x50-y50/beauty/diet/db/1823/diet_image.jpg" width="50" height="50" alt=""></a></p>
+    </li>
+        <li class="cf">
+    <p class="ttl"><a href="/diet/column/1876/">頼り過ぎはNG？「シートマスク」の前後にやること3つ</a></p>
+    <p class="img"><a href="/diet/column/1876/"><img src="http://beauty.c.yimg.jp/im_siggRPg0CBtoD.aoJ_8_u2mURA---x50-y50/beauty/diet/db/1876/diet_image.jpg" width="50" height="50" alt=""></a></p>
+    </li>
+        <li class="cf">
+    <p class="ttl"><a href="/diet/column/1869/">生理中でもダイエットしてもよいの？</a></p>
+    <p class="img"><a href="/diet/column/1869/"><img src="http://beauty.c.yimg.jp/im_siggz27l46ISyWXeOM.c4U1eZg---x50-y50/beauty/diet/db/1869/diet_image.jpg" width="50" height="50" alt=""></a></p>
+    </li>
+        </ul>
+    </div>
+    </div>
+    <!-- /.dietArticle -->
+    
+        <!-- rankingArticle -->
+    <div class="rankingArticle">
+        <div class="ttl cf">
+        <p class="t">アクセスランキング</p>
+        <p class="more"><a href="/diet/ranking/">もっと見る<span class="arw"></span></a></p>
+        </div>
+
+        <p class="rank"><a href="/diet/column/1885/"><span>1位</span>アラサー女性が悩んでる洋ナシ体型から…</a></p>
+    </div>
+    <!-- /.rankingArticle -->
+    
+        <!-- recipeArticle -->
+    <div class="recipeArticle">
+    <div class="ttl cf">
+    <p class="t">新着　健康レシピ</p>
+    <p class="more"><a href="/diet/recipe/">もっと見る<span class="arw"></span></a></p>
+    </div>
+
+    <ul class="list cf">
+        <li class="i1">
+    <p class="i"><a href="/diet/recipe/15707/"><img src="http://i.yimg.jp/images/health/health_diet/img/recipe/320x320/15707.jpg" width="90" height="90" alt="おでん"></a></p>
+        <p class="t"><a href="/diet/recipe/15707/">おでん</a></p>
+        </li>
+        <li class="i2">
+    <p class="i"><a href="/diet/recipe/15159/"><img src="http://i.yimg.jp/images/health/health_diet/img/recipe/320x320/15159.jpg" width="90" height="90" alt="エスニック風かきの炊き込みご飯"></a></p>
+        <p class="t"><a href="/diet/recipe/15159/">エスニック風かきの炊き込…</a></p>
+        </li>
+        <li class="i3">
+    <p class="i"><a href="/diet/recipe/15697/"><img src="http://i.yimg.jp/images/health/health_diet/img/recipe/320x320/15697.jpg" width="90" height="90" alt="オニオングラタンスープ"></a></p>
+        <p class="t"><a href="/diet/recipe/15697/">オニオングラタンスープ</a></p>
+        </li>
+        </ul>
+
+    </div>
+    <!-- /.recipeArticle -->
+    
+    </div>
+    <!-- /.sub_boxwrap -->
+</div>
+<!-- /sub_diet_rss_v2 -->
+
+
+<!-- sub_qr 2.0/ -->
+<div class="sub_box">
+<div class="sub_boxtitle">
+スマートフォン版Yahoo!ヘルスケア
+</div>
+<div class="sub_boxwrap">
+<div class="sub_boxcontent">
+<div class="sub_qr">
+<span class="qr_img"><img src="http://i.yimg.jp/images/health/medical/images/top/medical_qr.gif" alt="病院情報のQRコード" width="74" height="74"></span><span class="qr_txt">おでかけ先でも「病院情報」や「家庭の医学」で病気を調べることができます。</span>
+</div>
+</div>
+</div>
+</div>
+<!-- /sub_qr 2.0 -->
+
+
+<!-- sub_service_link 2.0/ -->
+<div class="sub_box">
+<div class="sub_boxtitle">
+関連サービス
+</div>
+<div class="sub_boxwrap">
+
+<div class="sub_boxcontent">
+<ul class="sub_1col">
+<li class="li1">
+<a href="http://rdsig.yahoo.co.jp/healthcare/right/kanren/RV=1/RU=aHR0cDovL2luc3VyYW5jZS55YWhvby5jby5qcC8-" class="row">
+<img class="li_img" src="http://i.yimg.jp/images/sicons/hoken28.gif" alt="医療保険、生命保険" width="28" height="28">
+<div class="li_txt">
+<p class="ttl">医療保険、生命保険</p>
+<p class="sub">Yahoo!保険</p>
+</div>
+</a>
+</li>
+<li class="li2">
+<a href="http://rdsig.yahoo.co.jp/healthcare/right/kanren/RV=1/RU=aHR0cDovL2NoaWVidWt1cm8ueWFob28uY28uanAvZGlyL2xpc3QvZDIwNzgyOTc4NTcvbGlzdC8-" class="row">
+<img class="li_img" src="http://i.yimg.jp/c/icon/s/bsc/2.0/chiebukuro28.gif" alt="Yahoo!知恵袋" width="28" height="28">
+<div class="li_txt">
+<p class="ttl">健康、病気、病院のQ&A</p>
+<p class="sub">Yahoo!知恵袋</p>
+</div>
+</a>
+</li>
+<li class="li3">
+<a href="http://indival.yahoo.co.jp/career?utm_source=yahoo&utm_medium=ad&utm_campaign=ys_hea" class="row">
+<img class="li_img" src="http://i.yimg.jp/c/icon/s/bsc/2.0/indival28.gif" alt="インディバル" width="28" height="28">
+<div class="li_txt">
+<p class="ttl">転職で始める第二の人生</p>
+<p class="sub">インディバル</p>
+</div>
+</a>
+</li>
+<li class="li4">
+<a href="http://rdsig.yahoo.co.jp/healthcare/right/kanren/RV=1/RU=aHR0cDovL2them9jLnlhaG9vLmNvLmpwLw--" class="row">
+<img class="li_img" src="http://i.yimg.jp/images/kazoc/common/icon/kazoc_icon29.png" alt="電子母子手帳アプリ KAZOC" width="28" height="28">
+<div class="li_txt">
+<p class="ttl">電子母子手帳アプリ KAZOC</p>
+<p class="sub">KAZOC</p>
+</div>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- /sub_service_link 2.0 -->
+
+
+</div>
+<!--/#yjSub-->
+
+</div>
+<!--/#yjContentsBody-->
+<div id="yjContentsFooter"> <span class="yjGuid"><img src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" width="1" height="1" alt="本文はここまでです"></span> <span class="yjSkip"> <a href="#yjPagetop"><img src="http://i.yimg.jp/yui/jp/tmpl/1.1.0/audionav.gif" alt="このページの先頭へ" width="1" height="1"></a></span>
+
+<!-- SpaceID=0 robot -->
+
+</div>
+<!--/#yjContentsFooter-->
+</div>
+<!--/#contents-->
+
+<hr class="yjSeparation">
+
+<div id="footer">
+
+<!-- footerNav /-->
+<div id="footerNav">
+<!-- footer_wrap /--> 
+<div class="footer_wrap">
+<!-- ftrnav_ttl /-->
+<div class="ftrnav_ttl cf"><p class="ttl">Yahoo!ヘルスケア</p>
+<span class="searchbox">
+<form method="GET" action="http://health.yahoo.co.jp/search/index.html">
+        <div class="btn_formarea">
+        <input name="p" type="text" class="search_window" onfocus="if (this.value == 'Yahoo!ヘルスケア内を検索') this.value = '';" onblur="if (this.value == '') this.value = 'Yahoo!ヘルスケア内を検索';" value="Yahoo!ヘルスケア内を検索">
+          <input name="type" type="hidden" value="all">
+          <input type="submit" class="search_btn" value="検索">
+        </div>
+      </form>
+</span>
+</div> 
+<!-- /ftrnav_ttl -->
+<!-- ftrnav_contents /--> 
+<div class="ftrnav_contents cf">
+<!-- first /--> 
+<div class="first cf">
+<dl class="fnv1"><dt class="nv_mds"><a href="/hospital/">病院情報</a></dt>
+<dd class="nv_cntnt">
+    <ul class="d1">
+        <li class="c1">さがす<ul class="d2">
+            <li><a href="/hospital/reservable/">優先診察の受けられるクリニック</a></li>
+        </ul></li>
+    </ul>
+</dd></dl>
+
+<dl class="fnv2"><dt class="nv_mds"><a href="http://health.yahoo.co.jp/katei/">家庭の医学</a></dt>
+<dd class="nv_cntnt">
+    <ul class="cf d1">
+        <li class="c1">さがす<ul class="d2">
+            <li ><a href="http://health.yahoo.co.jp/katei/symptom/main.html">主な症状からさがす</a></li>
+            <li ><a href="http://health.yahoo.co.jp/katei/symptom/part.html">各部位の症状からさがす</a></li>
+            <li >50音からさがす
+                <ul class="d3 floated cf aiu">
+                    <li><a href="http://health.yahoo.co.jp/katei/list/50/01/">あ</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/50/02/">か</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/50/03/">さ</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/50/04/">た</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/50/05/">な</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/50/06/">は</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/50/07/">ま</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/50/08/">や</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/50/09/">ら</a></li>
+                    <li><span>わ</span></li>
+                </ul>
+            </li>
+        </ul></li>
+        
+        <li class="c2">日ごろから気をつけたい病気
+            <ul class="d2 floated cf">
+                <li><a href="http://health.yahoo.co.jp/column/kouteieki/">口蹄疫</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/condition/bokoen/knowledge.html">膀胱炎</a></li>
+                <li>子供の病気
+                        <p class="cld">
+                        <a href="/feature/kodomoakifuyu/">冬編</a>
+                        <a href="/feature/natsukaze/">夏編</a>
+                        </p>
+                </li>
+                <li><a href="http://health.yahoo.co.jp/katei/condition/seibyo/knowledge.html">性病</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/condition/ji/knowledge.html">痔</a></li>
+                <li><a href="/feature/akiutsu/">うつ病</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/condition/mushiba/knowledge.html">虫歯</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/condition/seiri/knowledge.html">生理痛</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/condition/nyugan/knowledge.html">乳がん</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="d1 cf">
+        <li class="c3">医学専門用語
+            <ul class="d2">
+            <li>50音からさがす
+                <ul class="d3 floated cf aiu">
+                    <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/%A4%A2/h/">あ</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/%A4%AB/h/">か</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/%A4%B5/h/">さ</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/%A4%BF/h/">た</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/%A4%CA/h/">な</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/%A4%CF/h/">は</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/%A4%DE/h/">ま</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/%A4%E4/h/">や</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/%A4%E9/h/">ら</a></li>
+                    <li><span>わ</span></li>
+                </ul>
+            </li>
+            <li>ABC順で探す
+                <ul class="d3 floated cf aiu">
+                
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/A/h/">A</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/B/h/">B</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/C/h/">C</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/D/h/">D</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/E/h/">E</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/F/h/">F</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/G/h/">G</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/H/h/">H</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/I/h/">I</a></li>
+                <li><span>J</span></li>
+                <li><span>K</span></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/L/h/">L</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/M/h/">M</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/N/h/">N</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/O/h/">O</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/P/h/">P</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/Q/h/">Q</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/R/h/">R</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/S/h/">S</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/T/h/">T</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/U/h/">U</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/V/h/">V</a></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/W/h/">W</a></li>
+                <li><span>X</span></li>
+                <li><span>Y</span></li>
+                <li><a href="http://health.yahoo.co.jp/katei/dic/head_list/Z/h/">Z</a></li>
+                </ul>
+            </li>
+        </ul>
+        </li>
+        <li class="c4">よく検索されている病気
+                <ul class="d2 floated cf">
+                    <li><a href="http://health.yahoo.co.jp/katei/list/higoro/01/">子どもの病気</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/higoro/02/">中高年に多い病気</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/higoro/03/">女性の病気</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/higoro/04/">男性の病気</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/higoro/05/">こころの病気</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/higoro/06/">生活習慣病</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/higoro/09/">ガン</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/higoro/07/">感染症</a></li>
+                    <li><a href="http://health.yahoo.co.jp/katei/list/higoro/08/">アレルギー・アトピー</a></li>
+                </ul>
+            
+        </li>
+    </ul>
+</dd></dl>
+
+<dl class="fnv3"><dt class="nv_mds"><a href="http://health.yahoo.co.jp/soudan/">からだ相談</a></dt>
+    <dd class="nv_cntnt">
+    <ul class="d1">
+        <li class="c1">質問を見る
+            
+                <ul class="d2"><li>カテゴリから探す
+                        <ul class="d3 floated cf">
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2000">かぜ・インフルエンザ </a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2001">メンタルヘルス・うつ・睡眠障がい</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2002">アレルギー・花粉症 </a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2003">皮膚の病気・アトピー・水虫</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2004">呼吸器・ぜんそく・禁煙 </a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2022">頭の病気・神経の病気・頭痛</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2005">妊娠・出産</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2006">不妊症・不育症 </a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2007">女性の病気 </a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2008">こどもの病気・発育ほか </a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2009">美容・ダイエット</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2010">口臭・体臭・加齢臭</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2011">薄毛・抜け毛</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2023">泌尿器の病気 </a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2012">性の悩み・性感染症</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2013">心臓疾患・高血圧</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2014">糖尿病</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2015">肝臓・腎臓・そのほかの臓器の病気</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2016">胃腸・消化器の病気・痔（じ）</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2017">腫瘍（しゅよう）・がん </a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2018">認知症・介護</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2019">腰痛・関節炎・痛風</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2024">骨折・けが・外傷</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2020">目・耳鼻咽喉（いんこう）の病気</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2025">検査・薬</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2026">健康番組・雑誌・書籍</a></li>
+                            <li><a href="http://health.yahoo.co.jp/soudan/cat/?c=2021">その他</a></li>
+                        </ul>
+                    
+                </li></ul>
+            
+            
+        </li>
+        <li class="c2"><a href="http://health.yahoo.co.jp/soudan/doctor-list.html">回答協力医師一覧</a></li>
+        <li class="c3"><a href="http://health.yahoo.co.jp/soudan/guide/">使い方ガイド</a></li>
+        
+    </ul></dd>
+</dl>
+</div>
+ <!-- /first -->
+ <!-- second /--> 
+ <div class="second cf">
+<dl class="fnv4"><dt class="nv_mds"><a href="/selfcheck/">健康セルフチェック</a></dt>
+    <dd class="nv_cntnt">
+        <ul class="d1"><li class="cn1">チェックする
+            <ul class="d2 floated cf">
+                <li><a href="/selfcheck/#1">頭部、目、鼻、口</a></li>
+                <li><a href="/selfcheck/#2">循環器系</a></li>
+                <li><a href="/selfcheck/#3">呼吸器系</a></li>
+                <li><a href="/selfcheck/#4">消化器系</a></li>
+                <li><a href="/selfcheck/#5">全身</a></li>
+                <li><a href="/selfcheck/#6">肩、腰、骨格など</a></li>
+                <li><a href="/selfcheck/#7">性の病気</a></li>
+                <li><a href="/selfcheck/#8">皮膚、つめ</a></li>
+                <li><a href="/selfcheck/#9">こころの病気</a></li>
+            </ul>
+        </li>
+    </ul></dd>
+</dl>
+
+<dl class="fnv5"><div class="nv_mds"><a href="http://rdsig.yahoo.co.jp/healthcare/outside_rd_meds/RV=1/RE=1387194934/RH=cmRzaWcueWFob28uY28uanA-/RB=/RU=aHR0cDovL3d3dy5xbGlmZS5qcC9tZWRzL3lhaG9vLw--/RS=^ADAcEGVRowTwcjpV9Dg4rOxYu5M0LQ-"  target="qlife">お薬検索</a>
+<img src="http://i.yimg.jp/images/health/medical/images/common/out_link_icon_10.gif" width="14" height="10" title="外部リンク" alt="外部リンク" border="0"></div>
+    </dl>
+<div class="fnv6">
+<p class="nv_mds"><a href="/feature/releaselist/">特集一覧</a></p>
+</div>
+</div>
+ <!-- /second -->
+
+<div class="icon_ex_note cf">
+
+<div class="ex_note_wrap cf">
+<p class="ex_mds">※アイコンについて</p>
+<dl class="ex_note">
+<dt><img src="http://i.yimg.jp/images/health/medical/images/common/out_link_icon_10.gif" width="14" height="10" title="外部リンク" alt="外部リンク" border="0"></dt>
+<dd>外部リンク</dd>
+</dl>
+</div>
+
+</div>
+
+</div>
+ <!-- /ftrnav_contents -->
+</div> <!-- /footer_wrap -->
+</div> <!-- /footerNav -->
+
+<!-- SpaceID=0 robot -->
+
+<address>
+<!-- yjChview 1.0 /--> 
+
+<!-- /yjChview 1.0 -->
+<a href="http://docs.yahoo.co.jp/docs/info/terms/chapter1.html#cf2nd">プライバシーポリシー</a> - <a href="http://docs.yahoo.co.jp/docs/info/terms/">利用規約</a> - <a href="http://netadguide.yahoo.co.jp/info/">広告掲載について</a> - <a href="http://ms.yahoo.co.jp/bin/yadv-info/feedback/">ご意見・ご要望</a> - <a href="http://help.yahoo.co.jp/help/jp/health/">ヘルプ・お問い合わせ</a><br>
+Copyright (C) 2013 Wellness Co.Ltd. All rights reserved.<br>
+Copyright (C) 2013 Yahoo Japan Corporation. All Rights Reserved.
+</address>
+
+</div>
+
+<!--/#footer-->
+
+</div>
+<!--/#wrapper-->
+</body>
+</html>
+<!-- www02.medical.kks.ynwp.yahoo.co.jp compressed/chunked Sun Dec 15 20:55:34 JST 2013 -->
