@@ -11,7 +11,7 @@ class WebPage():
         try:
             response = requests.get(self.url)
             self.set_html_body_with_cchardet(response)
-        except ConnectionError:
+        except requests.exceptions.ConnectionError:
             self.html_body = ''
 
     def set_html_body_with_cchardet(self, response):

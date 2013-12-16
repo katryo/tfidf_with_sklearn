@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/jquery.form.js"></script>
+	<script type="text/javascript" src="/js/custom.js?refresh1"></script>
+	<script type="text/javascript" src="/js/prototype.js"></script>
+	<script type="text/javascript" src="/js/menu.js"></script>
+	<script type="text/javascript" src="/js/dropdown.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        <link rel="stylesheet" type="text/css" href="/css/reset.css" />        <link rel="stylesheet" type="text/css" href="/css/general_header.css" />        <link rel="stylesheet" type="text/css" href="/css/general.css?refresh" />        <link rel="stylesheet" type="text/css" href="/css/dropdown.css" />        <link rel="stylesheet" type="text/css" href="/css/common.css" />        <link rel="stylesheet" type="text/css" href="/css/custom_jp.css?refreshed" />
+        <meta name="keywords" content="中古機械,中古工作機械,プレス,板金機械,鉄骨加工機械,プラスチック加工,建設機械,木工機械,入札会,売買"></meta>
+        <meta name="description" content="中古機械売買ポータルサイト。国内外370社登録。工作機械を中心に日本製のあらゆる中古機械情報約16000台掲載中。持ち主会社との直接商談方式"></meta>
+        <meta name="Slurp" content="NOYDIR">        <title>中古機械情報百貨店</title>
+
+        <!--[if lte IE 7]>
+		<link rel="stylesheet" type="text/css" href="/css/print.css" media="print" />
+        <style type="text/css">
+            #menuWrapper, #menuBar ul a {height: 1%;}
+            a:active {width: auto;}
+        </style>
+        <![endif]-->
+
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" type="text/css" href="/css/ie6.css" />
+        <![endif]-->
+
+    </head>
+    <body onload="Nav_Init()">
+        <div id="wrap">
+            <div id="main" class="clearfix">
+                <div id="bodyContainer">
+                    <div id="headerContainer">
+                        <div id="headerTopContainer">
+    <div id=seoContainer>
+        <strong>中古機械情報百貨店 | 中古工作機械 板金 鉄骨加工 プレス 工具 測定機 建設 木工 中古機械マーケットプレイス</strong>
+    </div>
+    <!--<div class="highlight" id="headerTitleContainer">
+        <a href="/aboutus">NKエンジニアリング株式会社</a>    </div>-->
+    <div id="headerlanguageContainer">
+        <a href="http://usedmachinery.bz">英語サイト</a> | <a href="http://www.umc21.com/index.php">韓国語サイト</a>        </div>
+</div>
+
+<div id="headerMiddleContainer">
+    <div id="companyLogoContainer">
+        <a href="/"><img src="/img/common/jp/logo.png" alt="" /></a>    </div>
+    <div id="headerSearchKeywordContainer">
+    <form id="MachineGeneralSearchKeywordForm" method="get" action="/machines/general_search_keyword">    <div class="input text">
+        <label for="MachineSearch">検索 </label><input name="search" type="text" class="default-text" value="キーワード or 機械ID#" id="MachineSearch" /><div class="default-text" style="display:none;">キーワード or 機械ID#</div>    </div>
+    <input type="submit" class="submitKeyword" value="検索" /></form></div>
+    <div id="headerLoginContainer">
+        <a href="/members/login"><img src="/img/common/jp/login_btn.png" alt="" /></a>    </div>
+    
+    <div id="headerSmallLogoContainer">
+    
+        <div id="headerSmallLogoEachContainer">
+            <a href="/register_pay_info"><img src="/img/common/jp/add_pay.png" alt="" /></a>        </div>
+
+                    <div class="social-networking">
+                <a href="https://plus.google.com/u/0/107278676782766547754/posts" target="_blank"><img src="/img/common/google-plus-icon.png" alt="" /></a><a href="http://www.facebook.com/pages/%E4%B8%AD%E5%8F%A4%E6%A9%9F%E6%A2%B0%E6%83%85%E5%A0%B1%E7%99%BE%E8%B2%A8%E5%BA%97/562780180408690" target="_blank"><img src="/img/common/facebook-icon.png" alt="" /></a><a href="http://twitter.com/nkengineering" target="_blank"><img src="/img/common/twitter-icon.png" class="twitter" alt="" /></a>            </div>
+                
+            </div>
+
+    <div id="headerNaviContainer">
+        <div id="menuWrapper">
+    <ul id="menuBar">
+
+		
+                    <li>
+                <a href="/ourservice"><img src="/img/common/jp/ourservice_off.gif" class="swapImage {src: &#039;img/common/ourservice_on.gif&#039;}" alt="" /></a>                <ul class="subMenu">
+                    <li><a href="/ourservice">サービスについて</a></li><li><a href="/usedmachinery_links">中古機械リンク集</a></li><li><a href="/weeklymail">週刊メール一覧</a></li><li><a href="/nyusatsu">入札会一覧</a></li><li class="lastChild"><a href="/satei">買取 ・ 修理 ・ 査定 リスト一覧</a></li>                </ul>
+                            </li>
+                    <li>
+                <a href="/machines/general_list_new"><img src="/img/common/jp/machines_off.gif" class="swapImage {src: &#039;img/common/machines_on.gif&#039;}" alt="" /></a>            </li>
+                    <li>
+                <a href="/registeredcompany"><img src="/img/common/jp/registeredcompany_off.gif" class="swapImage {src: &#039;img/common/registeredcompany_on.gif&#039;}" alt="" /></a>            </li>
+                    <li>
+                <a href="/wantedlisting"><img src="/img/common/jp/wantedlisting_off.gif" class="swapImage {src: &#039;img/common/wantedlisting_on.gif&#039;}" alt="" /></a>                <ul class="subMenu">
+                    <li><a href="/post_wanted">買いたし情報投稿</a></li><li class="lastChild"><a href="/search_wanted">買いたし情報検索</a></li>                </ul>
+                            </li>
+                    <li>
+                <a href="/statdaily"><img src="/img/common/jp/statistics_off.gif" class="swapImage {src: &#039;img/common/statistics_on.gif&#039;}" alt="" /></a>                <ul class="subMenu">
+                    <li><a href="/statdaily">日別アクセス数 </a></li><li><a href="/stataverage">月別平均アクセス件数</a></li><li><a href="/statcompany">会社別アクセス件数 </a></li><li class="lastChild"><a href="/statmachine">機械別アクセス件数</a></li>                </ul>
+                            </li>
+                    <li>
+                <a href="/contactus"><img src="/img/common/jp/contactus_off.gif" class="swapImage {src: &#039;img/common/contactus_on.gif&#039;}" alt="" /></a>            </li>
+         
+		
+    </ul>
+</div>    </div>
+</div>
+                        <div id="headerBottomContainer">
+            <div id="headerBannerUpperContainer" class="headerBannerContainer">
+                            <div class="headerBannerEach upperBannerEach">
+                    <a href="http://www.jp.usedmachinery.bz/satei" target="_blank"><img src="/img/jpbanners/banner_37.gif" height="31" width="200" alt="" /></a>                </div>
+                            <div class="headerBannerEach upperBannerEach">
+                    <a href="http://www.akazawa-k.jp/otzaiko.html" target="_blank"><img src="/img/jpbanners/banner_409.gif" height="31" width="200" alt="" /></a>                </div>
+                            <div class="headerBannerEach upperBannerEach">
+                    <a href="http://www.t-mt.com/" target="_blank"><img src="/img/jpbanners/banner_418.GIF" height="31" width="200" alt="" /></a>                </div>
+                            <div class="headerBannerEach upperBannerEach">
+                    <a href="http://www.k-machinery.com/" target="_blank"><img src="/img/jpbanners/banner_430.gif" height="31" width="200" alt="" /></a>                </div>
+                    </div>
+                <div id="headerBannerLowerContainer" class="headerBannerContainer">
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.nds-i.co.jp" target="_blank"><img src="/img/jpbanners/banner_91.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www1a.biglobe.ne.jp/sanki-sk/" target="_blank"><img src="/img/jpbanners/banner_171.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.jp.usedmachinery.bz/members/general_view/347" target="_blank"><img src="/img/jpbanners/banner_179.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.jp.usedmachinery.bz/members/general_view/170" target="_blank"><img src="/img/jpbanners/banner_180.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.jp.usedmachinery.bz/members/general_view/357" target="_blank"><img src="/img/jpbanners/banner_181.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.aida.co.jp/products/used.html" target="_blank"><img src="/img/jpbanners/banner_234.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.u-machine.co.jp/" target="_blank"><img src="/img/jpbanners/banner_265.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.suzuki-machinery.jp/service.html" target="_blank"><img src="/img/jpbanners/banner_310.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://jidouban.com/" target="_blank"><img src="/img/jpbanners/banner_319.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.udagawakikai.com/" target="_blank"><img src="/img/jpbanners/banner_331.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.jp.usedmachinery.bz/members/general_view/148" target="_blank"><img src="/img/jpbanners/banner_349.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.jp.usedmachinery.bz/members/general_view/135" target="_blank"><img src="/img/jpbanners/banner_372.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.t-eng.co.jp/" target="_blank"><img src="/img/jpbanners/banner_373.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.kowakikai.jp/" target="_blank"><img src="/img/jpbanners/banner_374.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.ham-jp.com/" target="_blank"><img src="/img/jpbanners/banner_376.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.dnkk.co.jp/" target="_blank"><img src="/img/jpbanners/banner_384.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.onuma-mc.co.jp/" target="_blank"><img src="/img/jpbanners/banner_388.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.mechany.com/" target="_blank"><img src="/img/jpbanners/banner_398.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://homepage3.nifty.com/tsukaeng/higaitousyoumei_file.htm" target="_blank"><img src="/img/jpbanners/banner_407.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://sikano.com/" target="_blank"><img src="/img/jpbanners/banner_419.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.re-machine.jp" target="_blank"><img src="/img/jpbanners/banner_421.gif" height="31" width="88" alt="" /></a>                </div>
+                            <div class="headerBannerEach lowerBannerEach">
+                    <a href="http://www.nkmc.co.jp/" target="_blank"><img src="/img/jpbanners/banner_431.gif" height="31" width="88" alt="" /></a>                </div>
+                    </div>
+    </div>
+                    </div>
+                    <div id="mainContainer">
+                        <div id="aCategoryListContainer">
+    <div class="contentTitleContainer">
+        機械掲載件数 17042 件        <span id="homeContactMessage">機械の仕様、価格などは直接持主会社へのお問合わせを宜しくお願いします。</span>
+                <span id="homeMemberCount">掲載企業数：382 社</span>
+            </div>
+                                    <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/machines">NC工作機械 (2760)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/4">一般工作機械  (5502)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/5">工作機械周辺機器  (1237)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/6">プレス  (1209)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/7">板金機械 (1245)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/8">鉄骨加工機械 (869)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/11">プラスチック加工機械 (180)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/9">化学機械 (612)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/10">建設機械 (19)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/14">輸送・荷役機械 (373)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/15">測定工具・定盤・バイス (918)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/16">測定器・試験機 (470)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/13">木工機械 (61)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/17">モーター・発電機・受変電 (107)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/18">鉄製品製造設備 (40)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/19">食品関連機器 (5)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/30">溶接機 (283)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/28">コンプレッサー (642)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/27">各種ロボット (41)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/29">空調・環境・清掃機器 (203)</a>            </div>
+                                <div class="aCategoryListItemContainer">
+            <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" /><a href="/b_categories/list_bc/20">その他機械 (266)</a>            </div>
+            </div>
+<div id="midBannerContainer">
+    <div class="contentTitleContainer">入札会等ご案内<a href="/nyusatsu">詳細一覧を観る</a></div>
+            <ul id="middleBannerContainer">
+                            <li class="middleBannerEach">
+                    <a href="http://www.jp.usedmachinery.bz/nk/nyusatsu/intex/intex20131220.pdf" target="_blank"><img src="/img/jpbanners/banner_427.gif" height="41" width="113" alt="" /></a>                </li>
+                            <li class="middleBannerEach">
+                    <a href="http://www.jp.usedmachinery.bz/nk/nyusatsu/gunma/index.html" target="_blank"><img src="/img/jpbanners/banner_429.gif" height="41" width="113" alt="" /></a>                </li>
+                    </ul>
+    </div>
+
+<div id="newsContainer">
+    <div class="contentTitleContainer">お知らせ <a href="/latestnews">一覧を観る</a></div>
+    <div class="contentBloguru">
+        <script language='javascript'
+                type='text/javascript'
+                                src='http://jp.bloguru.com/GroupRSSFeed/dea784ae526c41800bb607e09ef9b876/feed.js?MaxPosts=2|NewWindow=1|Width=950|ShowDesc=0|ShowAvatar=0|MaxLength=100|SkinStyle="Standard"|DateFormat="Relative"'
+                            >
+        </script>
+    </div>
+</div>
+<div id="forumContainer">
+    <div id="recListContainer">
+        <div class="contentTitleContainer">おすすめ情報</div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/16] <a href="/machines/general_view_rec/27018">　●　　　　ラップ、ポリシュ御問い合わせ下さい　　●</a> / <a href="/members/general_view/185">阪九機械</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/16] <a href="/machines/general_view_rec/79453">❤❤❤　　FANUC制御！2008年製です(^O^)　　...</a> / <a href="/members/general_view/242">小林機械</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/16] <a href="/machines/general_view_rec/80398">　＼　＼　　あれっ、これ、いいじゃん！　９台あります！　...</a> / <a href="/members/general_view/392">東信機工</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/16] <a href="/machines/general_view_rec/80810">Panasonic VR006GB2　高級デジタル溶接機...</a> / <a href="/members/general_view/141">エリアネットコム</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/13] <a href="/machines/general_view_rec/80739">年式古いが程度は優良です。かなり低価格で提供できます。貿...</a> / <a href="/members/general_view/354">SKマシン</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/13] <a href="/machines/general_view_rec/80123">★交直アルミTIG溶接機★Panasonic★WS200...</a> / <a href="/members/general_view/208">ジロー機械</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/13] <a href="/machines/general_view_rec/78673">森 MS-650 </a> / <a href="/members/general_view/342">島村機械</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/12] <a href="/machines/general_view_rec/80469">＼＼＼18吋 高年式 早い者勝ちです／／／</a> / <a href="/members/general_view/395">東和機械</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/12] <a href="/machines/general_view_rec/80162">☆☆　新入荷　状態良好 門型MC　3150×1000　☆...</a> / <a href="/members/general_view/518">エヌシーシーマシナリ</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/12] <a href="/machines/general_view_rec/76525">◎消費増税前:ｱｲｱﾝﾜｰｶｰ･IW-45Ⅱおてごろ価格...</a> / <a href="/members/general_view/361">スギサン機販</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/12] <a href="/machines/general_view_rec/80646">中部工機 LLA-800 </a> / <a href="/members/general_view/152">キャプテンマシン</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/12] <a href="/machines/general_view_rec/79836">❤ブラシふさふさっ！植毛してません！ﾄﾙﾝﾌﾟ ﾊﾟﾝﾁ...</a> / <a href="/members/general_view/321">リバーテック</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/12] <a href="/machines/general_view_rec/69003">☞ ☞ ☞正面旋盤  津田 JUMBO-1250*600...</a> / <a href="/members/general_view/341">ソウル機械交易</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/12] <a href="/machines/general_view_rec/79742">80Tプレス★アマダ★TP-80★年末特価!!</a> / <a href="/members/general_view/317">プレス保全センター</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/11] <a href="/machines/general_view_rec/80642">2012年製、3次元レーザー加工機入荷しました。</a> / <a href="/members/general_view/167">遠藤機械工業</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/11] <a href="/machines/general_view_rec/14616">2500kva発電機4台</a> / <a href="/members/general_view/434">佐野ヂーゼル</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/11] <a href="/machines/general_view_rec/67194">大型ベンデングロール30mmx2000 端曲げ付き</a> / <a href="/members/general_view/313">大国機械</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/10] <a href="/machines/general_view_rec/80421">■■■ アマダ製 200T × 3150mm　ベンダー ...</a> / <a href="/members/general_view/405">ウンノ機械</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/10] <a href="/machines/general_view_rec/80409">北村　卓上旋盤　KL-16B　１９９７製　ネジ送り式刃物...</a> / <a href="/members/general_view/372">立川商店</a>            </div>
+                    <div class="recEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/10] <a href="/machines/general_view_rec/80500">♢大鋳製　ショツトブラスト＆ジグストリッパー　入荷しまし...</a> / <a href="/members/general_view/323">菱友商会</a>            </div>
+            </div>
+    <div id="wantedListContainer">
+        <div class="contentTitleContainer">買いたし情報 <a href="/wantedlisting">一覧を観る</a></div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/14] <a href="/threads/view/2380">円筒研削盤　GP20-50（シギヤ）</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/13] <a href="/threads/view/2379">門型マシニングをさがしています。</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/13] <a href="/threads/view/2378">和井田ＰＧＸ-3000を探しています。</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/13] <a href="/threads/view/2377">豊田ＧＯＰ３２-１００　探しています。</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/13] <a href="/threads/view/2376">アイダ　製　プレス　NS1　を探していま...</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/12] <a href="/threads/view/2375">***　立マシニング　遠州製　DTL探し...</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/11] <a href="/threads/view/2374">☆高速プレス 探しています☆</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/11] <a href="/threads/view/2373">アイダ　製　冷間鍛造プレス　K1　を探し...</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/10] <a href="/threads/view/2372">大隈豊和ＭＩＬＬＡＣ－1000ＶＨ</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/10] <a href="/threads/view/2371">ＮＣプロファイル研削盤　ＧＬＳ－5Ｐ＆5...</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/09] <a href="/threads/view/2370">Asahi-seiki Transfer...</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/09] <a href="/threads/view/2368">倣い装置付き旋盤または倣い装置</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/09] <a href="/threads/view/2364">アイダ　製　C型プレス　NC1　を探して...</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/05] <a href="/threads/view/2363">円筒研削盤を探しています。</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/05] <a href="/threads/view/2362">木工旋盤</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/05] <a href="/threads/view/2361">CNC円筒研削盤を探しています。</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/05] <a href="/threads/view/2360">アイダ　製　門型プレス　SMX　を探して...</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/05] <a href="/threads/view/2359">三菱、FANUC WIRECUT 探して...</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/04] <a href="/threads/view/2358">牧野 EDGE,EDNC , Sodic...</a>            </div>
+                    <div class="wantedEachTitle">
+                <img src="/img/common/arrow_bullet.png" height="16" width="18" alt="" />[12/04] <a href="/threads/view/2357">大日金属旋盤 ￠1000~1300x80...</a>            </div>
+            </div>
+</div>
+<div id="recentMachinesContainer">
+    <div class="contentTitleContainer">新規登録機械リスト <a href="/machines/general_list_new">一覧を観る</a></div>
+    <table cellpadding="0" cellspacing="0">
+    <tr>
+        <th>機械ID</th>
+        <th>機械名</th>
+        <th>メーカー</th>
+        <th>型式</th>
+        <th>年式</th>
+        <th>主仕様</th>
+        <th>画像</th>
+        <th>価格（万）</th>
+        <th>在庫場所</th>
+        <th>会社名</th>
+        <th>お問合せ</th>
+    </tr>
+        <tr class="altrow">
+
+        <!-- Machine Id -->
+        <td>
+            <a href="/machines/general_view/80819" target="_blank">#80819</a>        </td>
+
+        <!-- Machine Name -->
+        <td class="name">
+            <a href="/machines/general_view/80819">（800mm～）バンドソー</a><br />        </td>
+
+        <!-- Manufacturer -->
+        <td><div class="manu">アマダ</div>
+        </td>
+
+        <!-- Model -->
+        <td><div class="model">HK-800</div>
+        </td>
+
+        <!--  year -->
+        <td class="year">
+            1999        </td>
+
+        <!-- spec -->
+        <td><div class="spec">
+            L:6650, W:54, T:1.3mm</div>
+        </td>
+
+        <!-- photo -->
+        <td class="photo">
+            <a href="/machines/show_images/80819" target="_blank"><img src="/img/jpmachines/247/80819/thumbnail.jpg?1387164146" width="60" height="40" alt="" /></a>        </td>
+
+        <!-- price -->
+        <td class="price">
+            -        </td>
+
+        <td class="country">
+            愛知県        </td>
+        <td class="company"><a href="/machines/general_view/80819#company">興和機械</a></td>
+        <td class="request">
+            <div class="detail_inquiry"><a href="http://www.jp.usedmachinery.bz/contacts/inquiry_about_machine/80819" onclick="return popitup('http://www.jp.usedmachinery.bz/contacts/inquiry_about_machine/80819/popup','',715,670);" target="_blank"><img src="http://www.jp.usedmachinery.bz/img/common/request_green.png" alt="" /></a></div>
+        </td>
+    </tr>
+    <tr>
+
+        <!-- Machine Id -->
+        <td>
+            <a href="/machines/general_view/80818" target="_blank">#80818</a>        </td>
+
+        <!-- Machine Name -->
+        <td class="name">
+            <a href="/machines/general_view/80818">中古遠心バレル機</a><br />        </td>
+
+        <!-- Manufacturer -->
+        <td><div class="manu">日本バレル興業㈱</div>
+        </td>
+
+        <!-- Model -->
+        <td><div class="model">NC8-20S</div>
+        </td>
+
+        <!--  year -->
+        <td class="year">
+            1991        </td>
+
+        <!-- spec -->
+        <td><div class="spec">
+            本体幅1000・高さ1120・奥行き1105, ５Lポット×４個で20L、, １.５KW・４P・２００V・５０HZ, 回転数１７５回転・インバーター付...</div>
+        </td>
+
+        <!-- photo -->
+        <td class="photo">
+            <a href="/machines/show_images/80818" target="_blank"><img src="/img/jpmachines/515/80818/thumbnail.jpg?1387164146" width="60" height="40" alt="" /></a>        </td>
+
+        <!-- price -->
+        <td class="price">
+            -        </td>
+
+        <td class="country">
+            東京都        </td>
+        <td class="company"><a href="/machines/general_view/80818#company">アテックス</a></td>
+        <td class="request">
+            <div class="detail_inquiry"><a href="http://www.jp.usedmachinery.bz/contacts/inquiry_about_machine/80818" onclick="return popitup('http://www.jp.usedmachinery.bz/contacts/inquiry_about_machine/80818/popup','',715,670);" target="_blank"><img src="http://www.jp.usedmachinery.bz/img/common/request_green.png" alt="" /></a></div>
+        </td>
+    </tr>
+    <tr class="altrow">
+
+        <!-- Machine Id -->
+        <td>
+            <a href="/machines/general_view/80817" target="_blank">#80817</a>        </td>
+
+        <!-- Machine Name -->
+        <td class="name">
+            <a href="/machines/general_view/80817">NC旋盤</a><br />        </td>
+
+        <!-- Manufacturer -->
+        <td><div class="manu">オークマ</div>
+        </td>
+
+        <!-- Model -->
+        <td><div class="model">LCS-25</div>
+        </td>
+
+        <!--  year -->
+        <td class="year">
+            2005        </td>
+
+        <!-- spec -->
+        <td><div class="spec">
+            OSP-E10L, φ390*480, ベッド上振りφ520, S:520*220, 10吋チャック(北川 B-210), 刃物台：8角, #1161...</div>
+        </td>
+
+        <!-- photo -->
+        <td class="photo">
+            <a href="/machines/show_images/80817" target="_blank"><img src="/img/jpmachines/234/80817/thumbnail.jpg?1387164146" width="60" height="40" alt="" /></a>        </td>
+
+        <!-- price -->
+        <td class="price">
+            -        </td>
+
+        <td class="country">
+            愛知県        </td>
+        <td class="company"><a href="/machines/general_view/80817#company">木下機械</a></td>
+        <td class="request">
+            <div class="detail_inquiry"><a href="http://www.jp.usedmachinery.bz/contacts/inquiry_about_machine/80817" onclick="return popitup('http://www.jp.usedmachinery.bz/contacts/inquiry_about_machine/80817/popup','',715,670);" target="_blank"><img src="http://www.jp.usedmachinery.bz/img/common/request_green.png" alt="" /></a></div>
+        </td>
+    </tr>
+    <tr>
+
+        <!-- Machine Id -->
+        <td>
+            <a href="/machines/general_view/80816" target="_blank">#80816</a>        </td>
+
+        <!-- Machine Name -->
+        <td class="name">
+            <a href="/machines/general_view/80816">NC旋盤</a><br />        </td>
+
+        <!-- Manufacturer -->
+        <td><div class="manu">オークマ</div>
+        </td>
+
+        <!-- Model -->
+        <td><div class="model">LCS-25</div>
+        </td>
+
+        <!--  year -->
+        <td class="year">
+            2003        </td>
+
+        <!-- spec -->
+        <td><div class="spec">
+            OSP-E10L, φ390*480, ベッド上振りφ520, S:520*220, 10吋チャック(北川 B-210), 刃物台：8角, #1072...</div>
+        </td>
+
+        <!-- photo -->
+        <td class="photo">
+            <a href="/machines/show_images/80816" target="_blank"><img src="/img/jpmachines/234/80816/thumbnail.jpg?1387164146" width="60" height="40" alt="" /></a>        </td>
+
+        <!-- price -->
+        <td class="price">
+            -        </td>
+
+        <td class="country">
+            愛知県        </td>
+        <td class="company"><a href="/machines/general_view/80816#company">木下機械</a></td>
+        <td class="request">
+            <div class="detail_inquiry"><a href="http://www.jp.usedmachinery.bz/contacts/inquiry_about_machine/80816" onclick="return popitup('http://www.jp.usedmachinery.bz/contacts/inquiry_about_machine/80816/popup','',715,670);" target="_blank"><img src="http://www.jp.usedmachinery.bz/img/common/request_green.png" alt="" /></a></div>
+        </td>
+    </tr>
+    <tr class="altrow">
+
+        <!-- Machine Id -->
+        <td>
+            <a href="/machines/general_view/80815" target="_blank">#80815</a>        </td>
+
+        <!-- Machine Name -->
+        <td class="name">
+            <a href="/machines/general_view/80815">蜂の巣定盤</a><br />        </td>
+
+        <!-- Manufacturer -->
+        <td><div class="manu">-</div>
+        </td>
+
+        <!-- Model -->
+        <td><div class="model">-</div>
+        </td>
+
+        <!--  year -->
+        <td class="year">
+            -        </td>
+
+        <!-- spec -->
+        <td><div class="spec">
+            3000*1500*250H</div>
+        </td>
+
+        <!-- photo -->
+        <td class="photo">
+            <a href="/machines/show_images/80815" target="_blank"><img src="/img/jpmachines/268/80815/thumbnail.jpg?1387164146" width="60" height="40" alt="" /></a>        </td>
+
+        <!-- price -->
+        <td class="price">
+            -        </td>
+
+        <td class="country">
+            滋賀県        </td>
+        <td class="company"><a href="/machines/general_view/80815#company">メカニー</a></td>
+        <td class="request">
+            <div class="detail_inquiry"><a href="http://www.jp.usedmachinery.bz/contacts/inquiry_about_machine/80815" onclick="return popitup('http://www.jp.usedmachinery.bz/contacts/inquiry_about_machine/80815/popup','',715,670);" target="_blank"><img src="http://www.jp.usedmachinery.bz/img/common/request_green.png" alt="" /></a></div>
+        </td>
+    </tr>
+</table>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footerContainer">
+            <div id="footer">
+    <div id="footerMenuContainer">
+        <a href="/termsofuse">サイト利用規約</a> | <a href="/contactus">フィードバック</a> | <a href="/sitemap">サイトマップ</a> | <a href="/aboutus">サイト運営会社</a>
+        <span id="footerCopyrightContainer">
+            <span id="footerPSP">Web hosting and development company: Pacific Software Publishing</span><br />
+            Copyright &copy;2013 Used Machinery.bz All Rights Reserved.        </span>
+        
+    </div>
+</div>
+        </div>
+        <script type="text/javascript">
+  var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-11086299-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+    </body>
+</html>
+<!-- 0.4491s -->
