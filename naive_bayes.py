@@ -69,7 +69,7 @@ class NaiveBayes:
         prob = numerator / denominator
         return prob
 
-    def calc_score(self, words, category):
+    def score(self, words, category):
         score = math.log(self.prior_prob(category))
         for word in words:
             score += math.log(self.word_prob(word, category))
@@ -81,7 +81,7 @@ class NaiveBayes:
         words = self.to_words(doc)
 
         for category in self.category_count.keys():
-            prob = self.calc_score(words, category)
+            prob = self.score(words, category)
             if prob > max_prob_before:
                 max_prob_before = prob
                 best_guessed_category = category

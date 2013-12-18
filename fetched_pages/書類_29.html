@@ -1,0 +1,686 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/looce.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="keywords" content="海外旅行,旅行,ツアー,各国出入国書類の書き方">
+<meta name="description" content="JAL海外旅行・海外ツアーの計画をたてるときに便利な各国出入国書類の書き方をご案内します。">
+<title>JAL - 海外 各国出入国書類の書き方 （JAL旅プラスなび）</title>
+
+<link rel="stylesheet" href="/common_rn/css/import.css" type="text/css" media="screen,print">
+<!-- [旅プラスなび共通CSS] -->
+<link rel="stylesheet" href="/tabi/common/css/structure.css" type="text/css" media="screen,print">
+<link rel="stylesheet" href="/tabi/common/css/component.css" type="text/css" media="screen,print">
+<link rel="stylesheet" href="/tabi/common/css/city_info.css" type="text/css" media="screen,print">
+<link rel="stylesheet" href="/tabi/common/css/right_column.css" type="text/css" media="screen,print">
+<link rel="stylesheet" href="/tours/css/tripadviser.css" type="text/css" media="screen,print">
+<!-- /旅プラスなび共通CSS -->
+<link rel="start" href="http://www.jal.co.jp/" title="JAL−航空券 予約・空席照会・運賃案内−">
+<!-- [共通スクリプト] -->
+<!-- [共通ヘッダーCSS] -->
+<link rel="stylesheet" href="/tabi/common/css/common_header.css" type="text/css" media="screen,print">
+<!-- /[共通ヘッダーCSS] -->
+<script type="text/javascript" src="/tabi/common/js/heightLine.js"></script>
+<script type="text/javascript" src="/tabi/common/js/jquery.js"></script>
+<script type="text/javascript" src="/tabi/common/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/tabi/common/js/tabi.common.js"></script>
+<script type="text/javascript" src="/tabi/common/js/feed.js"></script>
+<script type="text/javascript" src="//intltoursearch.jal.co.jp/jal_intl/gadget/ta.js" charset="shift_jis"></script>
+<!-- intTabiHead -->
+
+<link rel="stylesheet" href="/common_rn/css/import.css" type="text/css" media="screen,print">
+<link rel="stylesheet" href="/tabi/common/css/tabi_rsv.css" type="text/css" media="screen,print">
+<link rel="stylesheet" href="/common_rn/css/modules/inter_module_940.css" type="text/css" media="screen,print">
+<link rel="stylesheet" href="/common_rn/css/modules/intltour/gadjet.css" type="text/css" media="screen,print">
+<link rel="stylesheet" href="/common_rn/css/modules/intltour/module_220.css" type="text/css" media="screen,print">
+<!-- [js.ssi] -->
+<script type="text/javascript" src="/common_rn/js/common.js"></script>
+<script type="text/javascript" src="/common_rn/js/rollover.js"></script>
+<script type="text/javascript" src="/common_rn/js/login.js"></script>
+<script type="text/javascript" src="/common_rn/js/insiteSearchInput.js"></script>
+<!-- /[js.ssi] -->
+<script type="text/javascript" src="/common_rn/js/formControl.js"></script>
+<script type="text/javascript" src="/common_rn/js/cookieManager.js"></script>
+<script type="text/javascript" src="/common_rn/js/calendarControl.js"></script>
+<script type="text/javascript" src="/common_rn/js/relationalList.js"></script>
+<script type="text/javascript" src="/common_rn/js/lib/jkl-parsexml.js"></script>
+<script type="text/javascript" src="/common_rn/js/airportList2.3.js"></script>
+<script type="text/javascript" src="/common_rn/js/intTicketModuleControl.js"></script>
+<script type="text/javascript" src="//intltoursearch.jal.co.jp/jal_intl/gadget/pivot.js"></script>
+<script type="text/javascript" src="/common_rn/js/intltourDPModuleControl.js"></script>
+<script type="text/javascript" src="/common_rn/js/intltourModuleControl.js"></script>
+<script type="text/javascript" src="/intltour/js/sc_click.js"></script>
+<script type="text/javascript" src="/tabi/common/js/dom_intTabiControl.js"></script>
+
+<!-- /intTabiHead -->
+
+<!-- [基本情報共通ファイル] -->
+<link rel="stylesheet" type="text/css" media="screen, print" href="/tabi/info/shared/css/import.css">
+<link rel="stylesheet" type="text/css" media="screen,print" href="/tabi/info/ed/css/mod-unique.css">
+<!-- [/基本情報共通ファイル] -->
+
+<!--プルダウン用スクリプト-->
+<script type="text/javascript" src="/tabi/info/shared/js/intCitySelectList.js"></script>
+<script type="text/javascript" src="/tabi/info/shared/js/intCitySelectListControl.js"></script>
+<script type="text/javascript">
+<!--
+function intCitySetupOnload() {
+	JLJS_IntCitySLCtrl.setup( "frmCityInfoAmerica" , "ame", "infoCity", "infoCityBlockAmerica", "intAirport2");
+	JLJS_IntCitySLCtrl.setup( "frmCityInfoEuro" , "eur", "infoCity", "infoCityBlockEuro", "intAirport2");
+	JLJS_IntCitySLCtrl.setup( "frmCityInfoOceania" , "oce", "infoCity", "infoCityBlockOceania", "intAirport2");
+	JLJS_IntCitySLCtrl.setup( "frmCityInfoGum" , "gum", "infoCity", "infoCityBlockGum", "intAirport2");
+	JLJS_IntCitySLCtrl.setup( "frmCityInfoAsia" , "asi", "infoCity", "infoCityBlockAsia", "intAirport2");
+	JLJS_IntCitySLCtrl.setup( "frmCityInfoChn" , "chn", "infoCity", "infoCityBlockChn", "intAirport2");
+}
+JLJS.addOnload( intCitySetupOnload );
+JLJS.addEvent( window, 'unload', intCitySetupOnload );
+//-->
+</script>
+<!--プルダウン用スクリプト-->
+</head>
+
+
+<body>
+<noscript>当サイトをご利用になるためには、Javascript対応のブラウザが必要です。また、設定でJavascriptを有効にする必要があります。</noscript>
+
+
+<!-- [wrapper] -->
+<div id="wrapper">
+
+<!-- [グローバルヘッダ] -->
+<!-- [JALSearchOptimization] -->
+<script type="text/javascript" src="/common_rn/js/navigationControl.js"></script>
+<script type="text/javascript" src="/common_rn/js/gnavi_dropdown.js"></script>
+<script type="text/javascript" src="/common_rn/js/naviControlByWindowName.js"></script>
+<!-- [HeaderArea] -->
+<div id="HeaderArea">
+<!-- [rnHead] -->
+<div id="rnHead" class="clearfix">
+<!-- [rnHeadL01] -->
+<div id="rnHeadL01">
+<h1 id="rnLogo01"><a href="/" id="rnG_HeaderLogo"><img src="/common_rn/img/logo_001_new.gif" width="139" height="74" alt="JAL JAPAN AIRLINES"></a></h1>
+<p id="rnLogo02"><a href="/oneworld/"><img src="/common_rn/img/logo_oneworld_002.gif" alt="oneworld" width="41" height="41" border="0"></a></p>
+</div>
+<!-- /[rnHeadL01] -->
+
+<!-- [rnHeadR01] -->
+<div id="rnHeadR01">
+
+<!-- [voiceNavigation] -->
+<ul id="voiceNavigation" class="rnHide">
+<li><a href="#skipNavigation">ナビゲーションをスキップして本文へ移動します。</a></li>
+<!-- /[voiceNavigation] --></ul>
+
+<!-- [rnHeadUtility02] -->
+<div id="rnHeadUtility02">
+<form name="InsiteSearchForm" action="/cgi-bin/jal/insite_search/index.cgi" method="get" target="_top" onSubmit="return isInsiteSearchForm(this);">
+
+<!-- [rnHeadUtilityLink01] -->
+<ul id="rnHeadUtilityLink01"><!--
+--><li class="ww"><a href="http://www.jal.com"><span class="bold">Japan</span> - 日本語<span class="withIcon"><img width="6" height="5" src="/common_rn/img/icon_triangle_001.gif" alt=""></span></a>
+</li>
+</ul>
+<!-- /[rnHeadUtilityLink01] -->
+
+<div id="rnHeadSearchArea" class="clearfix">
+<div id="rnHeadSearchTxt01"><label for="keyword01"><input type="text" class="text pseudo-default" size="21" name="keyword" title="" onfocus="JLJS_InsiteSearch.onfocus(this);" onblur="JLJS_InsiteSearch.onblur(this);" value="JALサイト内検索" id="keyword01"></label></div>
+<div id="rnHeadSearchBtn01"><input type="image" name="Search_Execute" value="" src="/common_rn/img/btn_header_search_001_02.gif" alt="検索"></div>
+<div id="rnHeadSearchBtn02"><a target="_top" href="/search/use/"><img src="/common_rn/img/btn_header_search_002_n.gif" alt="使い方" width="18" height="20"></a></div>
+</div>
+
+<input type="hidden" name="collection" value="jalcojp">
+<input type="hidden" name="charset" value="shift_jis">
+</form>
+
+</div>
+<!-- /[rnHeadUtility02] -->
+
+<!-- [rnHeadUtilityLink02] -->
+<ul id="rnHeadUtilityLink02" class="clearfix"><!--
+--><li class="rnIcn01 separate"><img src="/common_rn/img/icon_company_001.gif" alt="" width="16" height="11"><a href="http://www.jal.com/ja/" target="otherwindow">企業情報</a></li><!--
+--><li class="rnIcn01"><img src="/common_rn/img/icon_popup_p_001.gif" width="14" height="10" alt=""><a href="/help/" target="otherwindow">よくあるご質問</a></li><!--
+--><li class="rnIcn01"><img src="/common_rn/img/icon_popup_p_001.gif" width="14" height="10" alt=""><a href="/information/" target="otherwindow">お問い合わせ</a></li><!--
+--><li class="rnIcn01"><img src="/common_rn/img/icon_triangle_001.gif" width="6" height="5" alt=""><a href="/jalpri/">お体の不自由なお客さまへ</a></li><!--
+--><li class="rnIcn01"><img src="/common_rn/img/icon_popup_p_001.gif" width="14" height="10" alt=""><a href="/taiken/" target="otherwindow">はじめての方へ</a></li><!--
+--><li class="rnIcn01"><img src="/common_rn/img/icon_triangle_001.gif" width="6" height="5" alt=""><a href="/sitemap/dom.html">サイトマップ</a></li><!--
+--></ul>
+<!-- /[rnHeadUtilityLink02] -->
+
+<!-- [rnHeadNav01] -->
+<div id="rnHeadNav01">
+<!-- [rnHeadNav0101] -->
+<ul id="rnHeadNav0101" class="clearfix">
+<li>
+<!-- ホーム -->
+<p><a target="_top" href="/" id="rnG_HeaderHomeTab" class="roImg"><img src="/common_rn/img/tab_gnavi_home_n.gif" width="101" height="35" alt="ホーム"></a></p>
+</li>
+<li>
+<!-- 国内線 -->
+<p><a target="_top" href="/dom/" id="rnG_HeaderDomTab" class="roImg"><img src="/common_rn/img/tab_gnavi_dom_n.gif" width="100" height="35" alt="国内線（航空券、予約、ホテル、レンタカー）"></a></p>
+<div id="rnHeadNav0102A" class="rnHeadNav0102"></div>
+</li>
+<li>
+<!-- 国内ツアー -->
+<p><a target="_top" href="/domtour/" id="rnG_HeaderDomTourTab" class="roImg"><img src="/common_rn/img/tab_gnavi_tdom_n.gif" width="100" height="35" alt="国内ツアー（国内旅行）"></a></p>
+<div id="rnHeadNav0102B" class="rnHeadNav0102"></div>
+</li>
+<li>
+<!-- 国際線 -->
+<p><a target="_top" href="/inter/" id="rnG_HeaderIntTab" class="roImg"><img src="/common_rn/img/tab_gnavi_int_n.gif" width="100" height="35" alt="国際線（航空券、予約、海外、ホテル、レンタカー）"></a></p>
+<div id="rnHeadNav0102C" class="rnHeadNav0102"></div>
+</li>
+<li>
+<!-- 海外ツアー -->
+<p><a target="_top" href="/intltour/" id="rnG_HeaderIntTourTab" class="roImg"><img src="/common_rn/img/tab_gnavi_tint_n.gif" width="100" height="35" alt="海外ツアー（海外旅行）"></a></p>
+<div id="rnHeadNav0102D" class="rnHeadNav0102"></div>
+</li>
+<li>
+<!-- JALマイレージバンク -->
+<p><a target="_top" href="/jmb/" id="rnG_HeaderJMBTab" class="roImg"><img src="/common_rn/img/tab_gnavi_jmb_n.gif" width="160" height="35" alt="JALマイレージバンク（マイレージ、マイル、無料航空券、ＦＦＰ、特典、引換）"></a></p>
+<div id="rnHeadNav0102E" class="rnHeadNav0102"></div>
+</li>
+<li>
+<!-- JALカード -->
+<p><a target="_top" href="/jalcard/" id="rnG_HeaderJalCardTab" class="roImg"><img src="/common_rn/img/tab_gnavi_crd_n.gif" width="101" height="35" alt="JALカード"></a></p>
+<div id="rnHeadNav0102F" class="rnHeadNav0102"></div>
+</li>
+</ul>
+<!-- [/rnHeadNav0101] -->
+
+<script type="text/javascript">
+<!--
+setAction('rnHeadUtilityLink01', '<li class="logoutBtn"><a target="_top" href="https://www121.jal.co.jp/JmbWeb/JR/LogOut_ja.do" onClick="return confirm_logout()" id="btn_header_logout_001" class="roImg"><img src="/common_rn/img/btn_header_logout_001_n.gif" width="78" height="19" alt="ログアウト"></a></li><li class="ww"><a href="http://www.jal.com"><span class="bold">Japan</span> - 日本語<span class="withIcon"><img width="6" height="5" src="/common_rn/img/icon_triangle_001.gif" alt=""></span></a></li></li>');
+//-->
+</script>
+</div>
+<!-- /[rnHeadNav01] -->
+
+</div>
+<!-- /[rnHeadR01] -->
+
+<p class="hide">[ <a id="skipNavigation" name="skipNavigation">ここから本文です</a> ]</p>
+</div>
+<!-- /[rnHead] -->
+</div>
+<!-- /[HeaderArea] -->
+<script type="text/javascript"><!--
+JLJS_naviCtrl.setMenu();
+//--></script>
+<script type="text/javascript" src="/common_rn/js/social.js"></script>
+
+<div class="socialBox" id="JS_Social">
+<div class="rnClearfix">
+<ul><li><g:plusone size="medium" annotation="none"></g:plusone></li><li><a href="javascript:JLJS_Social.tweet();"><img src="/common_rn/img/icon_twitter.gif" width="20" height="20" alt="ツイートする"></a></li><li><a href="javascript:JLJS_Social.fbShare();"><img src="/common_rn/img/icon_facebook.gif" width="20" height="20" alt="Facebookでシェア"></a></li><li><a href="javascript:JLJS_Social.mixi();"><img src="/common_rn/img/icon_mixi.gif" width="20" height="20" alt="mixiチェック"></a></li><li><a href="javascript:JLJS_Social.bHatena();"><img src="/common_rn/img/icon_hatena.gif" width="20" height="20" alt="はてなブックマーク"></a></li></ul>
+</div>
+</div>
+<script type="text/javascript"><!--
+if(typeof isSetSocial == "undefined" || isSetSocial == true){
+	window.___gcfg = {lang: 'ja'};
+	(function(){
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		po.src = 'https://apis.google.com/js/plusone.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+}
+//--></script>
+<!-- /[JALSearchOptimization] -->
+<!-- /[グローバルヘッダ] -->
+
+<!-- [パンくず] -->
+<ul class="topicPath">
+<li><a href="/tabi/">JAL旅プラスなび</a>&gt;</li><!--
+--><li><a href="/tabi/info/">旅の基本情報</a>&gt;</li><!--
+--><li><span>各国出入国書類の書き方</span></li>
+</ul>
+<!-- /[パンくず] -->
+
+<!-- [contents] -->
+<div class="contents clearfix">
+
+<!-- [サイト共通ナビ] -->
+<script type="text/javascript">
+var commonNavitoggle = function() {
+	var sfEls = document.getElementById("commonNavi").getElementsByTagName("li");
+	for (var i = 0; i < sfEls.length; i++) {
+		sfEls[i].onmouseover = function() {
+			this.className += " hover";
+		}
+		sfEls[i].onmouseout = function() {
+			this.className = this.className.replace(new RegExp(" hover\\b"), "");
+		}
+	}
+}
+
+if (window.attachEvent) window.attachEvent("onload", commonNavitoggle);
+
+function mainNaviCtrl(){
+	var txt1 = document.getElementById('text1');
+	var img1 = document.getElementById('commonNavi1');
+	var img2 = document.getElementById('commonNavi2');
+	var img3 = document.getElementById('commonNavi3');
+	var img4 = document.getElementById('commonNavi4');
+	var img5 = document.getElementById('commonNavi5');
+	var img6 = document.getElementById('commonNavi6');
+	var subNavi1 = document.getElementById('subNavi1');
+	var subNavi2 = document.getElementById('subNavi2');
+	
+	txt1.onmouseover = function(){
+		this.src = "/tabi/common/img/link_header_text_o.gif";
+	}
+	txt1.onmouseout = function(){
+		this.src = "/tabi/common/img/link_header_text_n.gif";
+	}
+	img1.onmouseover = function(){
+		this.src = "/tabi/common/img/link_navi_zekkei_dom_o.gif";
+	}
+	img1.onmouseout = function(){
+		this.src = "/tabi/common/img/link_navi_zekkei_dom_n.gif";
+	}
+	img2.onmouseover = function(){
+		this.src = "/tabi/common/img/link_navi_area_dom_o.gif";
+	}
+	img2.onmouseout = function(){
+		this.src = "/tabi/common/img/link_navi_area_dom_n.gif";
+	}
+	img3.onmouseover = function(){
+		this.src = "/tabi/common/img/link_navi_area_inter_o.gif";
+	}
+	img3.onmouseout = function(){
+		this.src = "/tabi/common/img/link_navi_area_inter_n.gif";
+	}
+	img4.onmouseover = function(){
+		this.src = "/tabi/common/img/link_navi_modelplan_o.gif";
+	}
+	img4.onmouseout = function(){
+		this.src = "/tabi/common/img/link_navi_modelplan_n.gif";
+	}
+	img5.onmouseover = function(){
+		this.src = "/tabi/common/img/link_navi_column_o.gif";
+	}
+	img5.onmouseout = function(){
+		this.src = "/tabi/common/img/link_navi_column_n.gif";
+	}
+	img6.onmouseover = function(){
+		this.src = "/tabi/common/img/link_navi_info_o.gif";
+	}
+	img6.onmouseout = function(){
+		this.src = "/tabi/common/img/link_navi_info_n.gif";
+	}
+	
+	subNavi1.onmouseover = function() {
+		img2.src = "/tabi/common/img/link_navi_area_dom_o.gif";
+	}
+	subNavi1.onmouseout = function() {
+		if(location.pathname.match(/\/area\/dom\//i)){
+			img2.src = "/tabi/common/img/link_navi_area_dom_s.gif";
+		} else {
+			img2.src = "/tabi/common/img/link_navi_area_dom_n.gif";
+		}
+	}
+	subNavi2.onmouseover = function() {
+		img3.src = "/tabi/common/img/link_navi_area_inter_o.gif";
+	}
+	subNavi2.onmouseout = function() {
+		if(location.pathname.match(/\/area\/inter\//i)){
+			img3.src = "/tabi/common/img/link_navi_area_inter_s.gif";
+		} else {
+			img3.src = "/tabi/common/img/link_navi_area_inter_n.gif";
+		}
+	}
+
+	var site3 = document.getElementById("site3");
+	
+	if(location.pathname.match(/\/zekkei\//gi)){
+		var img1 = document.getElementById('commonNavi1');
+		img1.src = "/tabi/common/img/link_navi_zekkei_dom_s.gif";
+		img1.onmouseover = function(){
+			img1.src = "/tabi/common/img/link_navi_zekkei_dom_o.gif";
+		}
+		img1.onmouseout = function(){
+			this.src = "/tabi/common/img/link_navi_zekkei_dom_s.gif";
+		}
+		
+	} else if(location.pathname.match(/\/area\/dom\//i)){
+		var img2 = document.getElementById('commonNavi2');
+		img2.src = "/tabi/common/img/link_navi_area_dom_s.gif";
+		img2.onmouseover = function(){
+			this.src = "/tabi/common/img/link_navi_area_dom_o.gif";
+		}
+		img2.onmouseout = function(){
+			this.src = "/tabi/common/img/link_navi_area_dom_s.gif";
+		}
+
+	} else if(location.pathname.match(/\/area\/inter\//i)){
+		var img3 = document.getElementById('commonNavi3');
+		img3.src = "/tabi/common/img/link_navi_area_inter_s.gif";
+		img3.onmouseover = function(){
+			this.src = "/tabi/common/img/link_navi_area_inter_o.gif";
+		}
+		img3.onmouseout = function(){
+			this.src = "/tabi/common/img/link_navi_area_inter_s.gif";
+		}
+		
+	} else if(location.pathname.match(/\/modelplan\//gi)){
+		var img4 = document.getElementById('commonNavi4');
+		img4.src = "/tabi/common/img/link_navi_modelplan_s.gif";
+		img4.onmouseover = function(){
+			this.src = "/tabi/common/img/link_navi_modelplan_o.gif";
+		}
+		img4.onmouseout = function(){
+			this.src = "/tabi/common/img/link_navi_modelplan_s.gif";
+		}
+	} else if(location.hostname.match(/tabi.jal.co.jp/gi) && location.pathname.match(/\/tabicolumn\//gi)){
+		var img5 = document.getElementById('commonNavi5');
+		img5.src = "/tabi/common/img/link_navi_column_s.gif";
+		img5.onmouseover = function(){
+			this.src = "/tabi/common/img/link_navi_column_o.gif";
+		}
+		img5.onmouseout = function(){
+			this.src = "/tabi/common/img/link_navi_column_s.gif";
+		}
+		
+	} else if(location.pathname.match(/\/info\//gi) || location.pathname.match(/\/dom\/city_info\//gi) || location.pathname.match(/\/dom\/travel_plan\//gi) || location.pathname.match(/\/inter\/travel_plan\//gi)){
+		var img6 = document.getElementById('commonNavi6');
+		img6.src = "/tabi/common/img/link_navi_info_s.gif";
+		img6.onmouseover = function(){
+			this.src = "/tabi/common/img/link_navi_info_o.gif";
+		}
+		img6.onmouseout = function(){
+			this.src = "/tabi/common/img/link_navi_info_s.gif";
+		}
+	}
+}
+
+
+
+if( document.addEventListener ) {
+	window.addEventListener("load", function () { mainNaviCtrl(); }, false);
+} else {
+	window.attachEvent("onload", function () { mainNaviCtrl(); });
+};
+
+</script>
+
+
+<!-- [commonHeaderUnit] -->
+<div id="commonHeaderUnit" class="clearfix">
+<!-- [commonHeaderLogo] -->
+<div id="commonHeaderLogo">
+<h1><a href="/tabi/"><img src="/tabi/common/img/logo_tabi_plus.gif" alt="JAL旅プラスなび" width="220" height="62"></a></h1>
+</div>
+<!-- /[commonHeaderLogo] -->
+
+<dl id="commonHeaderNavi">
+<dt>
+<span class="headerHome"><a href="/tabi/"><img src="/tabi/common/img/link_header_home_n.gif" alt="TOPに戻る" width="92" height="16" class="rollover"></a></span>
+<span class="headerDescription"><img src="/tabi/common/img/txt_header_home_description.gif" alt="あなたの旅がきっと見つかる 旅の提案サイト" width="278" height="16"></span>
+<span class="jmbmemberlink"><a href="/jmb/tabi-plus/"><img src="/tabi/common/img/link_header_text_n.gif" alt="JMB旅プラス詳細・入会のご案内" width="183" height="16" id="text1"></a></span>
+</dt>
+<dd><ul id="commonNavi">
+<li class="firstChildList"><a href="/tabi/zekkei/"><img src="/tabi/common/img/link_navi_zekkei_dom_n.gif" alt="絶景コレクション" width="124" height="28" id="commonNavi1"></a></li>
+<li><a href="/tabi/area/dom/" onclick="return false;"><img src="/tabi/common/img/link_navi_area_dom_n.gif" alt="国内旅行" width="109" height="28" id="commonNavi2"></a>
+
+<ul id="subNavi1">
+<li class="fistChild"><span class="linkListNavi03"><a href="/tabi/area/dom/hok/">北海道</a></span></li>
+<li><span class="linkListNavi03"><a href="/tabi/area/dom/thu/">東北</a></span></li>
+<li><span class="linkListNavi03"><a href="/tabi/area/dom/kat/">関東</a></span></li>
+<li><span class="linkListNavi03"><a href="/tabi/area/dom/chb/">中部・北陸</a></span></li>
+<li><span class="linkListNavi03"><a href="/tabi/area/dom/kas/">関西・南紀</a></span></li>
+<li><span class="linkListNavi03"><a href="/tabi/area/dom/ssy/">中国・四国</a></span></li>
+<li><span class="linkListNavi03"><a href="/tabi/area/dom/kyu/">九州</a></span></li>
+<li class="lastchild"><span class="linkListNavi03"><a href="/tabi/area/dom/oka/">沖縄</a></span></li>
+
+</ul>
+</li>
+<li><a href="/tabi/area/inter/" onclick="return false;"><img src="/tabi/common/img/link_navi_area_inter_n.gif" alt="海外旅行" width="109" height="28" id="commonNavi3"></a>
+<ul id="subNavi2">
+<li class="fistChild"><span class="linkListNavi03"><a href="/tabi/area/inter/hwi/">ハワイ</a></span></li>
+<li><span class="linkListNavi03"><a href="/tabi/area/inter/ame/">アメリカ・カナダ・中南米</a></span></li>
+<li><span class="linkListNavi03"><a href="/tabi/area/inter/eur/">ヨーロッパ・中近東・アフリカ</a></span></li>
+<li><span class="linkListNavi03"><a href="/tabi/area/inter/oce/">オセアニア・南太平洋</a></span></li>
+<li><span class="linkListNavi03"><a href="/tabi/area/inter/mic/">グアム・パラオ（ミクロネシア）</a></span></li>
+<li><span class="linkListNavi03"><a href="/tabi/area/inter/asi/">アジア・韓国</a></span></li>
+<li><span class="linkListNavi03"><a href="/tabi/area/inter/chn/">中国・香港</a></span></li>
+<li class="lastchild"><span class="linkListNavi03"><a href="/tabi/area/inter/twn/">台湾</a></span></li>
+</ul>
+</li>
+<li><a href="/tabi/modelplan/" id="site3"><img src="/tabi/common/img/link_navi_modelplan_n.gif" alt="モデルプラン" width="103" height="28" id="commonNavi4"></a></li>
+<li><a href="//tabi.jal.co.jp/tabicolumn/"><img src="/tabi/common/img/link_navi_column_n.gif" alt="旅コラム" width="85" height="28" id="commonNavi5"></a></li>
+<li><a href="/tabi/info/"><img src="/tabi/common/img/link_navi_info_n.gif" alt="旅の基本情報" width="109" height="28" id="commonNavi6"></a></li>
+</ul></dd>
+</dl>
+</div>
+<!-- /[commonHeaderUnit] -->
+<!-- /[サイト共通ナビ] -->
+
+<!-- [mainTitleA01] -->
+<div class="mainTitleA01">
+<h2><img src="/tabi/info/ed/img/head_01.gif" width="204" height="18" alt="各国出入国書類の書き方"></h2>
+</div>
+<!-- /[mainTitleA01] -->
+
+<!-- = navi_area / -->
+
+<div class="wrapperInner">
+<!-- [左カラム] -->
+<div class="gridUnitA01L">
+
+<!-- ++++ centerArea ++++ -->
+<div id="centerArea">
+<div class="top_map">
+<img src="/tabi/info/ed/img/top_map.jpg" alt="各国出入国書類の書き方　世界地図" width="700" height="360" border="0" usemap="#Map">
+<map name="Map">
+<area shape="rect" coords="26,97,210,119" href="/tabi/info/ed/eur/index.html" target="_self" alt="ヨーロッパ・中近東・アフリカ">
+<area shape="rect" coords="208,124,288,144" href="/tabi/info/ed/chn/index.html" target="_self" alt="中国・香港">
+<area shape="rect" coords="332,139,374,159" href="/tabi/info/ed/jpn/index.html" target="_self" alt="日本">
+<area shape="rect" coords="419,150,629,172" href="/tabi/info/ed/ame/index.html" target="_self" alt="ハワイ・アメリカ・カナダ・中南米">
+<area shape="rect" coords="315,193,486,213" href="/tabi/info/ed/gum/index.html" target="_self" alt="グアム・パラオ（ミクロネシア）">
+<area shape="rect" coords="186,198,276,216" href="/tabi/info/ed/asi/index.html" target="_self" alt="アジア・台湾">
+<area shape="rect" coords="332,273,467,292" href="/tabi/info/ed/oce/index.html" target="_self" alt="オセアニア・南太平洋">
+</map>
+</div>
+
+<!--/#centerArea--></div>
+<!-- ++++ /centerArea ++++ -->
+</div>
+<!-- /[左カラム] -->
+
+<!-- [右カラム] -->
+<div class="gridUnitA01R infoTopNavi">
+<dl>
+<dt><a href="/tabi/info/ed/jpn/"><img width="6" height="5" alt="" src="/common_rn/img/icon_triangle_001.gif">日本</a></dt>
+<dt><a href="/tabi/info/ed/ame/"><img width="6" height="5" alt="" src="/common_rn/img/icon_triangle_001.gif">ハワイ・アメリカ・カナダ・中南米</a></dt>
+<dd class="clearfix">
+<form name="frmCityInfoAmerica">
+<div class="naviArea">
+<!--アメリカ・カナダ・中南米-->
+<div class="area_list"><div id="infoCityBlockAmerica"><!--都市プルダウン--></div><input type="hidden" name="infoCity" value=""><input type="image" onClick="jumpPulldownB( this.form.infoCity ); return false;" src="/tabi/info/shared/img/btn_sidepane_007.gif" alt="→"></div>
+<!--アメリカ・カナダ・中南米-->
+</div>
+</form>
+</dd>
+<dt><a href="/tabi/info/ed/eur/"><img width="6" height="5" alt="" src="/common_rn/img/icon_triangle_001.gif">ヨーロッパ・中近東・アフリカ</a></dt>
+<dd class="clearfix">
+<form name="frmCityInfoEuro">
+<div class="naviArea">
+<!--ヨーロッパ・中近東・アフリカ-->
+<div class="area_list"><div id="infoCityBlockEuro"><!--都市プルダウン--></div><input type="hidden" name="infoCity" value=""><input type="image" onClick="jumpPulldownB( this.form.infoCity ); return false;" src="/tabi/info/shared/img/btn_sidepane_007.gif" alt="→"></div>
+<!--ヨーロッパ・中近東・アフリカ-->
+</div>
+</form>
+</dd>
+<dt><a href="/tabi/info/ed/oce/"><img width="6" height="5" alt="" src="/common_rn/img/icon_triangle_001.gif">オセアニア・南太平洋</a></dt>
+<dd class="clearfix">
+<form name="frmCityInfoOceania">
+<div class="naviArea">
+<!--オセアニア・南太平洋-->
+<div class="area_list"><div id="infoCityBlockOceania"><!--都市プルダウン--></div><input type="hidden" name="infoCity" value=""><input type="image" onClick="jumpPulldownB( this.form.infoCity ); return false;" src="/tabi/info/shared/img/btn_sidepane_007.gif" alt="→"></div>
+<!--オセアニア・南太平洋-->
+</div>
+</form>
+</dd>
+<dt><a href="/tabi/info/ed/gum/"><img width="6" height="5" alt="" src="/common_rn/img/icon_triangle_001.gif">グアム・パラオ（ミクロネシア）</a></dt>
+<dd class="clearfix">
+<form name="frmCityInfoGum">
+<div class="naviArea">
+<!--グアム・パラオ（ミクロネシア）-->
+<div class="area_list"><div id="infoCityBlockGum"><!--都市プルダウン--></div><input type="hidden" name="infoCity" value=""><input type="image" onClick="jumpPulldownB( this.form.infoCity ); return false;" src="/tabi/info/shared/img/btn_sidepane_007.gif" alt="→"></div>
+<!--グアム・パラオ（ミクロネシア）-->
+</div>
+</form>
+</dd>
+<dt><a href="/tabi/info/ed/asi/"><img width="6" height="5" alt="" src="/common_rn/img/icon_triangle_001.gif">アジア・台湾</a></dt>
+<dd class="clearfix">
+<form name="frmCityInfoAsia">
+<div class="naviArea">
+<!--アジア・台湾-->
+<div class="area_list"><div id="infoCityBlockAsia"><!--都市プルダウン--></div><input type="hidden" name="infoCity" value=""><input type="image" onClick="jumpPulldownB( this.form.infoCity ); return false;" src="/tabi/info/shared/img/btn_sidepane_007.gif" alt="→"></div>
+<!--アジア・台湾-->
+</div>
+</form>
+</dd>
+<dt><a href="/tabi/info/ed/chn/"><img width="6" height="5" alt="" src="/common_rn/img/icon_triangle_001.gif">中国・香港</a></dt>
+<dd class="clearfix">
+<form name="frmCityInfoChn">
+<div class="naviArea">
+<!--中国・香港-->
+<div class="area_list clearfix"><div id="infoCityBlockChn"><!--都市プルダウン--></div><input type="hidden" name="infoCity" value=""><input type="image" onClick="jumpPulldownB( this.form.infoCity ); return false;" src="/tabi/info/shared/img/btn_sidepane_007.gif" alt="→"></div>
+<!--中国・香港-->
+</div>
+</form>
+</dd>
+</dl>
+<!--/infoTopNavi--></div>
+<!-- /[右カラム] -->
+
+</div>
+
+<!-- [共通フッター] -->
+<div id="commonFooter" style="margin: 10px 0 20px; clear: both;">
+<p><img src="/tabi/common/img/pic_common_footer.jpg" width="940" height="61" alt=""></p>
+</div>
+
+<!-- START ADPLAN SP -->
+<script language="JavaScript" type="text/javascript" src="//o.advg.jp/ojs?aid=5142&pid=1&sp_pnm=" charset="UTF-8"> 
+</script>
+<noscript>
+<iframe src="//o.advg.jp/oif?aid=5142&pid=1&sp_pnm=" width="1" height="1">
+</iframe>
+</noscript>
+<!-- END ADPLAN SP -->
+
+<!-- START ADPLAN SP -->
+<script language="JavaScript" type="text/javascript" src="//o.advg.jp/ojs?aid=5154&pid=1&sp_pnm=" charset="UTF-8"></script>
+<noscript>
+<iframe src="//o.advg.jp/oif?aid=5154&pid=1&sp_pnm=" width="1" height="1">
+</iframe>
+</noscript>
+<!-- END ADPLAN SP -->
+<!-- /[共通フッター] -->
+
+</div>
+<!-- /[contents] -->
+
+<!-- [グローバルフッタ] -->
+<!-- [JALSearchOptimization] -->
+<script type="text/javascript" src="/common_rn/js/main_footer.js"></script>
+<script type="text/javascript"><!--
+JLJS_mainFooterControl.changeHTMLByWindowName();
+//--></script>
+<div id="rnFootBreadArea"><div id="rnFootBreadInner">
+<ul id="rnFootBread" class="rnClearfix mainFootNavi">
+<li>ホーム</li>
+</ul>
+</div></div>
+
+<div id="rnFootNavi">
+<div id="rnFootNaviWrapper">
+
+<div id="rnFootNaviArea">
+<div class="clearfix">
+<dl class="section01">
+<dt><span class="withIcon indTri"><img src="/common_rn/img/icon_triangle_003.gif" width="6" height="5" alt=""><a href="/dom/" id="rn_FooterDomTab">国内線</a></span></dt>
+<dd></dd>
+</dl>
+
+<dl class="section02">
+<dt><span class="withIcon indTri"><img src="/common_rn/img/icon_triangle_003.gif" width="6" height="5" alt=""><a href="/domtour/" id="rn_FooterDomTour">国内ツアー</a></span></dt>
+<dd></dd>
+</dl>
+
+<dl class="section03">
+<dt><span class="withIcon indTri"><img src="/common_rn/img/icon_triangle_003.gif" width="6" height="5" alt=""><a href="/inter/" id="rn_FooterIntTab">国際線</a></span></dt>
+<dd></dd>
+</dl>
+
+<dl class="section04">
+<dt><span class="withIcon indTri"><img src="/common_rn/img/icon_triangle_003.gif" width="6" height="5" alt=""><a href="/intltour/" id="rn_FooterIntlTour">海外ツアー</a></span></dt>
+<dd></dd>
+</dl>
+</div>
+
+<div  class="clearfix">
+<dl class="section05">
+<dt><span class="withIcon indTri"><img src="/common_rn/img/icon_triangle_003.gif" width="6" height="5" alt=""><a href="/jmb/" id="rn_FooterJMBTab">JALマイレージバンク</a></span></dt>
+<dd></dd>
+</dl>
+
+<dl class="section06">
+<dt><span class="withIcon indTri"><img src="/common_rn/img/icon_triangle_003.gif" width="6" height="5" alt=""><a href="/jalcard/" id="rn_FooterJalCardTab">JALカード</a></span></dt>
+<dd></dd>
+</dl>
+
+<div class="subsection">
+<div class="subsectioninner">
+<ul class="wrap">
+<!--
+<li><span class="withIcon"><img src="/common_rn/img/icon_popup_p_003.gif" width="16" height="13" alt=""><a href="http://www.jal.com/ja/" target="otherwindow">企業情報</a></span></li>
+<li><span class="withIcon"><img src="/common_rn/img/icon_popup_p_003.gif" width="16" height="13" alt=""><a href="http://press.jal.co.jp/ja/" target="otherwindow">プレスリリース</a></span></li>
+<li><span class="withIcon"><img src="/common_rn/img/icon_popup_p_003.gif" width="16" height="13" alt=""><a href="/information/" target="otherwindow">お問い合わせ窓口</a></span></li>
+<li><span class="withIcon"><img src="/common_rn/img/icon_triangle_003.gif" width="6" height="5" alt=""><a href="/corporation/">法人のお客さま</a></span></li>
+-->
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<!-- /[rnFootNavi] -->
+
+<script type="text/javascript"><!--
+JLJS_naviCtrl.setMenuFooter();
+//--></script>
+<!-- [rnFoot] -->
+<div id="rnFoot">
+<div id="rnFootWrapper">
+
+<div id="rnFootNavi01" class="rnClearfix">
+<ul><!--
+--><li><span class="withIcon"><img src="/common_rn/img/icon_popup_p_001.gif" width="14" height="10" alt=""><a href="/other/system_maintenance.html" target="otherwindow">システムメインテナンス</a></span></li><!--
+--><li><span class="withIcon"><img src="/common_rn/img/icon_popup_p_001.gif" width="14" height="10" alt=""><a href="/footer/policy/" target="otherwindow">サイト利用規約</a></span></li><!--
+--><li><span class="withIcon"><img src="/common_rn/img/icon_popup_p_001.gif" width="14" height="10" alt=""><a href="/footer/goiken.html" target="otherwindow">ご意見・ご要望</a></span></li><!--
+--><li><span class="withIcon"><img src="/common_rn/img/icon_popup_p_001.gif" width="14" height="10" alt=""><a href="/footer/security.html" target="otherwindow">個人情報保護</a></span></li><!--
+--><li><span class="withIcon"><img src="/common_rn/img/icon_popup_p_001.gif" width="14" height="10" alt=""><a href="/jalcargo/" target="otherwindow">JALCARGO（貨物事業）</a></span></li><!--
+--></ul>
+<!-- [rnFootNavi01] --></div>
+
+<p id="rnFootCopy"><img src="/common_rn/img/txt_footer_copy_001.gif" width="219" height="11" alt="Copyright &copy; Japan Airlines. All rights reserved."></p>
+
+</div>
+</div>
+<!-- /[rnFoot] -->
+
+<script type="text/javascript" src="/common_rn/js/rtam.js"></script>
+<!-- /[JALSearchOptimization] -->
+<!-- /[グローバルフッタ] -->
+
+</div>
+<!-- /[wrapper] -->
+
+</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<TITLE>EDINET</TITLE>
+
+<LINK rel="stylesheet" type="text/css" href="css/ek/EKCommon.css">
+<LINK rel="stylesheet" type="text/css" href="css/ee/EECommon.css">
+<LINK rel="stylesheet" type="text/css" href="css/ek/EKTyui.css">
+<LINK rel="stylesheet" type="text/css" href="css/ek/EKCkCNormal.css" media="screen"/>
+<LINK rel="alternate stylesheet" type="text/css" href="css/ek/EKCkCBig.css" title="big" media="screen"/>
+<LINK rel="alternate stylesheet" type="text/css" href="css/ek/EKCkCNormal.css" title="normal" media="screen"/>
+<LINK rel="stylesheet" type="text/css" href="css/ek/EKCxPrint.css" media="print" />
+
+<SCRIPT type="text/javascript" src="script/bl/BLJS0010.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="script/ek/EKCommon.js" ></SCRIPT>
+<SCRIPT type="text/javascript" src="script/ee/topinfo/EEStyleSwitcher.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="script/ee/EECommon.js" ></SCRIPT>
+<SCRIPT type="text/javascript" src="script/ee/EEDispControl.js" ></SCRIPT>
+<SCRIPT type="text/javascript" src="script/ee/jquery-1.2.6.min.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="script/ee/jquery.slidepanel.pack.js"></SCRIPT>
+<SCRIPT type="text/javascript">
+	$(document).ready(function(){
+	$('.panel-item').slidePanel();
+	});
+</SCRIPT>
+<SCRIPT type="text/javascript">
+<!--
+function getQueryItems() {
+	var result = new Array();
+	if (window.location.search && window.location.search.length > 0) {
+		var qprms = window.location.search.substring(1).split('&');
+
+		for (var i = 0; i < qprms.length; i++) {
+			var v = qprms[i].split('=');
+
+			if (v[0] == 'dflg' || v[0] == 'iflg') {
+				result[v[0]] = v[1];
+			}
+		}
+	}
+	return result;
+}
+function doMenuAction(verb, bean, pid, tid, other) {
+	var qitms = getQueryItems();
+	if (qitms) {
+		other = "lgKbn=2&dflg=" + (qitms['dflg']=='1' ? '1' : '0') + "&iflg=" + (qitms['iflg']=='1' ? '1' : '0');
+	}
+	var frm = document.thisForm;
+	frm.action = "https://disclosure.edinet-fsa.go.jp/E01EW/BLMainController.jsp"
+	doSingleAction(verb, bean, pid, tid, other);
+}
+function doMenuActionMain(bean, verb, tid, pid) {
+	var beanTmp = "";
+	var verbTmp = "";
+	var frm = document.thisForm;
+	frm.action = "https://disclosure.edinet-fsa.go.jp/E01EW/BLMainController.jsp"
+
+	if (tid == "W1E62030") {
+		beanTmp = "ee.bean.EEW1E62030IBean";
+		verbTmp = "W1E62010YuKaBtn";
+	}
+	else {
+		beanTmp = bean;
+		verbTmp = verb;
+	}
+
+	if (tid == "W1E62010") {
+		frm.action = "/E01EW/download"
+	}
+
+	doSingleAction(verbTmp, beanTmp, pid, tid, "");
+	if (tid == "W1E62010") {
+		doSingleRelease();
+	}
+}
+function toTop(obj, lgKbn) {
+	var qitms = getQueryItems();
+	if (qitms) {
+		document.location.href = obj.href + "?lgKbn=2&dflg=" + (qitms['dflg']=='1' ? '1' : '0') + "&iflg=" + (qitms['iflg']=='1' ? '1' : '0');
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+function toLng(obj, lgKbn) {
+	var qitms = getQueryItems();
+	if (qitms) {
+		document.location.href = obj.href + "?lgKbn=1&dflg=" + (qitms['dflg']=='1' ? '1' : '0') + "&iflg=" + (qitms['iflg']=='1' ? '1' : '0');
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+// -->
+</SCRIPT>
+
+<!--■■■公認会計士バナー（開始）■■■-->
+	<style type="text/css">
+<!--
+#banner{
+}
+#banner a{
+	display:block;
+	margin-top:30px;
+	margin-bottom:30px;
+	margin-right:10px;
+	margin-left:0px;
+	padding:7px;
+	background-color:#ffc9c6;
+	border:#262649 double 3px;
+	color:#000082;
+	text-align:center;
+	text-decoration:none;
+}
+#banner a:link{color:#000082;}
+#banner a:visited{color:#000082;}
+#banner a:active{color:#000082;}
+#banner a:hover{color:#000082;background-color:#FFAAFF;}
+#banner a:hover{color:#000082;text-decoration: none;}
+-->
+	</style>
+<!--■■■公認会計士バナー（終了）■■■-->
+
+</HEAD>
+
+<BODY class="etsuran">
+<FORM name="thisForm" method="get" action="/E01EW/" target="_top" onsubmit="return false;">
+
+<DIV id="ci">
+<DIV id="user_title">
+<DIV id="user_title_line">
+<DIV id="wrapper">
+	<!-- ヘッダー -->
+	<DIV class="header">
+		<DIV class="header_box">
+			<DIV class="left_box">
+				<P class="ci_fsa"><IMG src="image/ee/fsa.png" alt="金融庁" width="40" height="48"></P>
+				<P class="lead"><IMG src="image/ee/lead.png" alt="金融商品取引法に基づく有価証券報告書等の開示書類に関する電子開示システム" width="504" height="14"></P>
+				<P class="ci_edinet"><IMG src="image/ee/edinet.png" alt="EDINET" width="328" height="41"></P>
+				<H1><IMG src="image/ee/etsuran.png" alt="閲覧 有価証券報告書等の開示書類を閲覧するサイト" width="496" height="70"></H1>
+			</DIV>
+			<DIV class="right_box">
+				<P class="english"><A href="EKW0EZ1001.html"  onclick="return toLng(this);"><IMG src="image/ee/english.png" alt="English" width="190" height="29"></A></P>
+				<P class="font_size navigation"><A href="#" id="small_font" onClick="setActiveStyleSheet('small'); loadHeight( true, 169, 80 ); return false;"><IMG src="image/ee/btn_fontsize_small.png" name="button_small" alt="文字サイズ小" class="cxbtn_style"/></A><A href="#" id="big_font" onClick="setActiveStyleSheet('big'); loadHeight( true, 169, 80 ); return false;"><IMG src="image/ee/btn_fontsize_big.png" name="button_big" alt="文字サイズ大" class="cxbtn_style"/></A></P>
+			</DIV>
+		</DIV>
+		<DIV class="gnav">
+			<UL>
+				<LI class="toppage"><A class="current" href="EKW0EZ0001.html" onclick="return toTop(this);"><IMG src="image/ee/etsuran_gnav01_top.png" alt="トップページ" width="196" height="50" border="0"></A></LI>
+				<LI class="kensaku"><A href="javascript:doMenuAction('W0EZA230CXP001007BLogic', 'ee.bean.parent.EECommonSearchBean', 'W0EZ0001', 'W1E63010', '');"><IMG src="image/ee/etsuran_gnav02_shorui.png" alt="書類検索" width="196" height="50" border="0"></A></LI>
+				<LI class="koukoku"><A href="javascript:doMenuAction('W1E63041CXP007001BLogic', 'ee.bean.W1E63040.EEW1E63041Bean', 'W0EZ0001', 'W1E63041', '');"><IMG src="image/ee/etsuran_gnav03_koukoku.png" alt="公告閲覧" width="196" height="50" border="0"></A></LI>
+				<LI class="hikaku"><A href="javascript:doMenuAction('W0EZA230CYP001001Action', 'ee.bean.W1E63050.EEW1E63050Bean', 'W0EZ0001', 'W1E63050', '');"><IMG src="image/ee/etsuran_gnav04_shorui.png" alt="書類比較" width="196" height="50" border="0"></A></LI>
+				<LI class="download"><A href="javascript:doMenuAction('W1E62075DisplayLnk', 'ee.bean.W1E62075.EEW1E62075Bean', 'W0EZ0001', 'W1E62075', '');"><IMG src="image/ee/etsuran_gnav05_dl.png" alt="ダウンロード" width="196" height="50" border="0"></A></LI>
+			</UL>
+		</DIV>
+	</DIV>
+	<!-- ヘッダー(END) -->
+	<!-- コンテナ -->
+	<DIV class="container">
+		<!-- メイン -->
+		<DIV class="main">
+			<!-- サイドナビ -->
+			<DIV class="sidenav">
+				<DIV class="l_menu m_bottom10">
+					<H2>トップメニュー<IMG src="image/ee/icon_blank01.png" alt="別窓を開く" width="15" height="12"></H2>
+					<DIV class="menu_list">
+						<UL>
+							<LI class="menuItem"><A href="https://disclosure.edinet-fsa.go.jp/EKW0EZ0005.html" onclick="window.open('https://disclosure.edinet-fsa.go.jp/EKW0EZ0005.html', '_blank', 'width=870,height=640,scrollbars=yes,location=yes,menubar=yes,status=no,toolbar=yes,left=0,top=0,resizable=yes'); return false;">お知らせ</A></LI>
+							<LI class="menuItem"><A href="https://disclosure.edinet-fsa.go.jp/EKW0EZ0006.html" onclick="window.open('https://disclosure.edinet-fsa.go.jp/EKW0EZ0006.html', '_blank', 'width=870,height=640,scrollbars=yes,location=yes,menubar=yes,status=no,toolbar=yes,left=0,top=0,resizable=yes'); return false;">よくある質問</A></LI>
+							<LI class="menuItem"><A href="EKW0EZ0008.html" onclick="window.open('EKW0EZ0008.html', '_blank', 'width=870,height=400,scrollbars=yes,location=yes,menubar=yes,status=no,toolbar=yes,left=0,top=0,resizable=yes'); return false;">端末要件</A></LI>
+							<LI class="menuItem"><A href="https://disclosure.edinet-fsa.go.jp/EKW0EZ0015.html" onclick="window.open('https://disclosure.edinet-fsa.go.jp/EKW0EZ0015.html', '_blank', 'width=870,height=640,scrollbars=yes,location=yes,menubar=yes,status=no,toolbar=yes,left=0,top=0,resizable=yes'); return false;">操作ガイド等</A></LI>
+							<LI class="menuItem"><A href="https://www.fsa.go.jp/opinion/" target="_blank">御意見・御要望</A><IMG class="blank_page_icon" 	src="image/ee/icon_blank02.png" alt="外部リンク" width="13" height="11"></LI>
+							<LI class="menuItem"><A href="https://disclosure.edinet-fsa.go.jp/EKW00Z0030.html" onclick="window.open('https://disclosure.edinet-fsa.go.jp/EKW00Z0030.html', '_blank', 'width=870, height=640,scrollbars=yes,location=yes,menubar=yes,status=no,toolbar=yes,left=0,top=0,resizable=yes'); return false;">著作権等について</A></LI>
+						</UL>
+					</DIV>
+					<BR>
+					<DIV class="menu_independence">
+						<A href="javascript:doMenuAction('W0EZA230CXP001007BLogic', 'ee.bean.parent.EECommonSearchBean', 'currentPage', 'W1E63010', '');">書類検索</A>
+					</DIV>
+					<BR>
+					<DIV class="menu_independence">
+						<A href="javascript:doMenuAction('W1E63041CXP007001BLogic', 'ee.bean.W1E63040.EEW1E63041Bean', 'currentPage', 'W1E63041', '');">公告閲覧</A>
+					</DIV>
+				</DIV>
+								
+				<DIV class="l_menu2">
+					<DIV class="info">
+						<H2>システムメンテナンスに伴う<BR>
+							<STRONG class="note">サービス一時停止</STRONG><BR>のお知らせ</H2>
+					</DIV>
+					<DIV class="menu_list">
+						<P>現在、サービス一時停止の予定はありません。</P>
+					</DIV>
+				</DIV>
+				<!--■■■公認会計士バナー（開始）■■■-->
+					<div id="banner">
+						<a href="https://disclosure.edinet-fsa.go.jp/download/ESE140063.pdf" target="_blank"><font face="HGP創英角ﾎﾟｯﾌﾟ体">「公認会計士試験合格者」<br />という人材がいます</font><img src="image/ek/icon_winow.gif" alt="別ウィンドウで開きます" class="icon-m-left" border="0" height="10" width="10"></a>
+					</div>
+				<!--■■■公認会計士バナー（終了）■■■-->
+				<!--■■■DHLバナー（開始）■■■-->
+					<div id="banner">
+						<a href="http://www.fsa.go.jp/receipt/d_hotline/index.html" target="_blank"><font face="HGP創英角ﾎﾟｯﾌﾟ体">開示義務違反等に係る情報をお持ちの方はこちらへ<br /></font><font size="1">（ディスクロジャー・ホットライン）</font><img src="image/ek/icon_winow.gif" alt="別ウィンドウで開きます" class="icon-m-left" border="0" height="10" width="10"></a>
+					</div>
+				<!--■■■DHLバナー（終了）■■■-->
+  			</DIV>
+			<!-- サイドナビ(END) -->
+			<!-- コンテンツ -->
+			
+			
+												
+			<DIV class="content">
+
+<DIV class="panel_blue">
+	<DIV class="panel-item panel">
+		<DIV class="panel-title-tyui">
+			<P style="color:black" class="txt font-size-9">政府認証基盤（GPKI）の更改に伴う端末設定について<SPAN class="confirm">必ず御確認ください。</SPAN></P>
+			<P class="close-open">&nbsp;</P>
+		</DIV>
+		<P style="color:black" class="txt-ommit-tyui font-size-8">政府認証基盤（GPKI）の更改に伴い、12月7日よりEDINETで使用しているサ…<SPAN class="more"><A HREF="#">続きを読む</A></SPAN></P>
+	</DIV>
+	<DIV style="color:black" class="panel-target panel-opened font-size-8">政府認証基盤（GPKI）の更改に伴い、12月7日よりEDINETで使用しているサーバ証明書及びコード署名証明書が更新されました。<BR>マイクロソフト社より提供されている&nbsp;Windows&nbsp;Update&nbsp;機能等により、自動的にアプリケーション認証局２の自己署名証明書のインストールが実行されるため、原則として対応は不要ですが、ログイン画面が表示できない等の際は、個別に「アプリケーション認証局２(Root)の自己署名証明書」を端末に設定してください。<BR><BR>端末設定方法に関する詳細については、端末要件を御覧ください。
+		<UL class="dotmark">
+		</UL>
+	</DIV>
+</DIV>
+<DIV class="panel_blue">
+	<DIV class="panel-item panel">
+		<DIV class="panel-title-tyui">
+			<P style="color:black" class="txt font-size-9">年末年始のお知らせについて<SPAN class="confirm">必ず御確認ください。</SPAN></P>
+			<P class="close-open">&nbsp;</P>
+		</DIV>
+		<P style="color:black" class="txt-ommit-tyui font-size-8">・開示書類の閲覧は年末年始も平常どおり行うことができます。<BR>・本年の書類本…<SPAN class="more"><A HREF="#">続きを読む</A></SPAN></P>
+	</DIV>
+	<DIV style="color:black" class="panel-target panel-opened font-size-8">・開示書類の閲覧は年末年始も平常どおり行うことができます。<BR>・本年の書類本登録受付時間は、12月27日（金）17:15で終了となります。<BR>　新年の書類本登録受付時間は、1月6日（月）9:00から可能となります。<BR>・事前チェック・仮登録は年末年始も平常どおり行うことができます。
+		<UL class="dotmark">
+		</UL>
+	</DIV>
+</DIV>
+
+
+			<DIV class="panel_gold">
+				<DIV class="panel-item panel">
+					<DIV class="panel-title-red">
+						<P class="txt">政府認証基盤（GPKI）の認証の更新について</P>
+						<P class="open-close">&nbsp;</P>
+					</DIV>
+				</DIV>
+				<DIV class="panel-target panel-closed">平成25年12月7日 政府認証基盤（GPKI）の認証基盤が更新され、EDINETのサーバー証明書及びコード署名証明書が新しくなりました。<BR>
+				<A href="javascript:doMenuAction('W1E63070InitDisplay', 'ee.bean.W1E63070.EEW1E63070Bean', 'W0EZ0001', 'W1E63070', '');">XBRLからCSVへの変換ツール<IMG src="image/ek/icon_blank01.png" alt="" width="11" height="13" border="0"></A>より、最新のツールをダウンロードして下さい。
+				</DIV>
+			</DIV>
+
+			<DIV class="panel_gold">
+				<DIV class="panel-item panel">
+					<DIV class="panel-title-red">
+						<P class="txt">開示情報に関する利用申請書の提出について</P>
+						<P class="open-close">&nbsp;</P>
+					</DIV>
+				</DIV>
+				<DIV class="panel-target panel-closed">
+					金融庁ではEDINETの安定稼働に当たり、クローラー等のツールを利用したアクセスによる負荷を把握するため、開示情報に関する利用申請書（以下「申請書」という。）を提出いただいております。そこで、<U>自社又は市販のツールにより、EDINETからデータを取得されている（取得を予定している）方</U>におかれましては、<A href="https://disclosure.edinet-fsa.go.jp/download/ESE140069.pdf" target="_blank">申請書<IMG src="image/ek/icon_blank01.png" alt="" width="11" height="13" border="0"></A>の提出をお願いいたします。<BR>
+					なお、<U>記載内容が不十分な場合は、再提出をお願いする場合もございます</U>ので、各項目について詳細に記載してください。<BR>
+					【提出方法】<BR>
+					上記の申請書をダウンロードしていただき、必要事項を記入し押印の上、下記の宛先まで郵送してください。<BR>
+					＜宛先＞<BR>
+					〒100-8967 東京都千代田区霞が関3－2－1　金融庁総務企画局企業開示課電子開示係
+				</DIV>
+			</DIV>
+			
+			<DIV class="panel_gold">
+				<DIV class="panel-item panel">
+					<DIV class="panel-title-red">
+						<P class="txt">注意（未公開株、ファンド等の取引について）</P>
+						<P class="open-close">&nbsp;</P>
+					</DIV>
+				</DIV>
+				<DIV class="panel-target panel-closed">
+					●「未公開株」「私募債」「ファンド（組合など）」の証券の取引に関してトラブルが発生しており、また、「EDINETに証券の情報を開示しているので安心である。」、「財務局受理印が押されているので安心である。」といった違法的な勧誘が行われているとの情報が寄せられています。<BR>
+					●金融庁・財務局はEDINETに開示している情報について、<BR>
+					&nbsp;①開示内容について真実・正確と認定すること<BR>
+					&nbsp;②開示内容に投資判断上の重要な事項の記載が欠けていないと認定すること<BR>
+					&nbsp;③開示している有価証券の価値を保証・承認すること<BR>
+					は<B>一切ありません</B>ので、くれぐれもご注意ください。<BR>
+					●なお、有価証券の取引に関し、上記①～③のような表示を行うことは、法により禁止されておりますので、ご注意ください。
+				</DIV>
+			</DIV>
+			
+			<DIV class="panel_gold">
+				<DIV class="panel-item panel">
+					<DIV class="panel-title-red">
+						<P class="txt">更新情報</P>
+						<P class="open-close">&nbsp;</P>
+					</DIV>
+				</DIV>
+				<DIV class="panel-target panel-closed">
+					平成25年9月25日 <A href="http://disclosure.edinet-fsa.go.jp/download/ESE140009.pdf" target="_blank">書類閲覧用端末要件<IMG src="image/ek/icon_blank01.png" alt="" width="11" height="13" border="0"></A>が更新されました。<BR>
+					平成25年8月21日 <A href="http://www.fsa.go.jp/search/20130821.html" target="_blank">次世代EDINETタクソノミ<IMG src="image/ek/icon_blank01.png" alt="" width="11" height="13" border="0"></A>が公開されました。<BR>
+					平成25年3月1日 <A href="http://www.fsa.go.jp/search/20130301.html" target="_blank">2013年版EDINETタクソノミ及びXBRL作成ガイド<IMG src="image/ek/icon_blank01.png" alt="" width="11" height="13" border="0"></A>が公開されました。<BR>
+					平成24年3月14日 <A href="http://www.fsa.go.jp/search/20120314.html" target="_blank">2012年版EDINETタクソノミ及びXBRL作成ガイド<IMG src="image/ek/icon_blank01.png" alt="" width="11" height="13" border="0"></A>が公開されました。
+				</DIV>
+			</DIV>
+			
+			<DIV class="panel_gold">
+				<DIV class="panel-item panel">
+					<DIV class="panel-title-red">
+						<P class="txt">「セキュリティ証明書」についての画面が表示された場合</P>
+						<P class="open-close">&nbsp;</P>
+					</DIV>
+				</DIV>
+				<DIV class="panel-target panel-closed">
+					<P>当システムにアクセスした際に、「セキュリティ証明書」についての画面が表示された場合は、端末への設定が必要となります。端末設定方法に関する詳細及びブラウザ等の推奨環境については、<A href="EKW0EZ0008.html" onclick="window.open('EKW0EZ0008.html', '_blank', 'width=870,height=400,scrollbars=yes,location=yes,menubar=yes,status=no,toolbar=yes,left=0,top=0,resizable=yes'); return false;">端末要件</A><IMG src="image/ee/icon_blank01.png" alt="別窓を開く" width="15" height="12">を御覧ください。 その他、当システムについての詳細は、<A href="https://disclosure.edinet-fsa.go.jp/EKW0EZ0015.html" onclick="window.open('https://disclosure.edinet-fsa.go.jp/EKW0EZ0015.html', '_blank', 'width=870,height=640,scrollbars=yes,location=yes,menubar=yes,status=no,toolbar=yes,left=0,top=0,resizable=yes'); return false;">操作ガイド</A><IMG src="image/ee/icon_blank01.png" alt="別窓を開く" width="15" height="12">の各種ガイドを御覧ください。</P>
+				</DIV>
+			</DIV>
+			
+			<DIV class="title_silver"><H2 class="title_h">書類検索</H2></DIV>
+			<DIV class="mb_6">
+				<TABLE id="vtbl" class="main_table_multi_line" >
+					<TR>
+						<TH class="default main_table_td_172">
+							<TABLE class="inner_table">
+								<TR>
+									<TH class="col_head">
+										<DIV><IMG src="image/ee/listmark02.gif" alt="" width="11" height="12" />&nbsp;</DIV>
+									</TH>
+									<TH class="col_text">
+										<A href="javascript:doMenuAction('W0EZA230CXP001007BLogic', 'ee.bean.parent.EECommonSearchBean', 'W0EZ0001', 'W1E63010', '');">書類簡易検索</A>
+									</TH>
+								</TR>
+							</TABLE>
+						</TH>
+						<TD class="default main_table_td_530">検索条件としてよく使われる「書類の提出者／有価証券の発行者／ファンド情報」、「書類種別」又は「決算期／提出期間」のみを指定して、書類検索を行うことができます。</TD>
+					</TR>
+					<TR>
+						<TH class="default main_table_td_172">
+							<TABLE class="inner_table">
+								<TR>
+									<TH class="col_head">
+										<DIV><IMG src="image/ee/listmark02.gif" alt="" width="11" height="12" />&nbsp;</DIV>
+									</TH>
+									<TH class="col_text">
+										<A href="javascript:doMenuAction('W0EZA230CXP002010BLogic', 'ee.bean.parent.EECommonSearchBean', 'W0EZ0001', 'W1E63020', '');">書類詳細検索</A>
+									</TH>
+								</TR>
+							</TABLE>
+						</TH>
+						<TD class="default main_table_td_530">書類簡易検索画面で指定できる検索条件のほか、書類の提出者又は有価証券の発行者の「業種」、「種別」等、より詳細な検索条件を指定して、書類検索を行うことができます。</TD>
+					</TR>
+					<TR>
+						<TH class="default main_table_td_172">
+							<TABLE class="inner_table">
+								<TR>
+									<TH class="col_head">
+										<DIV><IMG src="image/ee/listmark02.gif" alt="" width="11" height="12" />&nbsp;</DIV>
+									</TH>
+									<TH class="col_text">
+										<A href="javascript:doMenuAction('W1E63030InitDisplay', 'ee.bean.W1E63030.EEW1E63030Bean', 'W0EZ0001', 'W1E63030', '');">全文検索</A>
+									</TH>
+								</TR>
+							</TABLE>
+						</TH>
+						<TD class="default main_table_td_530">書類本文に含まれる「文字列」を指定して、検索を行うことができます。その際、書類の提出者又は有価証券の発行者の「業種」、「種別」等だけでなく、「目次」を指定して、検索範囲を絞ることができます。</TD>
+					</TR>
+				</TABLE>
+			</DIV>
+			<DIV class="title_silver"><H2 class="title_h">公告閲覧</H2></DIV>
+			<DIV class="write3 mb_6">
+				<TABLE class="main_table_multi_line" >
+					<TR>
+						<TH class="default main_table_td_172 main_table_td_img">
+							<TABLE class="inner_table">
+								<TR>
+									<TH class="col_head">
+										<DIV><IMG src="image/ee/listmark02.gif" alt="" width="11" height="12" class="align_middle" />&nbsp;</DIV>
+									</TH>
+									<TH class="col_text">
+										<A href="javascript:doMenuAction('W1E63041CXP007001BLogic', 'ee.bean.W1E63040.EEW1E63041Bean', 'W0EZ0001', 'W1E63041', '');">公告閲覧</A>
+									</TH>
+								</TR>
+							</TABLE>
+						</TH>
+						<TD class="default main_table_td_530">公告を閲覧することができます。</TD>
+					</TR>
+				</TABLE>
+			</DIV>
+
+			<DIV class="title_silver"><H2 class="title_h">書類比較</H2></DIV>
+			<TABLE class="main_table_multi_line" >
+				<TR>
+					<TH class="default main_table_td_172">
+						<TABLE class="inner_table">
+							<TR>
+								<TH class="col_head">
+									<DIV><IMG src="image/ee/listmark02.gif" alt="" width="11" height="12" />&nbsp;</DIV>
+								</TH>
+								<TH class="col_text">
+									<A href="javascript:doMenuAction('W0EZA230CYP001001Action', 'ee.bean.W1E63050.EEW1E63050Bean', 'W0EZ0001', 'W1E63050', '');">書類比較</A>
+								</TH>
+							</TR>
+						</TABLE>
+					</TH>
+					<TD class="default main_table_td_530">同一の書類提出者の複数期の書類、異なる書類提出者の同じ期の書類等の観点で、 複数の書類を並べ、比較を行うことができます。</TD>
+				</TR>
+			</TABLE>
+
+			<DIV class="title_silver"><H2 class="title_h">ダウンロード</H2></DIV>
+			<DIV class="mb_6">
+				<TABLE class="main_table_multi_line" >
+					<TR>
+						<TH class="default main_table_td_172">
+							<TABLE class="inner_table">
+								<TR>
+									<TH class="col_head">
+										<DIV><IMG src="image/ee/listmark02.gif" alt="" width="11" height="12" class="align_middle" />&nbsp;</DIV>
+									</TH>
+									<TH class="col_text">
+										<A href="javascript:doMenuAction('W1E62075DisplayLnk', 'ee.bean.W1E62075.EEW1E62075Bean', 'W0EZ0001', 'W1E62075', '');">XBRL（一括）</A>
+									</TH>
+								</TR>
+							</TABLE>
+						</TH>
+						<TD class="default main_table_td_530">開示書類等をXBRLデータごとに圧縮したファイルをダウンロードすることができます。</TD>
+					</TR>
+					<TR>
+						<TH class="default main_table_td_172">
+							<TABLE class="inner_table">
+								<TR>
+									<TH class="col_head">
+										<DIV><IMG src="image/ee/listmark02.gif" alt="" width="11" height="12" class="tb_2" />&nbsp;</DIV>
+									</TH>
+									<TH class="col_text">
+										<A href="javascript:doMenuAction('W1E62071InitDisplay', 'ee.bean.W1E62071.EEW1E62071Bean', 'W0EZ0001', 'W1E62071', '');">EDINETタクソノミ及びコードリスト</A>
+									</TH>
+								</TR>
+							</TABLE>
+						</TH>
+						<TD class="default main_table_td_530">EDINETタクソノミ、EDINETコードリスト及びファンドコードリストのダウンロードを行うことができます。</TD>
+					</TR>
+					<TR>
+						<TH class="default main_table_td_172">
+							<TABLE class="inner_table">
+								<TR>
+									<TH class="col_head">
+										<DIV><IMG src="image/ee/listmark02.gif" alt="" width="11" height="12" class="tb_2" />&nbsp;</DIV>
+									</TH>
+									<TH class="col_text">
+										<A href="javascript:doMenuAction('W1E63070InitDisplay', 'ee.bean.W1E63070.EEW1E63070Bean', 'W0EZ0001', 'W1E63070', '');">XBRLからCSVへの変換ツール</A>
+									</TH>
+								</TR>
+							</TABLE>
+						</TH>
+						<TD class="default main_table_td_530">指定したXBRLデータから抽出した値と、指定した変換ルール定義ファイルとを照合し、取得した変換後文字列をCSV形式のファイルに出力する「XBRLからCSVへの変換ツール」をダウンロードすることができます。</TD>
+					</TR>
+				</TABLE>
+				<P class="page_top"><SPAN class="arrow_top"><A href="#">ページの先頭に戻る</A></SPAN></P>
+			</DIV>
+
+		</DIV>
+		<!-- コンテンツ(END) -->
+		<DIV class="clearer"><SPAN></SPAN></DIV>
+		</DIV>
+		<!-- メイン(END) -->
+	</DIV>
+	<!-- コンテナ(END) -->
+
+</DIV>
+<!-- #wrapper(END) -->
+</DIV>
+<!-- #user_title_line(END) -->
+</DIV>
+<!-- #user_title(END) -->
+
+<!-- フッター-->
+<DIV class="footer">
+	<P class="copyright">金融庁/Financial Services Agency. The Japanese Government Copyright &copy;金融庁 All Rights Reserved.</P>
+</DIV>
+<!-- フッター(END) -->
+</DIV>
+			<INPUT type="hidden" name="uji.bean" value="bl.frwk.BLGenericDataBean">
+			<INPUT type="hidden" name="uji.verb" value="">
+			<INPUT type="hidden" name="TID" value="">
+			<INPUT type="hidden" name="PID" value="W0EZ0001">
+			<INPUT type="hidden" name="SESSIONKEY" value="">
+<!-- #ci(END) -->
+</FORM>
+</BODY>
+</HTML>
