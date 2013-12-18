@@ -5,7 +5,7 @@ import sys
 import MeCab
 
 
-class NaiveBayes:
+class NaiveBayes():
     def __init__(self):
         self.vocabularies = set()
         self.word_count = {}  # {'花粉症対策': {'スギ花粉': 4, '薬': 2,...} }
