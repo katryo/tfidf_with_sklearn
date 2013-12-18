@@ -1,19 +1,7 @@
 import math
-import pdb
 
 
 class SimCalculator():
-    def cooccurrence_count(self, v1, v2):
-        """
-        vector['コミュニケーション'] => {'ライフハック': 1}
-        vector['時間'] => 仕事: {'ライフハック': 1, '仕事': 1, '趣味': 1}
-        """
-        result = 0
-        for word in v1:
-            if word in v2:
-                result += (v1[word] + v2[word] - 1)
-        return result
-
     def _distance(self, v1, v2):
         #ピタゴラスの定理（次元の一般化により3以上の次元でも通用）で距離を計算
         sum_of_squared_values = lambda vector: sum([vector[word] * vector[word] for word in vector])
@@ -49,7 +37,6 @@ class SimCalculator():
 
 if __name__ == '__main__':
     sc = SimCalculator()
-    print(sc.cooccurrence_count({'ライフハック': 1}, {'ライフハック': 2, '仕事': 1, '趣味': 1}))
-    print(sc.sim_simpson({'ライフハック': 1}, {'ライフハック': 2, '仕事': 1, '趣味': 1}))
-    print(sc.sim_cos({'ライフハック': 1}, {'ライフハック': 2, '仕事': 1, '趣味': 1}))
+    print(sc.sim_cos({'ライフハック': 1, '骨折': 2}, {'ライフハック': 2, '仕事': 1, '趣味': 1}))
+    print(sc.sim_simpson({'ライフハック': 1, '骨折': 2}, {'ライフハック': 2, '仕事': 1, '趣味': 1}))
 
