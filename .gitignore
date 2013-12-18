@@ -1,4 +1,4 @@
 bing_search_naive_bayes.iml
 my_api_keys.py
 .idea/
-fetched_pages/*
+fetched_pages/
