@@ -21,6 +21,7 @@ if __name__ == '__main__':
         nb_input.train(query, 'input')
         results = OrderedDict()
         for category in nb_classifier.word_count:
+            # sim_cosのかわりにsim_simpsonも使える
             sim_cos = sc.sim_cos(nb_input.word_count['input'], nb_classifier.word_count[category])
             results[category] = sim_cos  # 最高valueのkeyを求めるためtupleにした
 
@@ -34,4 +35,7 @@ if __name__ == '__main__':
             if results[category] > best_score_before:
                 best_category = category
                 best_score_before = results[category]
-        print('類似度の最も高いカテゴリーは「%s」で類似度は %f です' % (best_category, results[best_category]))
+        try:
+            print('類似度の最も高いカテゴリーは「%s」で類似度は %f です' % (best_category, results[best_category]))
+        except KeyError:
+            continue
