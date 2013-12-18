@@ -17,8 +17,8 @@ class SimCalculator():
     def _distance(self, v1, v2):
         #ピタゴラスの定理（次元の一般化により3以上の次元でも通用）で距離を計算
         sum_of_squared_values = lambda vector: sum([vector[word] * vector[word] for word in vector])
-        squared_distance = sum_of_squared_values(v1) + sum_of_squared_values(v2)
-        distance =  math.sqrt(squared_distance)
+        squared_distance = sum_of_squared_values(v1) * sum_of_squared_values(v2)
+        distance = math.sqrt(squared_distance)
         return distance
 
     def sim_cos(self, v1, v2):
