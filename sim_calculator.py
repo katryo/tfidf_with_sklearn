@@ -3,14 +3,14 @@ import math
 
 class SimCalculator():
     def _absolute(self, vector):
-        # ベクトルvの長さつまり絶対値を返す
+        # ベクトルの長さつまり絶対値を返す
         squared_distance = sum([vector[word] * vector[word] for word in vector])
         distance = math.sqrt(squared_distance)
         return distance
 
     def sim_cos(self, v1, v2):
         numerator = 0
-        # v1とv2で共通するkeyがあったとき、その値の積を加算していく
+        # v1とv2で共通するkeyがあったとき、その値の積を加算していく。2つのベクトルの内積になる。
         for word in v1:
             if word in v2:
                 numerator += v1[word] * v2[word]
