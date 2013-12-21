@@ -22,7 +22,7 @@ class SimCalculator():
             return 0
         return numerator / denominator
 
-    def sim_simpson(self, v1,v2):
+    def sim_simpson(self, v1, v2):
         intersection = 0
         # v1とv2で共通するkeyの数を数えている
         for word in v2:

@@ -18,17 +18,17 @@ if __name__ == '__main__':
 
     for query in sys.stdin:
         nb_input.word_count = {}  # 二回目以降のinputのための初期化
-        nb_input.train(query, 'input')
+        nb_input.train(query, 'input')  # 標準入力で入れた文字列を'input'カテゴリとして学習
         results = OrderedDict()
         for category in nb_classifier.word_count:
             # sim_cosのかわりにsim_simpsonも使える
             sim_cos = sc.sim_cos(nb_input.word_count['input'], nb_classifier.word_count[category])
-            results[category] = sim_cos  # 最高valueのkeyを求めるためtupleにした
+            results[category] = sim_cos
 
         for result in results:
             print('カテゴリー「%s」との類似度は %f です' % (result, results[result]))
 
-        # http://cointoss.hatenablog.com/entry/2013/10/16/123129
+        # http://cointoss.hatenablog.com/entry/2013/10/16/123129 の通りやってもmaxのkey取れない(´・ω・`)
         best_score_before = 0.0
         best_category = ''
         for i, category in enumerate(results):
@@ -37,5 +37,5 @@ if __name__ == '__main__':
                 best_score_before = results[category]
         try:
             print('類似度の最も高いカテゴリーは「%s」で類似度は %f です' % (best_category, results[best_category]))
-        except KeyError:
+        except KeyError:  # inputが空白のとき
             continue
