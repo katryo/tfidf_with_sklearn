@@ -1,6 +1,6 @@
-bing_search_naive_bayes
+bing_search_naive_bayes_sim
 =======================
 
-Search, Train, Classify
+Search, Train, Classify, Calculate similarities!
 
-Please read the detailed article at http://qiita.com/katryo/items/62291ba328de9d12bd30 .
+Please read the detailed article at http://qiita.com/katryo/items/b6962facf744e93735bb
