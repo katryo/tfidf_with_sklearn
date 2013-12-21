@@ -2,10 +2,10 @@ import math
 
 
 class SimCalculator():
-    def _distance(self, v1, v2):
-        #ピタゴラスの定理（次元の一般化により3以上の次元でも通用）で距離を計算
+    def _absolute(self, v):
+        # ベクトルvの長さつまり絶対値を返す
         sum_of_squared_values = lambda vector: sum([vector[word] * vector[word] for word in vector])
-        squared_distance = sum_of_squared_values(v1) * sum_of_squared_values(v2)
+        squared_distance = sum_of_squared_values(v)
         distance = math.sqrt(squared_distance)
         return distance
 
@@ -16,7 +16,7 @@ class SimCalculator():
             if word in v2:
                 numerator += v1[word] * v2[word]
         
-        denominator = self._distance(v1, v2)
+        denominator = self._absolute(v1) * self._absolute(v2)
 
         if denominator == 0:
             return 0
@@ -37,6 +37,6 @@ class SimCalculator():
 
 if __name__ == '__main__':
     sc = SimCalculator()
-    print(sc.sim_cos({'ライフハック': 1, '骨折': 2}, {'ライフハック': 2, '仕事': 1, '趣味': 1}))
-    print(sc.sim_simpson({'ライフハック': 1, '骨折': 2}, {'ライフハック': 2, '仕事': 1, '趣味': 1}))
+    print('コサイン類似度は' + str(sc.sim_cos({'ライフハック': 1, '骨折': 2}, {'ライフハック': 2, '仕事': 1, '趣味': 1})))
+    print('シンプソン係数で計算した類似度は' + str(sc.sim_simpson({'ライフハック': 1, '骨折': 2}, {'ライフハック': 2, '仕事': 1, '趣味': 1})))
 
