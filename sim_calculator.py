@@ -2,10 +2,9 @@ import math
 
 
 class SimCalculator():
-    def _absolute(self, v):
+    def _absolute(self, vector):
         # ベクトルvの長さつまり絶対値を返す
-        sum_of_squared_values = lambda vector: sum([vector[word] * vector[word] for word in vector])
-        squared_distance = sum_of_squared_values(v)
+        squared_distance = sum([vector[word] * vector[word] for word in vector])
         distance = math.sqrt(squared_distance)
         return distance
 
