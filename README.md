@@ -1,6 +1,5 @@
-bing_search_naive_bayes_sim
+tfidf_with_sklearn
 =======================
+calculate tfidf with scikit-learn.
 
-Search, Train, Classify, Calculate similarities!
-
-Please read the detailed article at http://qiita.com/katryo/items/b6962facf744e93735bb
+Detailed article is here http://qiita.com/katryo/items/f86971afcb65ce1e7d40
